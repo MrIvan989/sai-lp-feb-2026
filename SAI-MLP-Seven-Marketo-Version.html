@@ -47,7 +47,7 @@
   <meta class="mktoBoolean" id="show-sec1" mktoname="Show Section 1 (Hero)?" default="true" true_value="block"
     false_value="none" false_value_name="Hide" true_value_name="Show">
   <meta class="mktoString" mktoname="Section 1 BG Color" id="sec1-bgColor" default="#ffffff">
-  <meta class="mktoString" mktoname="Section 1 Button Link" id="sec1-btn-link" default="#">
+  <meta class="mktoString" mktoname="Section 1 Button Link" id="sec1-btn-link" default="#savemyseat">
   <meta class="mktoString" mktoname="Section 1 Button Text" id="sec1-btn-text" default="Save My Seat">
   <meta class="mktoString" mktoname="Section 1 Badge Text" id="sec1-badge-text" default="Virtual Event">
 
@@ -227,7 +227,7 @@
     }
 
     .sec1-hero .hero-divider {
-      width: 60px;
+      width: 65%;
       height: 3px;
       background-color: var(--sai-orange);
       margin-bottom: 20px;
@@ -256,7 +256,7 @@
       background: #fff;
       border: 1px solid var(--sai-border);
       border-radius: 8px;
-      padding: 30px;
+      padding: 60px 30px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
@@ -301,32 +301,18 @@
       background: #fff;
       border: 1px solid var(--sai-border);
       border-radius: 8px;
-      padding: 24px;
+      padding: 50px 24px;
       height: 100%;
-      border-top: 4px solid transparent;
     }
-
-    .value-card.card-value {
-      border-top-color: var(--sai-card-border-value);
-    }
-
-    .value-card.card-vision {
-      border-top-color: var(--sai-card-border-vision);
-    }
-
-    .value-card.card-reveal {
-      border-top-color: var(--sai-card-border-reveal);
-    }
-
     .value-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--sai-teal);
+      color: var(--sai-dark);
       margin-bottom: 10px;
     }
 
     .value-card.card-value h3 {
-      color: var(--sai-orange);
+      color: var(--sai-dark);
     }
 
     .value-card p {
@@ -357,7 +343,7 @@
       display: ${show-sec3 };
       order: ${order-sec3 };
       background-color: ${sec3-bgColor };
-      background-image: url('SAI_treering_green.png');
+      background-image: url('assets/SAI_treering_green.png');
       background-size:cover;
       background-position: center center;
       padding: 60px 0;
@@ -582,112 +568,79 @@
       order: ${order-sec8};
       background-color: ${sec8-bgColor};
     }
-
-    .section-related .section-title {
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .section-related .section-title h2 {
-      color: var(--text-black);
-      font-size: 1.75rem;
-    }
-
-    .section-related .section-subtitle {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 0.95rem;
-      color: #666;
-    }
-
-    .related-content-wrapper {
-      position: relative;
-    }
-
-    .related-card {
-      background-color: var(--text-white);
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: box-shadow 0.25s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .related-card:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .related-card .card-image {
+    /* == CUSTOM CSS FOR CAROUSEL TRACK */
+    /* Hide overflow so cards outside the view are invisible */
+    .custom-carousel-viewport {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      overflow: hidden;
+      padding: 10px 0; /* Prevents shadow clipping */
+    }
+    .card-title{
+      color: var(--sai-teal-hover);
+      font-weight: bold;
+    }
+    .learn-more-link{
+      color: var(--sai-dark);
+      font-weight: bold;
+      text-decoration :none;
     }
 
-    .related-card .card-body {
-      padding: 20px;
-      flex-grow: 1;
+    /* Flex container for the cards. We use will-change to optimize animations */
+    .custom-carousel-track {
       display: flex;
-      flex-direction: column;
+      will-change: transform;
+    }
+    /* Responsive Breakpoints mapped from requirements */
+    .custom-carousel-card {
+      flex: 0 0 100%; /* Mobile (sm and below): 1 Card */
+      padding: 0 15px; /* Spacing between cards */
+    }
+    @media (min-width: 768px) {
+      .custom-carousel-card {
+        flex: 0 0 50%; /* Tablet (md): 2 Cards */
+      }
     }
 
-    .related-card h4 {
-      font-size: 1rem;
-      color: var(--text-black);
-      margin-bottom: 8px;
-    }
-
-    .related-card p {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 12px;
-      flex-grow: 1;
-      line-height: 1.5;
-    }
-
-    .related-card .learn-more {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--turquoise);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .related-card .learn-more:hover {
-      text-decoration: underline;
-    }
-
-    /* Carousel Navigation Arrows */
-    .carousel-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 36px;
-      height: 36px;
-      display: flex;
-      padding: 0;
-      border:none;
-      background-color: transparent;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.35s ease;
-      z-index: 2;
-    }
-    .carousel-nav:hover{
-      background-color: transparent;
-
-    }
-    .carousel-nav.prev {
-      left: -50px;
-    }
-
-    .carousel-nav.next {
-      right: -50px;
-    }
+    @media (min-width: 992px) {
+      .custom-carousel-card {
+        flex: 0 0 33.333333%; /* Desktop (lg): 3 Cards */
+        }
+      }
+      /* Custom Arrow Styling */
+     .carousel-control-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: var(--sai-teal);
+        color: var(--sai-white);
+        border: 2px solid #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+      }
+      .carousel-control-btn:hover {
+        background-color: var(--sai-teal-hover);
+        transform: translateY(-50%) scale(1.05);
+      }
+      .carousel-control-btn.prev {
+        left: -20px;
+      }
+      .carousel-control-btn.next {
+        right: -20px;
+      }
+      @media (max-width: 767px) {
+        .carousel-control-btn.prev { left: 0px; }
+        .carousel-control-btn.next { right: 0px; }
+      }
+        
+    
     /* ============================================================
        FOOTER STYLES
        ============================================================ */
@@ -714,11 +667,7 @@
     }
 
     .footer-section a {
-      color: $ {
-        footer-textColor
-      }
-
-      ;
+      color: ${footer-textColor};
       text-decoration: none;
       opacity: 0.85;
       transition: opacity 0.2s;
@@ -800,85 +749,6 @@
       }
     }
   </style>
-    <!-- ========================================== -->
-    <!-- CUSTOM CSS FOR CAROUSEL TRACK              -->
-    <!-- ========================================== -->
-    <style type="text/css">
-        /* Hide overflow so cards outside the view are invisible */
-        .custom-carousel-viewport {
-            width: 100%;
-            overflow: hidden;
-            padding: 10px 0; /* Prevents shadow clipping */
-        }
-
-        .learn-more-link{
-          color: var(--sai-dark);
-          font-weight: bold;
-          text-decoration :none;
-        }
-
-        /* Flex container for the cards. We use will-change to optimize animations */
-        .custom-carousel-track {
-            display: flex;
-            will-change: transform;
-        }
-
-        /* Responsive Breakpoints mapped from requirements */
-        .custom-carousel-card {
-            flex: 0 0 100%; /* Mobile (sm and below): 1 Card */
-            padding: 0 15px; /* Spacing between cards */
-        }
-
-        @media (min-width: 768px) {
-            .custom-carousel-card {
-                flex: 0 0 50%; /* Tablet (md): 2 Cards */
-            }
-        }
-
-        @media (min-width: 992px) {
-            .custom-carousel-card {
-                flex: 0 0 33.333333%; /* Desktop (lg): 3 Cards */
-            }
-        }
-
-        /* Custom Arrow Styling */
-        .carousel-control-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--sai-teal);
-            color: var(--sai-white);
-            border: 2px solid #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.2s;
-        }
-
-        .carousel-control-btn:hover {
-            background-color: var(--sai-teal-hover);
-            transform: translateY(-50%) scale(1.05);
-        }
-
-        .carousel-control-btn.prev {
-            left: -20px;
-        }
-
-        .carousel-control-btn.next {
-            right: -20px;
-        }
-
-        @media (max-width: 767px) {
-            .carousel-control-btn.prev { left: 0px; }
-            .carousel-control-btn.next { right: 0px; }
-        }
-    </style>
 </head>
 
 <body>
@@ -893,7 +763,7 @@
           <!-- Header Logo (mktoImg) -->
           <a href="${header-logo-link}" class="header-logo" target="_blank">
             <div class="mktoImg" id="header-logo" mktoname="Header Logo">
-              <img src="https://go.scaledagile.com/rs/983-XYR-522/images/SAFe-Logo-Tag.png" alt="SAFe Logo"
+              <img src="hassets/sai-logo-blue.png" alt="SAFe Logo"
                 style="max-height:45px;">
             </div>
           </a>
@@ -994,7 +864,7 @@
         <div class="row">
           <!-- quote icon -->
           <div class="col">
-            <img class="quote-one" src="quote-1.png" />
+            <img class="quote-one" src="assets/quote-1.png" />
           </div>
           <!-- quote -->
           <div class="col-lg-7 col-sm-12">
@@ -1005,7 +875,7 @@
           </div>
           <!-- quote icon 2-->
           <div class="col">
-            <img class="quote-two" src="quote-2.png" />  
+            <img class="quote-two" src="assets/quote-2.png" />  
           </div>
         </div>
       </div>
@@ -1026,7 +896,7 @@
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
               <!--<i class="fas fa-mountain"></i>-->
-              <img src="takeaway-icon.png" />
+              <img src="assets/takeaway-icon.png" />
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway1" mktoname="Section 3 Takeaway 1">
@@ -1041,7 +911,7 @@
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
               <!--<i class="fas fa-robot"></i>-->
-              <img src="takeaway-icon.png" />
+              <img src="assets/takeaway-icon.png" />
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway2" mktoname="Section 3 Takeaway 2">
@@ -1056,7 +926,7 @@
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
              <!--<i class="fas fa-sync-alt"></i>-->
-              <img src="takeaway-icon.png" />
+              <img src="assets/takeaway-icon.png" />
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway3" mktoname="Section 3 Takeaway 3">
@@ -1071,7 +941,7 @@
           <div class="takeaway-item d-flex mb-0">
             <div class="takeaway-icon">
               <!--<i class="fas fa-star"></i>-->
-              <img src="takeaway-icon.png" />
+              <img src="assets/takeaway-icon.png" />
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway4" mktoname="Section 3 Takeaway 4">
@@ -1101,7 +971,7 @@
             <div class="speaker-card rounded-4">
               <div class="mktoImg" id="sec4-speaker1-img" mktoname="Speaker 1 Photo">
                 <img class="speaker-photo"
-                  src="andrew-profile.png" alt="Andrew Sales">
+                  src="assets/andrew-profile.png" alt="Andrew Sales">
               </div>
               <div class="speaker-bio">
                 <div class="mktoText" id="sec4-speaker1-info" mktoname="Speaker 1 Info">
@@ -1116,7 +986,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="speaker-card rounded-4">
               <div class="mktoImg" id="sec4-speaker2-img" mktoname="Speaker 2 Photo">
-                <img class="speaker-photo" src="beth-profile.png"
+                <img class="speaker-photo" src="assets/beth-profile.png"
                   alt="Beth Bock">
               </div>
               <div class="speaker-bio">
@@ -1134,7 +1004,7 @@
     <!-- ============================================================
          SECTION 5 - FORM SECTION
          ============================================================ -->
-    <section class="sec5-form">
+    <section id="savemyseat" class="sec5-form mx-4 my-4 rounded-4">
       <div class="container">
         <div class="form-wrapper">
           <!-- Form Header Text -->
@@ -1205,94 +1075,8 @@
     </section>
 
     <!-- ============================================================
-         SECTION 8: RELATED CONTENT
-         ============================================================ -->
-    <section class="section-related" id="sec-related">
-      <div class="container py-5">
-        <!-- Section Title (Marketo Editable Text) -->
-        <div class="section-title">
-          <div class="mktoText" id="sec8-title" mktoname="Section 8 Title">
-            <h2>Related Content</h2>
-          </div>
-        </div>
-        <!-- Section Subtitle (Marketo Editable Text) -->
-        <div class="mktoText" id="sec8-subtitle" mktoname="Section 8 Subtitle">
-          <p class="section-subtitle">Explore more events and expand your horizons.</p>
-        </div>
-        <!-- Related Content Cards -->
-        <div class="related-content-wrapper">
-          <!-- Carousel Prev Arrow -->
-          <button type="button" class="carousel-nav prev" id="carousel-prev" aria-label="Previous">
-            <i class="bi bi-chevron-left"></i>
-          </button>
-          <!-- Carousel Next Arrow -->
-          <button type="button" class="carousel-nav next" id="carousel-next" aria-label="Next">
-            <i class="bi bi-chevron-right"></i>
-          </button>
-
-          <div class="row g-4" id="carousel-track">
-            <!-- Related Card 1 -->
-            <div class="col-md-4">
-              <div class="related-card">
-                <!-- Related Card 1 Image (Marketo Editable Image) -->
-                <div class="mktoImg" mktoname="Section 8 Card 1 Image" id="sec8-card1-img">
-                  <img class="card-image" src="carousel-placeholder.png" alt="SAFe & AI Summit">
-                </div>
-                <div class="card-body">
-                  <!-- Related Card 1 Content (Marketo Editable Text) -->
-                  <div class="mktoText" id="sec8-card1-content" mktoname="Section 8 Card 1 Content">
-                    <h4>SAFe &amp; AI Summit</h4>
-                    <p>Get your pass and secure your place among organizations unlocking the power of AI and business
-                      agility.</p>
-                    <a href="#" class="learn-more">Learn More <i class="bi bi-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Related Card 2 -->
-            <div class="col-md-4">
-              <div class="related-card">
-                <!-- Related Card 2 Image (Marketo Editable Image) -->
-                <div class="mktoImg" mktoname="Section 8 Card 2 Image" id="sec8-card2-img">
-                  <img class="card-image" src="carousel-placeholder.png" alt="SAFe & AI Summit">
-                </div>
-                <div class="card-body">
-                  <!-- Related Card 2 Content (Marketo Editable Text) -->
-                  <div class="mktoText" id="sec8-card2-content" mktoname="Section 8 Card 2 Content">
-                    <h4>SAFe &amp; AI Summit</h4>
-                    <p>Get your pass and secure your place among organizations unlocking the power of AI and business
-                      agility.</p>
-                    <a href="#" class="learn-more">Learn More <i class="bi bi-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Related Card 3 -->
-            <div class="col-md-4">
-              <div class="related-card">
-                <!-- Related Card 3 Image (Marketo Editable Image) -->
-                <div class="mktoImg" mktoname="Section 8 Card 3 Image" id="sec8-card3-img">
-                  <img class="card-image" src="carousel-placeholder.png" alt="SAFe & AI Summit">
-                </div>
-                <div class="card-body">
-                  <!-- Related Card 3 Content (Marketo Editable Text) -->
-                  <div class="mktoText" id="sec8-card3-content" mktoname="Section 8 Card 3 Content">
-                    <h4>SAFe &amp; AI Summit</h4>
-                    <p>Get your pass and secure your place among organizations unlocking the power of AI and business
-                      agility.</p>
-                    <a href="#" class="learn-more">Learn More <i class="bi bi-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-      <!-- ============================================================
           SECTION 8: CAROUSEL CONTENT
-      ============================================================ -->
+    ============================================================ -->
     <section class="bg-light pb-5">
 
     <!-- ========================================== -->
@@ -1408,37 +1192,37 @@
             // STEP B: Array mapping the Marketo variables
             const cardsData = [
                 {
-                    image: parseToken("${card1-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card1-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card1-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card1-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card1-link}", "#")
                 },
                 {
-                    image: parseToken("${card2-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card2-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card2-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card2-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card2-link}", "#")
                 },
                 {
-                    image: parseToken("${card3-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card3-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card3-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card3-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card3-link}", "#")
                 },
                 {
-                    image: parseToken("${card4-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card4-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card4-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card4-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card4-link}", "#")
                 },
                 {
-                    image: parseToken("${card5-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card5-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card5-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card5-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card5-link}", "#")
                 },
                 {
-                    image: parseToken("${card6-img}", "carousel-placeholder.png"),
+                    image: parseToken("${card6-img}", "assets/carousel-placeholder.png"),
                     title: parseToken("${card6-title}", "Safe &amp; AI Summit"),
                     description: parseToken("${card6-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
                     link: parseToken("${card6-link}", "#")
@@ -1461,9 +1245,9 @@
                     // Standard Bootstrap 5 Card Structure
                     cardWrapper.innerHTML = `
                         <div class="card h-100 shadow-sm border-0 bg-white">
-                            <img src="${card.image}" class="card-img-top" alt="${card.title}" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Not+Found'">
+                            <img src="${card.image}" class="card-img-top rounded-3" alt="${card.title}" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Not+Found'">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-bold text-dark">${card.title}</h5>
+                                <h5 class="card-title">${card.title}</h5>
                                 <p class="card-text text-muted">${card.description}</p>
                                 <div class="mt-auto pt-3">
                                     <a href="${card.link}" class="learn-more-link">Learn More ></a>
