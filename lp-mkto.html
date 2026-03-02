@@ -2,158 +2,137 @@
 <html lang="en">
 
 <head>
-  <!-- ============================================================
-       MARKETO GUIDED LANDING PAGE META VARIABLES
-       ============================================================ -->
-
-  <!-- Page Meta Variables -->
-  <meta class="mktoString" mktoname="Page Title" id="page-title" default="SAFe Summit Rewind | Scaled Agile">
-  <meta class="mktoString" mktoname="Page Description" id="page-desc"
-    default="Replaying the major reveals and key takeaways from the global community.">
-  <meta class="mktoString" mktoname="Page Image" id="page-img"
-    default="https://go.scaledagile.com/rs/983-XYR-522/images/safe-summit-rewind-og.jpg">
-
-  <title>${page-title}</title>
-  <meta property="og:title" content="${page-title}">
-  <meta property="og:description" content="${page-desc}">
-  <meta property="og:image" content="${page-img}">
-
-  <meta charset="utf-8">
-  <meta content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="robots" content="index, nofollow">
-
-  <!-- Favicon -->
-  <meta class="mktoString" mktoname="Favicon" id="Favicon"
-    default="https://go.scaledagile.com/rs/983-XYR-522/images/favicon.ico">
-  <link rel="shortcut icon" href="${Favicon}" type="image/x-icon">
-  <link rel="icon" href="${Favicon}" type="image/x-icon">
-
-  <!-- ============================================================
-       BODY VARIABLES
-       ============================================================ -->
-  <meta class="mktoString" mktoname="Body BG Color" id="bodyBGcolor" default="#f4eee4">
-
-  <!-- ============================================================
-       HEADER VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-header" mktoname="Show Header?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Header BG Color" id="header-bgColor" default="#ffffff">
-  <meta class="mktoString" mktoname="Header Logo URL" id="header-logo-link" default="https://www.scaledagile.com/">
-
-  <!-- ============================================================
-       SECTION 1 (HERO) VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-sec1" mktoname="Show Section 1 (Hero)?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Section 1 BG Color" id="sec1-bgColor" default="#ffffff">
-  <meta class="mktoString" mktoname="Section 1 Button Link" id="sec1-btn-link" default="#savemyseat">
-  <meta class="mktoString" mktoname="Section 1 Button Text" id="sec1-btn-text" default="Save My Seat">
-  <meta class="mktoString" mktoname="Section 1 Badge Text" id="sec1-badge-text" default="Virtual Event">
-
-  <!-- ============================================================
-       SECTION 2 (VALUE PROPS) VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-sec2" mktoname="Show Section 2 (Value Props)?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Section 2 BG Color" id="sec2-bgColor" default="#f7f7f7">
-
-  <!-- ============================================================
-       SECTION 3 (KEY TAKEAWAYS) VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-sec3" mktoname="Show Section 3 (Key Takeaways)?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Section 3 BG Color" id="sec3-bgColor" default="#ffffff">
-
-  <!-- ============================================================
-       SECTION 4 (FEATURED SPEAKERS) VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-sec4" mktoname="Show Section 4 (Speakers)?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Section 4 BG Color" id="sec4-bgColor" default="#f7f7f7">
-
-  <!-- ============================================================
-       SECTION 5 (FORM) VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-sec5" mktoname="Show Section 5 (Form)?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Section 5 BG Color" id="sec5-bgColor" default="#eaeaea">
-  <meta class="mktoString" mktoname="Section 5 Form BG Color" id="sec5-form-bg" default="#ffffff">
-  <meta class="mktoString" mktoname="Section 5 Button Text" id="sec5-btn-text" default="Save My Seat">
-
-  <!-- ==========================================================
-    CAROUSEL VARIABLES
-  =========================================================== -->
-    <!-- Card 1 -->
-    <meta class="mktoString" mktoname="Card 1 Image" id="card1-img" default="https://via.placeholder.com/400x200?text=Image+1">
-    <meta class="mktoString" mktoname="Card 1 Title" id="card1-title" default="Event Title 1">
-    <meta class="mktoString" mktoname="Card 1 Description" id="card1-desc" default="Brief description for related content card 1 goes right here.">
-    <meta class="mktoString" mktoname="Card 1 Link" id="card1-link" default="#">
-
-    <!-- Card 2 -->
-    <meta class="mktoString" mktoname="Card 2 Image" id="card2-img" default="https://via.placeholder.com/400x200?text=Image+2">
-    <meta class="mktoString" mktoname="Card 2 Title" id="card2-title" default="Event Title 2">
-    <meta class="mktoString" mktoname="Card 2 Description" id="card2-desc" default="Brief description for related content card 2 goes right here.">
-    <meta class="mktoString" mktoname="Card 2 Link" id="card2-link" default="#">
-
-    <!-- Card 3 -->
-    <meta class="mktoString" mktoname="Card 3 Image" id="card3-img" default="https://via.placeholder.com/400x200?text=Image+3">
-    <meta class="mktoString" mktoname="Card 3 Title" id="card3-title" default="Event Title 3">
-    <meta class="mktoString" mktoname="Card 3 Description" id="card3-desc" default="Brief description for related content card 3 goes right here.">
-    <meta class="mktoString" mktoname="Card 3 Link" id="card3-link" default="#">
-
-    <!-- Card 4 -->
-    <meta class="mktoString" mktoname="Card 4 Image" id="card4-img" default="https://via.placeholder.com/400x200?text=Image+4">
-    <meta class="mktoString" mktoname="Card 4 Title" id="card4-title" default="Event Title 4">
-    <meta class="mktoString" mktoname="Card 4 Description" id="card4-desc" default="Brief description for related content card 4 goes right here.">
-    <meta class="mktoString" mktoname="Card 4 Link" id="card4-link" default="#">
-
-    <!-- Card 5 -->
-    <meta class="mktoString" mktoname="Card 5 Image" id="card5-img" default="https://via.placeholder.com/400x200?text=Image+5">
-    <meta class="mktoString" mktoname="Card 5 Title" id="card5-title" default="Event Title 5">
-    <meta class="mktoString" mktoname="Card 5 Description" id="card5-desc" default="Brief description for related content card 5 goes right here.">
-    <meta class="mktoString" mktoname="Card 5 Link" id="card5-link" default="#">
-
-    <!-- Card 6 -->
-    <meta class="mktoString" mktoname="Card 6 Image" id="card6-img" default="https://via.placeholder.com/400x200?text=Image+6">
-    <meta class="mktoString" mktoname="Card 6 Title" id="card6-title" default="Event Title 6">
-    <meta class="mktoString" mktoname="Card 6 Description" id="card6-desc" default="Brief description for related content card 6 goes right here.">
-    <meta class="mktoString" mktoname="Card 6 Link" id="card6-link" default="#">
-
-  <!-- ============================================================
-       FOOTER VARIABLES
-       ============================================================ -->
-  <meta class="mktoBoolean" id="show-footer" mktoname="Show Footer?" default="true" true_value="block"
-    false_value="none" false_value_name="Hide" true_value_name="Show">
-  <meta class="mktoString" mktoname="Footer BG Color" id="footer-bgColor" default="#2d3748">
-  <meta class="mktoString" mktoname="Footer Text Color" id="footer-textColor" default="#ffffff">
-
-  <!-- ============================================================
-       SECTION ORDERING VARIABLES
-       ============================================================ -->
-  <meta class="mktoString" id="order-header" mktoname="Header Order" default="1">
-  <meta class="mktoString" id="order-sec1" mktoname="Section 1 (Hero) Order" default="2">
-  <meta class="mktoString" id="order-sec2" mktoname="Section 2 (Value Props) Order" default="3">
-  <meta class="mktoString" id="order-sec3" mktoname="Section 3 (Key Takeaways) Order" default="4">
-  <meta class="mktoString" id="order-sec4" mktoname="Section 4 (Speakers) Order" default="5">
-  <meta class="mktoString" id="order-sec5" mktoname="Section 5 (Form) Order" default="6">
-  <meta class="mktoString" id="order-footer" mktoname="Footer Order" default="7">
-
+<!-- ============================================================
+MARKETO GUIDED LANDING PAGE META VARIABLES
+============================================================ -->
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Token parser -->
   <script src="parse-tokens.js"></script>
-  <style>
-    /* ============================================================
-       GLOBAL STYLES
-       ============================================================ */
+ <!-- Page Meta Variables -->
+<meta class="mktoString" mktoname="Page Title" id="page-title" default="SAFe Summit Rewind | Scaled Agile">
+<meta class="mktoString" mktoname="Page Description" id="page-desc" default="Replaying the major reveals and key takeaways from the global community.">
+<meta class="mktoString" mktoname="Page Image" id="page-img" default="https://go.scaledagile.com/rs/983-XYR-522/images/safe-summit-rewind-og.jpg">
+
+<title>${page-title}</title>
+<meta property="og:title" content="${page-title}">
+<meta property="og:description" content="${page-desc}">
+<meta property="og:image" content="${page-img}">
+
+<meta charset="utf-8">
+<meta content="width=device-width, minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="robots" content="index, nofollow">
+
+<!-- Favicon -->
+<meta class="mktoString" mktoname="Favicon" id="Favicon" default="https://go.scaledagile.com/rs/983-XYR-522/images/favicon.ico">
+<link rel="shortcut icon" href="${Favicon}" type="image/x-icon">
+<link rel="icon" href="${Favicon}" type="image/x-icon">
+
+ <!-- ===== BODY VARIABLES ====== -->
+<meta class="mktoString" mktoname="Body BG Color" id="bodyBGcolor" default="var(--sai-white)"> 
+
+<!-- ===== HEADER VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-header" mktoname="Show Header?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Header BG Color" id="header-bgColor" default="var(--sai-white)">
+<meta class="mktoString" mktoname="Header Logo URL" id="header-logo-link" default="https://www.scaledagile.com/">
+
+<!-- ===== SECTION 1 (HERO) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec1" mktoname="Show Section 1?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 1 BG Color" id="sec1-bgColor" default="var(--sai-white)">
+<meta class="mktoString" mktoname="Section 1 Button Link" id="sec1-btn-link" default="#savemyseat">
+<meta class="mktoString" mktoname="Section 1 Button Text" id="sec1-btn-text" default="Save My Seat">
+<meta class="mktoString" mktoname="Section 1 Badge Text" id="sec1-badge-text" default="Virtual Event">
+
+<!-- ===== SECTION 2 (VALUE PROPS) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec2" mktoname="Show Section 2 (Value Props)?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 2 BG Color" id="sec2-bgColor" default="var(--sai-cream)">
+
+<!-- ===== SECTION 2.5 (QUOTE) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec2-quote" mktoname="Show Section 2 (Value Props)?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 2.5 Quote BG Color" id="sec2-quote-bgColor" default="var(--sai-light-blue)">
+
+<!-- ===== SECTION 3 (KEY TAKEAWAYS) VARIABLES ====== -->
+<meta class="mktoBoolean" id="show-sec3" mktoname="Show Section 3 (Key Takeaways)?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 3 BG Color" id="sec3-bgColor" default="var(--sai-cream)">
+
+<!-- ===== SECTION 4 (FEATURED SPEAKERS) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec4" mktoname="Show Section 4 (Speakers)?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 4 BG Color" id="sec4-bgColor" default="var(--sai-light-blue)">
+
+<!-- ===== SECTION 5 (FORM) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec5" mktoname="Show Section 5 (Form)?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Section 5 BG Color" id="sec5-bgColor" default="var(--sai-cream)">
+<meta class="mktoString" mktoname="Section 5 Form BG Color" id="sec5-form-bg" default="var(--sai-white)">
+
+<!-- ===== SECTION 8 CAROUSEL VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-sec6" mktoname="Show Carousel?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Carousel BG Color" id="sec6-bgColor" default="var(--sai-light-blue)">
+<!-- Card 1 -->
+<meta class="mktoString" mktoname="Card 1 Image" id="card1-img" default="https://via.placeholder.com/400x200?text=Image+1">
+<meta class="mktoString" mktoname="Card 1 Title" id="card1-title" default="Event Title 1">
+<meta class="mktoString" mktoname="Card 1 Description" id="card1-desc" default="Brief description for related content card 1 goes right here.">
+<meta class="mktoString" mktoname="Card 1 Link" id="card1-link" default="#">
+
+<!-- Card 2 -->
+<meta class="mktoString" mktoname="Card 2 Image" id="card2-img" default="https://via.placeholder.com/400x200?text=Image+2">
+<meta class="mktoString" mktoname="Card 2 Title" id="card2-title" default="Event Title 2">
+<meta class="mktoString" mktoname="Card 2 Description" id="card2-desc" default="Brief description for related content card 2 goes right here.">
+<meta class="mktoString" mktoname="Card 2 Link" id="card2-link" default="#">
+
+<!-- Card 3 -->
+<meta class="mktoString" mktoname="Card 3 Image" id="card3-img" default="https://via.placeholder.com/400x200?text=Image+3">
+<meta class="mktoString" mktoname="Card 3 Title" id="card3-title" default="Event Title 3">
+<meta class="mktoString" mktoname="Card 3 Description" id="card3-desc" default="Brief description for related content card 3 goes right here.">
+<meta class="mktoString" mktoname="Card 3 Link" id="card3-link" default="#">
+
+<!-- Card 4 -->
+<meta class="mktoString" mktoname="Card 4 Image" id="card4-img" default="https://via.placeholder.com/400x200?text=Image+4">
+<meta class="mktoString" mktoname="Card 4 Title" id="card4-title" default="Event Title 4">
+<meta class="mktoString" mktoname="Card 4 Description" id="card4-desc" default="Brief description for related content card 4 goes right here.">
+<meta class="mktoString" mktoname="Card 4 Link" id="card4-link" default="#">
+
+<!-- Card 5 -->
+<meta class="mktoString" mktoname="Card 5 Image" id="card5-img" default="https://via.placeholder.com/400x200?text=Image+5">
+<meta class="mktoString" mktoname="Card 5 Title" id="card5-title" default="Event Title 5">
+<meta class="mktoString" mktoname="Card 5 Description" id="card5-desc" default="Brief description for related content card 5 goes right here.">
+<meta class="mktoString" mktoname="Card 5 Link" id="card5-link" default="#">
+
+<!-- Card 6 -->
+<meta class="mktoString" mktoname="" id="" default="">
+<meta class="mktoString" mktoname="Card 6 Image" id="card6-img" default="https://via.placeholder.com/400x200?text=Image+6">
+<meta class="mktoString" mktoname="Card 6 Title" id="card6-title" default="Event Title 6">
+<meta class="mktoString" mktoname="Card 6 Description" id="card6-desc" default="Brief description for related content card 6 goes right here.">
+<meta class="mktoString" mktoname="Card 6 Link" id="card6-link" default="#">
+
+<!-- Card Visibility (Cards 1–3 always shown; Cards 4–6 are optional) -->
+<meta class="mktoBoolean" id="show-card4" mktoname="Show Card 4?" default="true" true_value="true" false_value="false" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-card5" mktoname="Show Card 5?" default="true" true_value="true" false_value="false" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-card6" mktoname="Show Card 6?" default="true" true_value="true" false_value="false" false_value_name="Hide" true_value_name="Show">
+
+<!-- ===== FOOTER VARIABLES ====== -->
+<meta class="mktoBoolean" id="show-footer" mktoname="Show Footer?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Footer BG Color" id="footer-bgColor" default="var(--sai-dark)">
+<meta class="mktoString" mktoname="Footer Text Color" id="footer-textColor" default="var(--sai-white)">
+
+<!-- ===== SECTION ORDERING VARIABLES ===== -->
+<meta class="mktoString" id="order-header" mktoname="Header Order" default="1">
+<meta class="mktoString" id="order-sec1" mktoname="Section 1 (Hero) Order" default="2">
+<meta class="mktoString" id="order-sec2" mktoname="Section 2 (Value Props) Order" default="3">
+<meta class="mktoString" id="order-sec2-quote" mktoname="Section 2.5 (Quote) Order" default="4">
+<meta class="mktoString" id="order-sec3" mktoname="Section 3 (Key Takeaways) Order" default="5">
+<meta class="mktoString" id="order-sec4" mktoname="Section 4 (Speakers) Order" default="6">
+<meta class="mktoString" id="order-sec5" mktoname="Section 5 (Form) Order" default="7">
+<meta class="mktoString" id="order-footer" mktoname="Footer Order" default="8">  
+
+
+<style>
+    /* ===== GLOBAL STYLES ===== */
     :root {
       --sai-dark: #053947;
       --sai-teal: #8ACBCE;
@@ -184,9 +163,7 @@
       line-height: 1.6;
     }
 
-    /* ============================================================
-       HEADER STYLES
-       ============================================================ */
+    /* ===== HEADER STYLES ===== */
     .header-section {
       display: ${show-header };
       order: ${order-header};
@@ -200,9 +177,7 @@
       width: auto;
     }
 
-    /* ============================================================
-       SECTION 1 - HERO STYLES
-       ============================================================ */
+    /* ===== SECTION 1 - HERO STYLES ===== */
     .container {
       max-width: 1080px;
       width: 100%;
@@ -289,9 +264,7 @@
       color: #fff;
     }
 
-    /* ============================================================
-       SECTION 2 - VALUE PROPS STYLES
-       ============================================================ */
+    /* ===== SECTION 2 - VALUE PROPS STYLES ===== */
     .sec2-value-props {
       display: ${show-sec2};
       order: ${order-sec2};
@@ -323,9 +296,7 @@
       margin-bottom: 0;
       line-height: 1.6;
     }
-    /* ============================================================
-      SECTION 2-5 - QUOTE STYLES
-      ============================================================ */
+    /* ===== SECTION 2-5 - QUOTE STYLES ===== */
     .sec2-quote {
       display: ${show-sec2-quote};
       order: ${order-sec2-quote};
@@ -339,9 +310,7 @@
     .quote-text, .quote-name{
       text-align:center;
     }
-    /* ============================================================
-       SECTION 3 - KEY TAKEAWAYS STYLES
-       ============================================================ */
+    /* ===== SECTION 3 - KEY TAKEAWAYS STYLES ===== */
     .sec3-takeaways {
       display: ${show-sec3 };
       order: ${order-sec3 };
@@ -405,9 +374,7 @@
       background: transparent;
     }
 
-    /* ============================================================
-       SECTION 4 - FEATURED SPEAKERS STYLES
-       ============================================================ */
+    /* ===== SECTION 4 - FEATURED SPEAKERS STYLES ===== */
     .sec4-speakers {
       display: ${ show-sec4 };
       order: ${order-sec4} ;
@@ -456,9 +423,7 @@
       line-height: 1.5;
     }
 
-    /* ============================================================
-       SECTION 5 - FORM STYLES
-       ============================================================ */
+    /* ===== SECTION 5 - FORM STYLES ===== */
     .sec5-form {
       display: ${show-sec5};
       order: ${order-sec5};
@@ -563,27 +528,25 @@
       font-size: .9rem;
     }
 
-    /* ============================================================
-   SECTION 8: RELATED CONTENT
-   ============================================================ */
+   /* ===== SECTION 6: RELATED CONTENT ===== */
     .section-related {
-      display: ${show-sec8};
-      order: ${order-sec8};
-      background-color: ${sec8-bgColor};
+      display: ${show-sec6};
+      order: ${order-sec6};
+      background-color: ${sec6-bgColor};
     }
-    /* == CUSTOM CSS FOR CAROUSEL TRACK */
+    /* ======= CUSTOM CSS FOR CAROUSEL TRACK ===== */
     /* Hide overflow so cards outside the view are invisible */
     .custom-carousel-viewport {
       width: 100%;
       overflow: hidden;
-      padding: 10px 0; /* Prevents shadow clipping */
+      padding: 10px 0;
     }
     .card-title{
       color: var(--sai-teal-hover);
       font-weight: bold;
     }
     .learn-more-link{
-      color: var(--sai-dark);
+      color: var(--sai-teal-hover);
       font-weight: bold;
       text-decoration :none;
     }
@@ -643,10 +606,7 @@
         .carousel-control-btn.next { right: 0px; }
       }
         
-    
-    /* ============================================================
-       FOOTER STYLES
-       ============================================================ */
+    /* ===== FOOTER STYLES ===== */
     .footer-section {
       display: ${show-footer};
       order: ${order-footer};
@@ -677,7 +637,7 @@
     }
 
     .footer-section a:hover {
-      opacity: 1;
+      opacity: 0.75;
       text-decoration: underline;
     }
 
@@ -710,17 +670,13 @@
       opacity: 0.7;
     }
 
-    /* ============================================================
-       PAGE LAYOUT (FLEX ORDERING)
-       ============================================================ */
+    /* ===== PAGE LAYOUT (FLEX ORDERING) ===== */
     .page-wrapper {
       display: flex;
       flex-direction: column;
     }
-
-    /* ============================================================
-       RESPONSIVE STYLES
-       ============================================================ */
+    
+    /* ===== RESPONSIVE STYLES ===== */
     @media (max-width: 767px) {
       .sec1-hero {
         padding: 30px 0;
@@ -756,10 +712,7 @@
 
 <body>
   <div class="page-wrapper">
-
-    <!-- ============================================================
-         HEADER SECTION
-         ============================================================ -->
+    <!-- ===== HEADER SECTION ===== -->
     <header class="header-section p-4">
       <div class="container">
         <div class="d-flex align-items-center">
@@ -773,10 +726,7 @@
         </div>
       </div>
     </header>
-
-    <!-- ============================================================
-         SECTION 1 - HERO
-         ============================================================ -->
+    <!-- ===== SECTION 1 - HERO ===== -->
     <section class="sec1-hero">
       <div class="container">
         <div class="row align-items-start">
@@ -786,13 +736,10 @@
               <h1>SAFe Summit Rewind</h1>
               <p class="subtitle">Replay the major reveals and key takeaways from the Summit</p>
             </div>
-
             <div class="hero-divider"></div>
-
             <div class="mktoText" id="sec1-description" mktoname="Section 1 Description">
               <p class="hero-description">The doors have just closed on the SAFe Summit in Amsterdam, where the global community gathered for five days of immersive sessions, customer stories, and high-intensity networking. Whether you joined us in person or are just now tuning in, we've distilled the event's breakthrough moments into the actionable insights needed to transition to the next evolution of Agility: AI-Empowered SAFe. Discover how this shift serves as the essential foundation for becoming an AI-Native enterprise and provides the edge needed to keep your organization ahead of the game.</p>
             </div>
-
             <div class="mktoText" id="sec1-event-details" mktoname="Section 1 Event Details">
               <div class="event-details">
                 <p class="mb-1"><strong>Date:</strong> Wednesday, April 15, 2026</p>
@@ -801,7 +748,6 @@
               </div>
             </div>
           </div>
-
           <!-- Virtual Event Card -->
           <div class="col-lg-4 col-md-5 offset-lg-1">
             <div class="virtual-event-card">
@@ -814,10 +760,7 @@
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-         SECTION 2 - VALUE PROPS (3 CARDS)
-         ============================================================ -->
+    <!-- ===== SECTION 2 - VALUE PROPS (3 CARDS) ====== -->
     <section class="sec2-value-props mx-4 my-4 rounded-4">
       <div class="container">
         <div class="row g-4">
@@ -831,7 +774,6 @@
               </div>
             </div>
           </div>
-
           <!-- Vision Card -->
           <div class="col-md-4">
             <div class="value-card card-vision">
@@ -842,7 +784,6 @@
               </div>
             </div>
           </div>
-
           <!-- Reveal Card -->
           <div class="col-md-4">
             <div class="value-card card-reveal">
@@ -856,10 +797,7 @@
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-         SECTION 2-5 - quote
-         ============================================================ -->
+    <!-- ===== SECTION 2-5 - QAuote ===== -->
     <section class="sec2-quote mx-4 my-4 rounded-4">
       <div class="container">
         <div class="row">
@@ -881,17 +819,13 @@
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-         SECTION 3 - KEY TAKEAWAYS
-         ============================================================ -->
+    <!-- ===== SECTION 3 - KEY TAKEAWAYS ===== -->
     <section class="sec3-takeaways mx-4 my-4 rounded-4">
       <div class="container">
         <!-- Section Title -->
         <div class="mktoText" id="sec3-title" mktoname="Section 3 Title">
           <h2 class="section-title">Key Takeaways</h2>
         </div>
-
         <div class="takeaways-wrapper">
           <!-- Takeaway 1 -->
           <div class="takeaway-item d-flex">
@@ -907,7 +841,6 @@
               </div>
             </div>
           </div>
-
           <!-- Takeaway 2 -->
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
@@ -922,7 +855,6 @@
               </div>
             </div>
           </div>
-
           <!-- Takeaway 3 -->
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
@@ -937,7 +869,6 @@
               </div>
             </div>
           </div>
-
           <!-- Takeaway 4 -->
           <div class="takeaway-item d-flex mb-0">
             <div class="takeaway-icon">
@@ -955,17 +886,13 @@
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-         SECTION 4 - FEATURED SPEAKERS
-         ============================================================ -->
+    <!-- ===== SECTION 4 - FEATURED SPEAKERS ===== -->
     <section class="sec4-speakers mx-4 my-4 rounded-4">
       <div class="container">
         <!-- Section Title -->
         <div class="mktoText" id="sec4-title" mktoname="Section 4 Title">
           <h2 class="section-title">Featured Speakers</h2>
         </div>
-
         <div class="row justify-content-center g-4">
           <!-- Speaker 1 -->
           <div class="col-md-3 col-sm-6">
@@ -982,7 +909,6 @@
               </div>
             </div>
           </div>
-
           <!-- Speaker 2 -->
           <div class="col-md-3 col-sm-6">
             <div class="speaker-card rounded-4">
@@ -1001,10 +927,7 @@
         </div>
       </div>
     </section>
-
-    <!-- ============================================================
-         SECTION 5 - FORM SECTION
-         ============================================================ -->
+    <!-- ===== SECTION 5 - FORM SECTION ===== -->
     <section id="savemyseat" class="sec5-form mx-4 my-4 rounded-4">
       <div class="container">
         <div class="form-wrapper">
@@ -1012,10 +935,8 @@
           <div class="mktoText" id="sec5-form-title" mktoname="Section 5 Form Title">
             <h3>Save Your Seat</h3>
           </div>
-
           <!-- Marketo Form Embed -->
           <div class="mktoForm" id="mktoForm_0000" mktoname="Section 5 Form"></div>
-
           <!-- Fallback Form (visible when not in Marketo, for preview purposes) -->
           <div class="fallback-form">
             <div class="mb-3">
@@ -1044,7 +965,6 @@
                 <option value="">Select...</option>
               </select>
             </div>
-
             <!-- Email Preferences -->
             <div class="mb-3 email-prefs">
               <p class="fw-semibold mb-2" style="font-size:0.85rem; color:#333;">Email preferences</p>
@@ -1060,7 +980,6 @@
               <p>To visit our communication preferences page, please click <a href="#">HERE</a>.<br>We process your
                 personal information in accordance with our <a href="#">Privacy Policy</a>.</p>
             </div>
-
             <!-- Submit Button -->
             <div class="text-center mt-4">
               <button type="button" class=" btn btn-sai-teal">Save My Seat</button>
@@ -1075,24 +994,15 @@
       </div>
     </section>
 
-    <!-- ============================================================
-          SECTION 8: CAROUSEL CONTENT
-    ============================================================ -->
+    <!-- ===== SECTION 6: CAROUSEL CONTENT ===== -->
     <section class="bg-light pb-5">
-
-    <!-- ========================================== -->
-    <!-- HTML STRUCTURE                             -->
-    <!-- ========================================== -->
-    <div class="container my-5 py-4 bg-white rounded shadow-sm position-relative">
-        
+    <div class="container py-5 position-relative"> 
         <!-- Editable Marketo Header -->
         <div class="mktoText" id="related-content-heading" mktoname="Related Content Heading">
             <h2 class="text-center mb-5 fw-bold text-dark">Related Content</h2>
         </div>
-
         <!-- Carousel Wrapper -->
         <div class="position-relative px-md-4">
-            
             <!-- Controls -->
             <button class="carousel-control-btn prev" id="prevBtn" aria-label="Previous">
                 <!-- SVG Arrow Left -->
@@ -1100,14 +1010,12 @@
                     <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                 </svg>
             </button>
-            
             <!-- Viewport & Track -->
             <div class="custom-carousel-viewport">
                 <div class="custom-carousel-track" id="carouselTrack">
                     <!-- Cards will be dynamically injected here by JS -->
                 </div>
             </div>
-
             <button class="carousel-control-btn next" id="nextBtn" aria-label="Next">
                 <!-- SVG Arrow Right -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -1117,10 +1025,7 @@
         </div>
     </div>
   </section>
-
-    <!-- ============================================================
-         FOOTER SECTION
-         ============================================================ -->
+  <!-- ===== FOOTER SECTION ===== -->
     <footer class="footer-section">
       <div class="container footer-container">
         <div class="row">
@@ -1132,7 +1037,6 @@
                   Map</a></p>
             </div>
           </div>
-
           <!-- Contact Column -->
           <div class="col-lg-4 col-md-4 col-sm-12 footer-col">
             <div class="mktoText" id="footer-contact" mktoname="Footer Contact">
@@ -1147,7 +1051,6 @@
               <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-
           <!-- Newsroom Column -->
           <div class="ccol-lg-4 col-md-4 col-sm-12 footer-col">
             <div class="mktoText" id="footer-newsroom" mktoname="Footer Newsroom Links">
@@ -1162,7 +1065,6 @@
             </div>
           </div>
         </div>
-
         <!-- Footer Bottom -->
         <div class="footer-bottom">
           <div class="mktoText" id="footer-copyright" mktoname="Footer Copyright">
@@ -1171,80 +1073,86 @@
         </div>
       </div>
     </footer>
-
   </div><!-- /.page-wrapper -->
-
+  
   <!-- Bootstrap 5.3 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- local scripts -->
-  <!-- ========================================== -->
-    <!-- VANILLA JS CAROUSEL LOGIC & MARKETO TOKENS -->
-    <!-- ========================================== -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // Helper function for testing outside of Marketo.
-            // If the template hasn't been compiled, the token (e.g., "${card1-title}") will start with "$".
-            // We substitute fallback text so the carousel still renders nicely in local development.
-            const parseToken = (token, fallbackText) => {
-                return token.startsWith('$') ? fallbackText : token;
-            };
+    
+  <!-- CAROUSEL LOGIC & MARKETO TOKENS -->
+  <script >
+   document.addEventListener('DOMContentLoaded', () => {
+      // Helper function for testing outside of Marketo.
+      // If the template hasn't been compiled, the token (e.g., "${card1-title}") will start with "$".
+      // We substitute fallback text so the carousel still renders nicely in local development.
+      // Remove this token parser prior to delivering to the client.
+      // STEP B: Array mapping the Marketo variables
+      const parseToken = (token, fallbackText) => {
+         return token.startsWith('$') ? fallbackText : token;
+      };
+      // Returns true when the token is unresolved (local preview) or explicitly "true"
+      const parseBoolToken = (token) => {
+         return token.startsWith('$') ? true : token === 'true';
+      };
+      // STEP B: Array mapping the Marketo variables
+      const cardsData = [{
+            image: parseToken("${card1-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card1-title}", "Safe & AI Summit"),
+            description: parseToken("${card1-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card1-link}", "#"),
+            visible: true
+         },
+         {
+            image: parseToken("${card2-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card2-title}", "Safe & AI Summit"),
+            description: parseToken("${card2-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card2-link}", "#"),
+            visible: true
+         },
+         {
+            image: parseToken("${card3-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card3-title}", "Safe & AI Summit"),
+            description: parseToken("${card3-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card3-link}", "#"),
+            visible: true
+         },
+         {
+            image: parseToken("${card4-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card4-title}", "Safe & AI Summit"),
+            description: parseToken("${card4-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card4-link}", "#"),
+            visible: parseBoolToken("${show-card4}")
+         },
+         {
+            image: parseToken("${card5-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card5-title}", "Safe & AI Summit"),
+            description: parseToken("${card5-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card5-link}", "#"),
+            visible: parseBoolToken("${show-card5}")
+         },
+         {
+            image: parseToken("${card6-img}", "assets/carousel-placeholder.png"),
+            title: parseToken("${card6-title}", "Safe & AI Summit"),
+            description: parseToken("${card6-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
+            link: parseToken("${card6-link}", "#"),
+            visible: parseBoolToken("${show-card6}")
+         }
+      ];
 
-            // STEP B: Array mapping the Marketo variables
-            const cardsData = [
-                {
-                    image: parseToken("${card1-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card1-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card1-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card1-link}", "#")
-                },
-                {
-                    image: parseToken("${card2-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card2-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card2-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card2-link}", "#")
-                },
-                {
-                    image: parseToken("${card3-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card3-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card3-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card3-link}", "#")
-                },
-                {
-                    image: parseToken("${card4-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card4-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card4-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card4-link}", "#")
-                },
-                {
-                    image: parseToken("${card5-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card5-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card5-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card5-link}", "#")
-                },
-                {
-                    image: parseToken("${card6-img}", "assets/carousel-placeholder.png"),
-                    title: parseToken("${card6-title}", "Safe &amp; AI Summit"),
-                    description: parseToken("${card6-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
-                    link: parseToken("${card6-link}", "#")
-                }
-            ];
+      const track = document.getElementById('carouselTrack');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-            const track = document.getElementById('carouselTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            let isAnimating = false; // Lock interactions during animation
-            const transitionSpeed = 400; // ms
+      let isAnimating = false; // Lock interactions during animation
+      const transitionSpeed = 400; // ms
 
-            // STEP C: Render the cards dynamically into the track
-            function renderCards() {
-                cardsData.forEach(card => {
-                    const cardWrapper = document.createElement('div');
-                    cardWrapper.className = 'custom-carousel-card';
-                    
-                    // Standard Bootstrap 5 Card Structure
-                    cardWrapper.innerHTML = `
+      // STEP C: Render the cards dynamically into the track
+      function renderCards() {
+         cardsData.filter(card => card.visible).forEach(card => {
+            const cardWrapper = document.createElement('div');
+            cardWrapper.className = 'custom-carousel-card';
+
+            // Standard Bootstrap 5 Card Structure
+            cardWrapper.innerHTML = `
                         <div class="card h-100 shadow-sm border-0 bg-white">
                             <img src="${card.image}" class="card-img-top rounded-3" alt="${card.title}" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Not+Found'">
                             <div class="card-body d-flex flex-column">
@@ -1256,107 +1164,97 @@
                             </div>
                         </div>
                     `;
-                    track.appendChild(cardWrapper);
-                });
-            }
-
-            // Initialize Cards
-            renderCards();
-
-            // Logic: Advance By One (Next)
-            nextBtn.addEventListener('click', () => {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                // Dynamically get the width of one card (adjusts automatically based on viewport)
-                const cardWidth = track.firstElementChild.offsetWidth;
-                
-                // Set CSS transition and move track left
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-                track.style.transform = `translateX(-${cardWidth}px)`;
-
-                // Once movement finishes, manipulate DOM to create the "loop"
-                track.addEventListener('transitionend', function handleNext() {
-                    track.style.transition = 'none'; // Turn off transition temporarily
-                    track.style.transform = 'translateX(0)'; // Snap track back to center
-                    
-                    // Move the first node to the end of the line
-                    track.appendChild(track.firstElementChild); 
-                    
-                    track.removeEventListener('transitionend', handleNext);
-                    isAnimating = false;
-                });
-            });
-
-            // Logic: Go Back By One (Previous)
-            prevBtn.addEventListener('click', () => {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                const cardWidth = track.firstElementChild.offsetWidth;
-
-                // Move the LAST node to the beginning of the line FIRST
-                track.prepend(track.lastElementChild);
-
-                // Offset the track instantly so it doesn't look like anything changed
-                track.style.transition = 'none';
-                track.style.transform = `translateX(-${cardWidth}px)`;
-
-                // Force a browser reflow so the style above is applied immediately
-                track.offsetHeight; 
-
-                // Now turn on transitions and animate back to zero
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-                track.style.transform = 'translateX(0)';
-
-                track.addEventListener('transitionend', function handlePrev() {
-                    track.style.transition = 'none';
-                    track.removeEventListener('transitionend', handlePrev);
-                    isAnimating = false;
-                });
-            });
-        });
-    </script>
-  
-  <script stype="text/javascript">
-    /* ============================================================
-   SAFe Summit Rewind - Marketo Guided Landing Page Scripts
-   ============================================================ */
-
-    document.addEventListener('DOMContentLoaded', function () {
-    /* ============================================================
-       SMOOTH SCROLL FOR ANCHOR LINKS
-         ============================================================ */
-      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-        anchor.addEventListener('click', function (e) {
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-
-      /* ============================================================
-         MARKETO FORM STYLING OVERRIDE
-         Ensures Marketo forms inherit landing page styles
-         ============================================================ */
-      if (typeof MktoForms2 !== 'undefined') {
-        MktoForms2.whenReady(function (form) {
-          // Remove default Marketo stylesheet to use custom styles
-          var formEl = form.getFormElem()[0];
-          if (formEl) {
-            var mktoStyle = formEl.querySelector('style');
-            if (mktoStyle) {
-              mktoStyle.remove();
-            }
-          }
-        });
+            track.appendChild(cardWrapper);
+         });
       }
 
-    });
+      // Initialize Cards
+      renderCards();
 
-  </script>
+      // Logic: Advance By One (Next)
+      nextBtn.addEventListener('click', () => {
+         if (isAnimating) return;
+         isAnimating = true;
+
+         // Dynamically get the width of one card (adjusts automatically based on viewport)
+         const cardWidth = track.firstElementChild.offsetWidth;
+
+         // Set CSS transition and move track left
+         track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+         track.style.transform = `translateX(-${cardWidth}px)`;
+
+         // Once movement finishes, manipulate DOM to create the "loop"
+         track.addEventListener('transitionend', function handleNext() {
+            track.style.transition = 'none'; // Turn off transition temporarily
+            track.style.transform = 'translateX(0)'; // Snap track back to center
+
+            // Move the first node to the end of the line
+            track.appendChild(track.firstElementChild);
+
+            track.removeEventListener('transitionend', handleNext);
+            isAnimating = false;
+         });
+      });
+
+      // Logic: Go Back By One (Previous)
+      prevBtn.addEventListener('click', () => {
+         if (isAnimating) return;
+         isAnimating = true;
+
+         const cardWidth = track.firstElementChild.offsetWidth;
+
+         // Move the LAST node to the beginning of the line FIRST
+         track.prepend(track.lastElementChild);
+
+         // Offset the track instantly so it doesn't look like anything changed
+         track.style.transition = 'none';
+         track.style.transform = `translateX(-${cardWidth}px)`;
+
+         // Force a browser reflow so the style above is applied immediately
+         track.offsetHeight;
+
+         // Now turn on transitions and animate back to zero
+         track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+         track.style.transform = 'translateX(0)';
+
+         track.addEventListener('transitionend', function handlePrev() {
+            track.style.transition = 'none';
+            track.removeEventListener('transitionend', handlePrev);
+            isAnimating = false;
+         });
+      });
+   });
+
+/* ===== SAFe Summit Rewind - Marketo Guided Landing Page Scripts ===== */
+document.addEventListener('DOMContentLoaded', function () {
+   /* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+         const target = document.querySelector(this.getAttribute('href'));
+         if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+               behavior: 'smooth',
+               block: 'start'
+            });
+         }
+      });
+   });
+   /* ===== MARKETO FORM STYLING OVERRIDE - Ensures Marketo forms inherit landing page styles ===== */
+   if (typeof MktoForms2 !== 'undefined') {
+      MktoForms2.whenReady(function (form) {
+         // Remove default Marketo stylesheet to use custom styles
+         var formEl = form.getFormElem()[0];
+         if (formEl) {
+            var mktoStyle = formEl.querySelector('style');
+            if (mktoStyle) {
+               mktoStyle.remove();
+            }
+         }
+      });
+   }
+}); 
+</script>
 </body>
 
 </html>
