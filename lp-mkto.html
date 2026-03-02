@@ -7,15 +7,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 ============================================================ -->
   <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts -->
+  <!-- Google Fonts - For offline testing
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">-->
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- Token parser -->
-  <script src="parse-tokens.js"></script>
- <!-- Page Meta Variables -->
+
+  <!-- Page Meta Variables -->
 <meta class="mktoString" mktoname="Page Title" id="page-title" default="SAFe Summit Rewind | Scaled Agile">
 <meta class="mktoString" mktoname="Page Description" id="page-desc" default="Replaying the major reveals and key takeaways from the global community.">
 <meta class="mktoString" mktoname="Page Image" id="page-img" default="https://go.scaledagile.com/rs/983-XYR-522/images/safe-summit-rewind-og.jpg">
@@ -104,7 +103,6 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <meta class="mktoString" mktoname="Card 5 Link" id="card5-link" default="#">
 
 <!-- Card 6 -->
-<meta class="mktoString" mktoname="" id="" default="">
 <meta class="mktoString" mktoname="Card 6 Image" id="card6-img" default="https://via.placeholder.com/400x200?text=Image+6">
 <meta class="mktoString" mktoname="Card 6 Title" id="card6-title" default="Event Title 6">
 <meta class="mktoString" mktoname="Card 6 Description" id="card6-desc" default="Brief description for related content card 6 goes right here.">
@@ -128,7 +126,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <meta class="mktoString" id="order-sec3" mktoname="Section 3 (Key Takeaways) Order" default="5">
 <meta class="mktoString" id="order-sec4" mktoname="Section 4 (Speakers) Order" default="6">
 <meta class="mktoString" id="order-sec5" mktoname="Section 5 (Form) Order" default="7">
-<meta class="mktoString" id="order-footer" mktoname="Footer Order" default="8">  
+<meta class="mktoString" id="order-sec6" mktoname="Section 6 (Carousel) Order" default="8">
+<meta class="mktoString" id="order-footer" mktoname="Footer Order" default="9">
 
 
 <style>
@@ -155,17 +154,45 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       padding: 0;
       box-sizing: border-box;
     }
+    /* FONTS */
+    @font-face {
+      font-family: "nimbus-sans-extended";
+      src: url("https://use.typekit.net/af/dd1c92/0000000000000000775879ca/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/dd1c92/0000000000000000775879ca/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/dd1c92/0000000000000000775879ca/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+      font-display: swap;
+      font-style: normal;
+      font-weight: 400;
+      font-stretch: normal;
+    }
+    @font-face {
+      font-family: "usual";
+      src: url("https://use.typekit.net/af/df9c14/00000000000000007735a69c/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/df9c14/00000000000000007735a69c/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/df9c14/00000000000000007735a69c/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+      font-display: swap;
+      font-style: normal;
+      font-weight: 400;
+      font-stretch: normal;
+    }
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    h1, h2, h3, h4, h5, h6{
+      --tw-text-opacity: 1;
+      color: rgb(5 57 71 / var(--tw-text-opacity));
+      font-family: nimbus-sans-extended, usual, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.375;
+      margin-bottom: 1.5rem;
+      word-break: keep-all;
+    }
+    p, span, li, ul, ol{
+      font-family: usual, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
       color: var(--sai-text);
-      background-color: ${bodyBGcolor};
       line-height: 1.6;
+    }
+    body {
+      background-color: ${bodyBGcolor};
     }
 
     /* ===== HEADER STYLES ===== */
     .header-section {
-      display: ${show-header };
+      display: ${show-header};
       order: ${order-header};
       background-color: ${header-bgColor};
       padding: 15px 0;
@@ -310,12 +337,15 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .quote-text, .quote-name{
       text-align:center;
     }
+    .quote-text span{
+	    font-style: italic;
+    }
     /* ===== SECTION 3 - KEY TAKEAWAYS STYLES ===== */
     .sec3-takeaways {
-      display: ${show-sec3 };
-      order: ${order-sec3 };
+      display: ${show-sec3};
+      order: ${order-sec3};
       background-color: ${sec3-bgColor};
-      background-image: url('assets/SAI_treering_green.png');
+      background-image: url('https://go.scaledagile.com/rs/983-XYR-522/images/SAI_treering_green.png?version=0');
       background-size:cover;
       background-position: center center;
       padding: 60px 0;
@@ -376,7 +406,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
     /* ===== SECTION 4 - FEATURED SPEAKERS STYLES ===== */
     .sec4-speakers {
-      display: ${ show-sec4 };
+      display: ${show-sec4};
       order: ${order-sec4} ;
       background-color: ${sec4-bgColor};
       padding: 60px 0;
@@ -529,7 +559,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     }
 
    /* ===== SECTION 6: RELATED CONTENT ===== */
-    .section-related {
+    .sec6-related {
       display: ${show-sec6};
       order: ${order-sec6};
       background-color: ${sec6-bgColor};
@@ -719,8 +749,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Header Logo (mktoImg) -->
           <a href="${header-logo-link}" class="header-logo" target="_blank">
             <div class="mktoImg" id="header-logo" mktoname="Header Logo">
-              <img src="assets/sai-logo-blue.png" alt="SAFe Logo"
-                style="max-height:45px;">
+              <img class="header-logo-sai" src="https://go.scaledagile.com/rs/983-XYR-522/images/sai-logo-blue.png?version=0" alt="SAFe Logo">
             </div>
           </a>
         </div>
@@ -744,7 +773,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
               <div class="event-details">
                 <p class="mb-1"><strong>Date:</strong> Wednesday, April 15, 2026</p>
                 <p class="mb-1"><strong>Time:</strong> 10:00 am – 11:00 am MT | 12:00 pm – 1:00 pm ET</p>
-                <p class="mb-0"><strong>Where:</strong> Live Virtual Webinar with Q&A</p>
+                <p class="mb-0"><strong>Where:</strong> Live Virtual Webinar with Q&amp;A</p>
               </div>
             </div>
           </div>
@@ -803,18 +832,18 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         <div class="row">
           <!-- quote icon -->
           <div class="col quote-icon">
-            <img class="quote-one" src="assets/quote-1.png" />
+            <img class="quote-one" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-1.png?version=0" alt="quote">
           </div>
           <!-- quote -->
           <div class="col-lg-7 col-sm-12">
             <div class="mktoText" id="sec2-quote" mktoname="Section 2 Quote">
-              <h3 class="quote-text">The most dangerous phrase in the language is, '<span style="font-style: italic;">We've always done it this way.</span>'</h3>
+              <h3 class="quote-text">The most dangerous phrase in the language is, '<span>We've always done it this way.</span>'</h3>
               <p class="quote-name">— Grace Hopper</p>
             </div>
           </div>
           <!-- quote icon 2-->
           <div class="col quote-icon">
-            <img class="quote-two" src="assets/quote-2.png" />  
+            <img class="quote-two" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-2.png?version=0" alt="quote">
           </div>
         </div>
       </div>
@@ -831,7 +860,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
               <!--<i class="fas fa-mountain"></i>-->
-              <img src="assets/takeaway-icon.png" />
+              <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway1" mktoname="Section 3 Takeaway 1">
@@ -845,7 +874,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
               <!--<i class="fas fa-robot"></i>-->
-              <img src="assets/takeaway-icon.png" />
+              <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway2" mktoname="Section 3 Takeaway 2">
@@ -859,7 +888,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="takeaway-item d-flex">
             <div class="takeaway-icon">
              <!--<i class="fas fa-sync-alt"></i>-->
-              <img src="assets/takeaway-icon.png" />
+              <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway3" mktoname="Section 3 Takeaway 3">
@@ -873,7 +902,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="takeaway-item d-flex mb-0">
             <div class="takeaway-icon">
               <!--<i class="fas fa-star"></i>-->
-              <img src="assets/takeaway-icon.png" />
+              <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
             </div>
             <div>
               <div class="mktoText" id="sec3-takeaway4" mktoname="Section 3 Takeaway 4">
@@ -898,8 +927,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="col-md-3 col-sm-6">
             <div class="speaker-card rounded-4">
               <div class="mktoImg" id="sec4-speaker1-img" mktoname="Speaker 1 Photo">
-                <img class="speaker-photo"
-                  src="assets/andrew-profile.png" alt="Andrew Sales">
+                <img class="speaker-photo" src="https://go.scaledagile.com/rs/983-XYR-522/images/andrew-profile.png?version=0" alt="Andrew Sales">
               </div>
               <div class="speaker-bio">
                 <div class="mktoText" id="sec4-speaker1-info" mktoname="Speaker 1 Info">
@@ -913,8 +941,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="col-md-3 col-sm-6">
             <div class="speaker-card rounded-4">
               <div class="mktoImg" id="sec4-speaker2-img" mktoname="Speaker 2 Photo">
-                <img class="speaker-photo" src="assets/beth-profile.png"
-                  alt="Beth Bock">
+                <img class="speaker-photo" src="https://go.scaledagile.com/rs/983-XYR-522/images/beth-profile.png?version=0" alt="Beth Bock">
               </div>
               <div class="speaker-bio">
                 <div class="mktoText" id="sec4-speaker2-info" mktoname="Speaker 2 Info">
@@ -948,7 +975,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
               <input type="text" class="form-control">
             </div>
             <div class="mb-3">
-              <label class="form-label">Organization <span class="required" style="color:#e53e3e">*</span></label>
+              <label class="form-label">Organization <span class="required">*</span></label>
               <input type="text" class="form-control">
             </div>
             <div class="mb-3">
@@ -995,7 +1022,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     </section>
 
     <!-- ===== SECTION 6: CAROUSEL CONTENT ===== -->
-    <section class="bg-light pb-5">
+    <section class="sec6-related bg-light pb-5">
     <div class="container py-5 position-relative"> 
         <!-- Editable Marketo Header -->
         <div class="mktoText" id="related-content-heading" mktoname="Related Content Heading">
@@ -1074,10 +1101,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       </div>
     </footer>
   </div><!-- /.page-wrapper -->
-  
+
   <!-- Bootstrap 5.3 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
   <!-- CAROUSEL LOGIC & MARKETO TOKENS -->
   <script >
    document.addEventListener('DOMContentLoaded', () => {
@@ -1090,54 +1117,54 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
          return token.startsWith('$') ? fallbackText : token;
       };
       // Returns true when the token is unresolved (local preview) or explicitly "true"
-      const parseBoolToken = (token) => {
-         return token.startsWith('$') ? true : token === 'true';
-      };
+      function parseBoolToken(val) {
+      	// Standardizes Marketo string output to actual JS boolean
+      	return val === true || val === "true"; 
+	  }
       // STEP B: Array mapping the Marketo variables
       const cardsData = [{
-            image: parseToken("${card1-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card1-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png"),
             title: parseToken("${card1-title}", "Safe & AI Summit"),
             description: parseToken("${card1-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card1-link}", "#"),
             visible: true
          },
          {
-            image: parseToken("${card2-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card2-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png?version=0"),
             title: parseToken("${card2-title}", "Safe & AI Summit"),
             description: parseToken("${card2-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card2-link}", "#"),
             visible: true
          },
          {
-            image: parseToken("${card3-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card3-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png?version=0"),
             title: parseToken("${card3-title}", "Safe & AI Summit"),
             description: parseToken("${card3-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card3-link}", "#"),
             visible: true
          },
          {
-            image: parseToken("${card4-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card4-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png?version=0"),
             title: parseToken("${card4-title}", "Safe & AI Summit"),
             description: parseToken("${card4-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card4-link}", "#"),
             visible: parseBoolToken("${show-card4}")
          },
          {
-            image: parseToken("${card5-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card5-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png?version=0"),
             title: parseToken("${card5-title}", "Safe & AI Summit"),
             description: parseToken("${card5-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card5-link}", "#"),
             visible: parseBoolToken("${show-card5}")
          },
          {
-            image: parseToken("${card6-img}", "assets/carousel-placeholder.png"),
+            image: parseToken("${card6-img}", "https://go.scaledagile.com/rs/983-XYR-522/images/carousel-placeholder.png?version=0"),
             title: parseToken("${card6-title}", "Safe & AI Summit"),
             description: parseToken("${card6-desc}", "Get your pass and secure your place among organization unlocking the power of AI and business gility."),
             link: parseToken("${card6-link}", "#"),
             visible: parseBoolToken("${show-card6}")
          }
       ];
-
       const track = document.getElementById('carouselTrack');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
@@ -1154,12 +1181,12 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             // Standard Bootstrap 5 Card Structure
             cardWrapper.innerHTML = `
                         <div class="card h-100 shadow-sm border-0 bg-white">
-                            <img src="${card.image}" class="card-img-top rounded-3" alt="${card.title}" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Not+Found'">
+                            <img src="$\{card.image}" class="card-img-top rounded-3" alt="$\{card.title}" onerror="this.src='https://placehold.co/400x200?text=Card+Image+Here'">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">${card.title}</h5>
-                                <p class="card-text text-muted">${card.description}</p>
+                                <h5 class="card-title">$\{card.title}</h5>
+                                <p class="card-text text-muted">$\{card.description}</p>
                                 <div class="mt-auto pt-3">
-                                    <a href="${card.link}" class="learn-more-link">Learn More ></a>
+                                    <a href="$\{card.link}" class="learn-more-link">Learn More ></a>
                                 </div>
                             </div>
                         </div>
@@ -1180,8 +1207,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
          const cardWidth = track.firstElementChild.offsetWidth;
 
          // Set CSS transition and move track left
-         track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-         track.style.transform = `translateX(-${cardWidth}px)`;
+         track.style.transition = 'transform' + trasnitionSpeed + 'ms ease-in-out';
+         track.style.transform = 'translateX(' + '-' + cardWidth + 'px)';
 
          // Once movement finishes, manipulate DOM to create the "loop"
          track.addEventListener('transitionend', function handleNext() {
@@ -1208,13 +1235,13 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
          // Offset the track instantly so it doesn't look like anything changed
          track.style.transition = 'none';
-         track.style.transform = `translateX(-${cardWidth}px)`;
+         track.style.transform = 'translateX(' + '-' + cardWidth + 'px)';
 
          // Force a browser reflow so the style above is applied immediately
          track.offsetHeight;
 
          // Now turn on transitions and animate back to zero
-         track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
+         track.style.transition = 'transform' + trasnitionSpeed + 'ms ease-in-out';
          track.style.transform = 'translateX(0)';
 
          track.addEventListener('transitionend', function handlePrev() {
