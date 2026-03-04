@@ -305,7 +305,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       order: ${order-sec2};
       background-color: ${sec2-bgColor};
       padding: 50px 0;
-      width: 1280px;
+      width: 100%;
       margin: 1.5rem auto!important;
     }
 
@@ -339,7 +339,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       order: ${order-sec2-quote};
       background-color: ${sec2-quote-bgColor};
       padding: 50px 0;
-      width: 1280px;
+      width: 100%;
       margin: 1.5rem auto!important;
     }
     .quote-one, .quote-two{
@@ -361,7 +361,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       background-size:cover;
       background-position: center center;
       padding: 60px 0;
-      width: 1280px;
+      width: 100%;
       margin: 1.5rem auto!important;
     }
 
@@ -423,7 +423,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       order: ${order-sec4} ;
       background-color: ${sec4-bgColor};
       padding: 60px 0;
-      width: 1280px;
+      width: 100%;
       margin: 1.5rem auto!important;
     }
 
@@ -474,7 +474,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       order: ${order-sec5};
       background-color: ${sec5-bgColor};
       padding: 60px 0;
-      width: 1280px;
+      width: 100%;
       margin: 1.5rem auto!important;
     }
 
@@ -590,10 +590,36 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
       .form-wrapper {
         padding: 24px;
+        max-width: 100%;
       }
 
       .footer-col {
         margin-bottom: 20px;
+      }
+
+      /* Remove side margins on card sections so they span full width on mobile */
+      .sec2-value-props,
+      .sec2-quote,
+      .sec3-takeaways,
+      .sec4-speakers,
+      .sec5-form {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      /* Hide decorative quote icons on mobile — they stack awkwardly */
+      .quote-icon {
+        display: none;
+      }
+
+      /* Ensure section padding is comfortable on small screens */
+      .sec2-value-props,
+      .sec2-quote,
+      .sec3-takeaways,
+      .sec4-speakers,
+      .sec5-form {
+        padding: 40px 0;
       }
     }
   </style>
@@ -691,7 +717,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       <div class="container">
         <div class="row g-4">
           <!-- Value Card -->
-          <div class="col-md-4">
+          <div class="col-12 col-md-4">
             <div class="value-card card-value">
               <div class="mktoText" id="sec2-card1" mktoname="Section 2 Card 1 (Value)">
                 <h3>Value</h3>
@@ -701,7 +727,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Vision Card -->
-          <div class="col-md-4">
+          <div class="col-12 col-md-4">
             <div class="value-card card-vision">
               <div class="mktoText" id="sec2-card2" mktoname="Section 2 Card 2 (Vision)">
                 <h3>Vision</h3>
@@ -711,7 +737,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Reveal Card -->
-          <div class="col-md-4">
+          <div class="col-12 col-md-4">
             <div class="value-card card-reveal">
               <div class="mktoText" id="sec2-card3" mktoname="Section 2 Card 3 (Reveal)">
                 <h3>Reveal</h3>
@@ -732,7 +758,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             <img class="quote-one" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-1.png?version=0" alt="quote">
           </div>
           <!-- quote -->
-          <div class="col-lg-7 col-sm-12">
+          <div class="col-12 col-lg-7">
             <div class="mktoText" id="sec2-quote" mktoname="Section 2 Quote">
               <h3 class="quote-text">The most dangerous phrase in the language is, '<span>We've always done it this way.</span>'</h3>
               <p class="quote-name">— Grace Hopper</p>
@@ -854,18 +880,20 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     <!-- ===== SECTION 5 - FORM SECTION ===== -->
     <section id="savemyseat" class="sec5-form mx-4 my-4 rounded-4">
       <div class="container">
-        <div class="row">
-          <div class="form-wrapper">
-            <!-- Form Header Text -->
-            <div class="mktoText" id="sec5-form-title" mktoname="Section 5 Form Title">
-              <h3>Save Your Seat</h3>
-            </div>
-            <!-- Marketo Form Embed -->
-            <div class="mktoForm" id="mktoForm_0000" mktoname="Section 5 Form"></div>
-            <br>
-            <!-- Special Address text-->
-            <div class="mktoText" id="sec5-address" mktoname="Section 5 Special Address">
-                <p>If you are using a nonprofessional email address, then you can go here to fill out a special form. <a class="special-address" href="#">Special Email Address</a></p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <div class="form-wrapper">
+              <!-- Form Header Text -->
+              <div class="mktoText" id="sec5-form-title" mktoname="Section 5 Form Title">
+                <h3>Save Your Seat</h3>
+              </div>
+              <!-- Marketo Form Embed -->
+              <div class="mktoForm" id="mktoForm_0000" mktoname="Section 5 Form"></div>
+              <br>
+              <!-- Special Address text-->
+              <div class="mktoText" id="sec5-address" mktoname="Section 5 Special Address">
+                  <p>If you are using a nonprofessional email address, then you can go here to fill out a special form. <a class="special-address" href="#">Special Email Address</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -896,7 +924,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Newsroom Column -->
-          <div class="ccol-lg-4 col-md-4 col-sm-12 footer-col">
+          <div class="col-lg-4 col-md-4 col-sm-12 footer-col">
               <div class="footer-links">
                 <a href="https://scaledagile.com/about/newsroom/" target="_blank">Newsroom</a>
                 <a href="https://scaledagile.com/about-scaled-agile/" target="_blank">About Us</a>
