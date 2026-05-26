@@ -6,46 +6,57 @@
 // To change a background color, update the value here and refresh.
 
 const tokenDefaults = {
-    // ── Page ─────────────────────────────────────────────────────────────────
-    'bodyBGcolor':          'var(--sai-white)',
+    // ── Page ──────────────────────────────────────────────────────────────────
+    'bodyBGcolor':             'var(--sai-white)',
 
-    // ── Header ───────────────────────────────────────────────────────────────
-    'show-header':          'block',
-    'header-bgColor':       'var(--sai-cream)',
+    // ── Header ────────────────────────────────────────────────────────────────
+    'show-header':             'block',
+    'header-bgColor':          'var(--sai-cream)',
+    'header-logo-position':    '0 auto',
+    
+    // ── Section 1 – Hero ──────────────────────────────────────────────────────
+    'show-sec1':               'none',
+    'hero-col-full-width':     '58.333%',
+    'sec1-bgColor':            'var(--sai-light-blue)',
+    'show-event-card':         'block',
 
-    // ── Section 1 – Hero ─────────────────────────────────────────────────────
-    'show-sec1':            'block',
-    'sec1-bgColor':         'var(--sai-light-blue)',
-
+    // ── Section 1 – Hero Dark ─────────────────────────────────────────────────
+    'show-hero-dark':          'none',
+    'hero-dark-bgColor':       'var(--sai-dark)',
+    
     // ── Section 2 – Value Props ───────────────────────────────────────────────
-    'show-sec2':            'block',
-    'sec2-bgColor':         'var(--sai-cream)',
+    'show-sec2':               'none',
+    'sec2-bgColor':            'var(--sai-cream)',
 
     // ── Section 2-5 – Quote ───────────────────────────────────────────────────
-    'show-sec2-quote':      'block',
-    'sec2-quote-bgColor':   'var(--sai-light-blue)',
+    'show-sec2-quote':         'none',
+    'sec2-quote-bgColor':      'var(--sai-light-blue)',
 
     // ── Section 3 – Key Takeaways ─────────────────────────────────────────────
-    'show-sec3':            'block',
-    'sec3-bgColor':         'var(--sai-cream)',
+    'show-sec3':               'none',
+    'sec3-bgColor':            'var(--sai-cream)',
 
-    // ── Section 4 – Featured Speakers ────────────────────────────────────────
-    'show-sec4':            'block',
-    'sec4-bgColor':         'var(--sai-light-blue)',
+    // ── Section 3.5 - Title and Text ──────────────────────────────────────────
+    'show-sec3-text':          'none',
+    'sec3-text-bgColor':       'var(--sai-light-blue)',
+
+    // ── Section 4 – Featured Speakers ─────────────────────────────────────────
+    'show-sec4':               'none',
+    'sec4-bgColor':            'var(--sai-light-blue)',
 
     // ── Section 5 – Form ──────────────────────────────────────────────────────
-    'show-sec5':            'block',
-    'sec5-bgColor':         'var(--sai-cream)',
-    'sec5-form-bg':         'var(--sai-white)',
+    'show-sec5':               'block',
+    'sec5-bgColor':            'var(--sai-cream)',
+    'sec5-form-bg':            'var(--sai-cream)',
 
-    // ── Section 8 – Related Content / Carousel ───────────────────────────────
-    'show-sec8':            'block',
-    'sec8-bgColor':         'var(--sai-light-blue)',
+    // ── Section 8 – Related Content / Carousel ────────────────────────────────
+    'show-sec8':               'block',
+    'sec8-bgColor':            'var(--sai-light-blue)',
 
     // ── Footer ────────────────────────────────────────────────────────────────
-    'show-footer':          'block',
-    'footer-bgColor':       'var(--sai-dark)',
-    'footer-textColor':     'var(--sai-cream)',
+    'show-footer':             'block',
+    'footer-bgColor':          'var(--sai-dark)',
+    'footer-textColor':        'var(--sai-cream)',
 };
 
 document.addEventListener('DOMContentLoaded', () => {

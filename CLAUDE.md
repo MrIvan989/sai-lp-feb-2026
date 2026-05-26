@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Marketo Guided Landing Page** template for a SAFe (Scaled Agile Framework) webinar lead generation page. There are two HTML files that must stay in sync:
+This is a **Marketo Guided Landing Page** template for a SAFe (Scaled Agile Framework) webinar lead generation page. There are two HTML files that are the same structuraly, they just differ in the branding they use.:
 
-- **`SAI-MLP-Seven-Local-Copy.html`** — Local preview version with hardcoded values for browser testing
-- **`SAI-MLP-Seven-Marketo-Version.html`** — Production version with Marketo `${variable-name}` placeholders for dynamic content
+- **`SAFe-safe-rewind-simplified.htlm`** — Production version with Marketo `${variable-name}` placeholders for dynamic content. Uses SAFe branding
+- **`AIN-safe-rewind-simplified.html`** — Production version with Marketo `${variable-name}` placeholders for dynamic content. Uses AI-Native branding
 
 There is no build process. Edit HTML/CSS directly.
 
@@ -45,9 +45,3 @@ CSS custom properties are defined in `:root`:
 - Bootstrap 5.3.3
 - Font Awesome 6.5.1
 - Google Fonts (Inter)
-
-## Workflow Notes
-
-- When making content or style changes, apply them to **both files** simultaneously — the Local Copy gets literal values, the Marketo version keeps `${...}` tokens.
-- To preview locally, open `SAI-MLP-Seven-Local-Copy.html` directly in a browser.
-- The Marketo version will not render correctly in a browser (tokens are unresolved); always use the Local Copy for visual verification.
