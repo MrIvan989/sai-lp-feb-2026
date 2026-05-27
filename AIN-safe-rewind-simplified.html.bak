@@ -19,7 +19,9 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Page Meta Variables -->
-<meta class="mktoString" mktoname="Page Image" id="page-img" default="https://go.scaledagile.com/rs/983-XYR-522/images/safe-summit-rewind-og.jpg">
+<meta class="mktoString" mktoname="Page Title" id="page-title" default="Webinar Registration | AI-Native Training by Scaled Agile">
+<meta class="mktoString" mktoname="Page Description" id="page-desc" default="Please fill out the form to register.">
+<meta class="mktoString" mktoname="Page Image" id="page-img" default="https://go.scaledagile.com/rs/983-XYR-522/images/ain-logo-rgb-featured.jpg?version=0">
 
 <title>${page-title}</title>
 <meta property="og:title" content="${page-title}">
@@ -36,35 +38,43 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <link rel="icon" href="${Favicon}" type="image/x-icon">
 
  <!-- ===== BODY VARIABLES ====== -->
-<meta class="mktoColor" mktoname="Body BG Color" id="bodyBGcolor" default="#ffffff">
+<meta class="mktoColor" mktoname="Body BG Color" id="bodyBGcolor" default="#eeeeff">
+<!-- Body BG Image URL (leave blank for no image) -->
+<meta class="mktoString" mktoname="Body BG Image URL" id="body-bgImage" default="">
 
-<!-- ===== HEADER VARIABLES == -->
+<!-- ===== HEADER VARIABLES ===== -->
+<meta class="mktoColor" id="header-bgColor" mktoname="Header BG Color" default="#c3c2ff">
 <meta class="mktoString" mktoname="Header Logo URL" id="header-logo-link" default="https://www.scaledagile.com/">
 <meta class="mktoBoolean" id="header-logo-position" mktoname="Center Scaled Agile Logo" default="true" true_value="0 auto" false_value="0" false_value_name="Left" true_value_name="Center">
+<!-- Header BG Image URL (leave blank for no image) -->
+<meta class="mktoString" mktoname="Header BG Image URL" id="header-bgImage" default="">
 <!-- Header Logo Visibility Toggle -->
 <meta class="mktoBoolean" id="show-header-logo" mktoname="Show Header Logo?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
 <!-- Header Logo Width -->
 <meta class="mktoString" id="header-logo-width" mktoname="Header Logo Width" default="180px">
 
-<!-- ===== 1st BANNER SECTION VARIABLES (placed after header) ===== -->
+<!-- ===== BANNER SECTION VARIABLES (NEW - placed after header) ===== -->
 <meta class="mktoBoolean" id="show-banner" mktoname="Show Banner?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Banner BG Color" id="banner-bgColor" default="#ffffff">
-<meta class="mktoString" mktoname="Banner 1 Image Link" id="banner-image-link" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
-<!-- ===== 2nd BANNER SECTION VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-banner2" mktoname="Show Banner 2?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Banner 2 BG Color" id="banner2-bgColor" default="#ffffff">
-<meta class="mktoString" id="banner-2-image-url" mktoname="Banner 2 Image URL" default="">
-<meta class="mktoString" id="banner-2-image-link" mktoname="Banner 2 Image Link" default="#">
+<meta class="mktoString" mktoname="Banner Width" id="banner-width" default="100%">
+<meta class="mktoColor" mktoname="Banner BG Color" id="banner-bgColor" default="#eeeeff">
+<!-- Banner BG Image URL (for optional background behind the banner graphic) -->
+<meta class="mktoString" mktoname="Banner BG Image URL" id="banner-bgImage" default="https://placehold.co/1920x1080">
+<!-- Banner Image Link URL (for making the banner clickable) -->
+<meta class="mktoString" mktoname="Banner Image Link URL" id="banner-image-link" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
+<!-- Banner Link Label (text for the link below the banner) -->
+<meta class="mktoString" mktoname="Banner Link Label" id="banner-link-label" default="">
+<!-- Banner Link URL (URL for the link below the banner) -->
+<meta class="mktoString" mktoname="Banner Link URL" id="banner-link-url" default="">
 
 <!-- ===== SECTION (HERO LIGHT) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-hero-light" mktoname="Show Hero Light?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Hero Light BG Color" id="hero-light-bgColor" default="#F4F9FA">
+<meta class="mktoBoolean" mktoname="Show Hero Light?" id="show-hero-light" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Hero Light BG Color" id="hero-light-bgColor" default="#eeeeff">
 <!-- Hero Light BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Hero Light BG Image URL" id="hero-light-bgImage" default="">
 <meta class="mktoString" mktoname="Hero Light Button Text" id="sec1-btn-text" default="Save My Seat">
 <meta class="mktoString" mktoname="Hero Light Badge Text" id="sec1-badge-text" default="Virtual Event">
-<meta class="mktoColor" mktoname="Hero Light Virtual Event Button Color" id="virtual-event-btn-color" default="#7b42ff">
-<meta class="mktoColor" mktoname="Hero Light Divider Color" id="light-divider-color" default="#7b42ff">
+<meta class="mktoColor" mktoname="Virtual Event Button Color" id="virtual-event-btn-color" default="#7b42ff">
+<meta class="mktoColor" mktoname="Hero Light Divider Color" id="light-hero-divider-color" default="#7b42ff">
 
 <!-- ===== HERO LAYOUT VARIABLES (HERO LIGHT AND HERO DARK) ===== -->
 <meta class="mktoBoolean" id="show-event-card" mktoname="Show Virtual Event Card?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
@@ -72,30 +82,31 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <!-- Hero Button Size Setting -->
 <meta class="mktoString" id="hero-button-size" mktoname="Hero Button Size" default="medium">
 
-<!-- ===== SECTION (HERO DARK MODE) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-hero-dark" mktoname="Show Hero Dark Version?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Hero Dark BG Color" id="hero-dark-bgColor" default="#053947">
+<!-- ===== SECTION (HERO DARK) VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-hero-dark" mktoname="Show Hero Dark?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Hero Dark BG Color" id="hero-dark-bgColor" default="#7b42ff">
 <!-- Hero Dark BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Hero Dark BG Image URL" id="hero-dark-bgImage" default="">
 <meta class="mktoString" mktoname="Hero Dark Button Text" id="sec-hero-dark-btn-text" default="Save My Seat">
 <meta class="mktoString" mktoname="Hero Dark Badge Text" id="sec-hero-dark-badge-text" default="Virtual Event">
-
+<meta class="mktoColor" mktoname="Dark Hero Divider Color" id="dark-divider-color" default="#7b42ff">
 
 <!-- ===== SECTION (VALUE PROPS) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-value-props" mktoname="Show Value Props?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Value Props BG Color" id="value-props-bgColor" default="#FFFBF4">
+<meta class="mktoBoolean" id="show-sec2" mktoname="Show Value Props?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Value Props BG Color" id="value-props-bgColor" default="#c3c2ff">
 <!-- Value Props BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Value Props BG Image URL" id="value-props-bgImage" default="">
 
 <!-- ===== SECTION (QUOTE) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-quote-sec" mktoname="Show Quote?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Quote BG Color" id="sec-quote-bgColor" default="#F4F9FA">
+<meta class="mktoBoolean" id="show-sec2-quote" mktoname="Show Quote?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Quote BG Color" id="sec-quote-bgColor" default="#eeeeff">
 <!-- Quote BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Quote BG Image URL" id="sec-quote-bgImage" default="">
+<meta class="mktoColor" mktoname="Quotes Text Color" id="quotes-color" default="#c3c2ff">
 
 <!-- ===== SECTION (KEY TAKEAWAYS) VARIABLES ====== -->
-<meta class="mktoBoolean" id="show-key-takeaways" mktoname="Show Key Takeaways?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Key Takeaways BG Color" id="key-takeaways-bgColor" default="#FFFBF4">
+<meta class="mktoBoolean" id="show-sec3" mktoname="Show Key Takeaways?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Key Takeaways BG Color" id="key-takeaways-bgColor" default="#eeeeff">
 <!-- Key Takeaways BG Image URL (defaults to tree ring graphic; set to blank for no image) -->
 <meta class="mktoString" mktoname="Key Takeaways BG Image URL" id="key-takeaways-bgImage" default="https://go.scaledagile.com/rs/983-XYR-522/images/SAI_treering_green.png?version=0">
 
@@ -108,71 +119,75 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <meta class="mktoBoolean" id="show-takeaway10" mktoname="Show Takeaway 10?" default="false" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
 
 <!-- ===== SECTION (TITLE AND TEXT) VARIABLES ====== -->
-<meta class="mktoBoolean" id="show-text-only-sec" mktoname="Show Title and Text?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Title and Text BG Color" id="text-only-sec-bgColor" default="#F4F9FA">
+<meta class="mktoBoolean" id="show-sec3-text" mktoname="Show Title and Text?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Title and Text - Title BG Color" id="textOnly-sec-bgColor" default="#eeeeff">
 <!-- Title and Text BG Image URL (leave blank for no image) -->
-<meta class="mktoString" mktoname="Title and Text BG Image URL" id="text-only-sec-bgImage" default="">
-<meta class="mktoColor" mktoname="Title and Text - Text Color" id="text-only-sec-text-color" default="#343333">
+<meta class="mktoString" mktoname="Title and Text BG Image URL" id="textOnly-sec-bgImage" default="">
+<meta class="mktoColor" mktoname="Title and Text - Text Color" id="textOnly-sec-text-color" default="#3f3f3f">
 
 <!-- ===== SECTION (FEATURED SPEAKERS) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-featured-speakers-sec" mktoname="Show Speakers?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Speakers BG Color" id="featured-speakers-bgColor" default="#F4F9FA">
-<!-- Speakers BG Image URL (leave blank for no image) -->
-<meta class="mktoString" mktoname="Speakers BG Image URL" id="featured-speakers-bgImage" default="">
+<meta class="mktoBoolean" id="show-sec4" mktoname="Show Key Speakers?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Key Speakers BG Color" id="featured-speakers-bgColor" default="#eeeeff">
+<!-- Key Speakers BG Image URL (leave blank for no image) -->
+<meta class="mktoString" mktoname="Key Speakers BG Image URL" id="featured-speakers-bgImage" default="">
 
 <!-- ===== SECTION (FORM) VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-form-sec" mktoname="Show Form?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Form Section BG Color" id="form-sec-bgColor" default="#FFFBF4">
+<meta class="mktoBoolean" id="show-sec5" mktoname="Show Form?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoColor" mktoname="Form Section BG Color" id="form-sec-bgColor" default="#eeeeff">
 <!-- Form Section BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Form Section BG Image URL" id="form-sec-bgImage" default="">
-<meta class="mktoColor" id="sec5-form-bg" mktoname="Section 5 Form BG Color" default="#FFFBF4">
+<meta class="mktoColor" id="form-bgColor" mktoname="Form BG Color" default="#ffffff">
+<meta class="mktoColor" id="form-title-color" mktoname="Form Title Color" default="#7b42ff">
+
 
 <!-- ===== SECTION FOOTER ===== -->
-<meta class="mktoColor" id="footer-bg-color" mktoname="Footer BG Color" default="#053947">
-<meta class="mktoColor" id="footer-text-color" mktoname="Footer Text Color" default="#FFFBF4">
+<meta class="mktoColor" id="footer-bgColor" mktoname="Footer BG Color" default="#3f3f3f" >
+<meta class="mktoColor" id="footer-text-color" mktoname="Footer Text Color" default="#eeeeff">
 <!-- Footer BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Footer BG Image URL" id="footer-bgImage" default="">
 
 <!-- ===== SECTION ORDERING VARIABLES (shifted +1 for banner) ===== -->
 <meta class="mktoString" id="order-header" mktoname="Header Order" default="1">
 <meta class="mktoString" id="order-banner" mktoname="Banner Order" default="2">
-<meta class="mktoString" id="order-banner-2" mktoname="Banner Order" default="3">
-<meta class="mktoString" id="order-hero-light" mktoname="Hero Light Order" default="4">
-<meta class="mktoString" id="order-hero-dark" mktoname="Hero Dark Order" default="5">
-<meta class="mktoString" id="order-value-props" mktoname="Value Props Order" default="6">
-<meta class="mktoString" id="order-quote" mktoname="Quote Order" default="7">
-<meta class="mktoString" id="order-key-takeaways" mktoname="Key Takeaways Order" default="8">
-<meta class="mktoString" id="order-text-only" mktoname="Title and Text Order" default="9">
-<meta class="mktoString" id="order-speakers" mktoname="Speakers Order" default="10">
-<meta class="mktoString" id="order-form-cta" mktoname="Form Order" default="11">
-<meta class="mktoString" id="order-footer" mktoname="Footer Order" default="12">
+<meta class="mktoString" id="order-sec1" mktoname="Hero Light Order" default="3">
+<meta class="mktoString" id="order-hero-dark" mktoname="Hero Dark Order" default="4">
+<meta class="mktoString" id="order-sec2" mktoname="Value Props Order" default="5">
+<meta class="mktoString" id="order-sec2-quote" mktoname="Quote Order" default="6">
+<meta class="mktoString" id="order-sec3" mktoname="Key Takeaways Order" default="7">
+<meta class="mktoString" id="order-sec3-text" mktoname="Title and Text Order" default="8">
+<meta class="mktoString" id="order-sec4" mktoname="Key Speakers Order" default="9">
+<meta class="mktoString" id="order-sec5" mktoname="Form Section Order" default="10">
+<meta class="mktoString" id="order-footer" mktoname="Footer Order" default="11">
 
-<!-- Fonts - Noto Sans -->
+<!-- Fonts - Montserrat -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Reenie+Beanie&display=swap" rel="stylesheet">
-<script src="parse-tokens.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<script src="parse-tokens-ain.js"></script>
 <style>
     /* ===== GLOBAL STYLES ===== */
     :root {
-      --sai-dark: #053947;
-      --sai-teal: #8ACBCE;
-      --sai-teal-hover: #0A83A0;
-      --sai-light-blue: #F4F9FA;
-      --sai-cream: #FFFBF4;
-      --sai-light-cream: #FFFBF4;
-      --sai-white: #ffffff;
-      --sai-light-gray: #f7f7f7;
-      --sai-border: #e0e0e0;
-      --sai-text: #343333;
-      --sai-text-light: #666666;
-      --sai-orange: #CB9349;
-      --sai-card-border-value: #CB9349;
-      --sai-card-border-vision: #1A6137;
-      --sai-card-border-reveal: #0A83A0;
+      --dark-purple: #7b42ff;
+      --medium-purple: #c3c2ff;
+      --light-purple: #eeeeff;
+      --dark-teal: #288c89;
+      --teal: #54d1ca;
+      --light-teal: #e6fffb;
+      --dark-text: #3f3f3f;
+      --white-text: #ffffff;
+      --light-border: #e6e8e8;
     }
+    .dark-purple{background-color: #7b42ff;}
+    .medium-purple{background-color: #c3c2ff;}
+    .light-purple{background-color: #eeeeff;}
+    .dark-teal{background-color: #288c89;}
+    .teal{background-color: #54d1ca;}
+    .light-teal{background-color: #e6fffb;}
+    .dark-text{background-color: #3f3f3f;}
+    .white-text{background-color: #ffffff;}
 
-    * {
+  * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -183,14 +198,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     h1, h2, h3, h4, h5, h6{
       --tw-text-opacity: 1;
       color: rgb(5 57 71 / var(--tw-text-opacity));
-      font-family: "Noto Sans", Arial, sans-serif;
+      font-family: "Montserrat", Arial, sans-serif;
       font-weight: 400;
       line-height: 1.375;
       margin-bottom: 1.5rem;
       word-break: keep-all;
     }
     p, span, li, ul, ol{
-      font-family: "Noto Sans", Arial, sans-serif;
+      font-family: "Montserrat", Arial, sans-serif;
       color: var(--sai-text);
       line-height: 1.6;
     }
@@ -206,8 +221,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .header-section {
       display: block;
       order: ${order-header};
-      background-color: #FFFBF4;
-      background-image: none;
+      background-color: ${header-bgColor};
+      background-image: url('${header-bgImage}');
       background-size: cover;
       background-position: center center;
       padding: 15px 0;
@@ -220,7 +235,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       width: ${header-logo-width};
     }
     .header-logo img {
-      max-height: 45px;
+      max-height: 95px;
       width: auto;
     }
 
@@ -230,9 +245,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .banner-section {
       display: ${show-banner};
       order: ${order-banner};
-	    width:100vw;
       background-color: ${banner-bgColor};
-      background-image: ${banner-bg-img};
+      background-image: url('${banner-bgImage}');
       background-size: cover;
       background-position: center center;
       padding: 0;
@@ -246,32 +260,15 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .banner-section .banner-img-wrapper {
       max-width: ${banner-width};
       margin: 0 auto;
-      width:100vw; 
-      margin-left:-50vw; 
-      left:50%; 
-      position:relative; 
-      overflow:hidden;
     }
 
     .banner-section .banner-img-wrapper img {
       width: 100%;
       height: auto;
       display: block;
-      width:100vw; 
-      height:auto;
     }
-	
-  	.banner-section-2 {
-      display: ${show-banner2};
-      order: ${order-banner-2};
-      background-color: ${banner2-bgColor};
-    }
-    .banner-section-2 img{
-		  width: 100%;
-	  }
 
-
-    /* ===== SECTION 1 - LIGHT HERO STYLES ===== */
+    /* ===== SECTION - HERO LIGHT STYLES ===== */
     .container {
       max-width: 1080px;
       width: 100%;
@@ -279,7 +276,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
     .sec1-hero {
       display: ${show-hero-light};
-      order: ${order-hero-light};
+      order: ${order-sec1};
       background-color: ${hero-light-bgColor};
       background-image: url('${hero-light-bgImage}');
       background-size: cover;
@@ -290,7 +287,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .sec1-hero h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 8px;
     }
 
@@ -303,7 +300,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .sec1-hero .hero-divider {
       width: 65%;
       height: 3px;
-      background-color: var(--sai-orange);
+      background-color: ${light-hero-divider-color};
       margin-bottom: 20px;
     }
 
@@ -315,15 +312,15 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     }
 
     .sec1-hero .event-details p{
-      font-family: "Noto Sans", arial, sans-serif;
+      font-family: "Montserrat", arial, sans-serif;
       font-size: 0.85rem;
       color: #053947;
     }
 
     .sec1-hero .event-details span {
-      font-family: "Noto Sans", arial, sans-serif;
+      font-family: "Montserrat", arial, sans-serif;
       font-weight: 600;
-      color: #053947;
+      color: var(--dark-purple);
       min-width: 55px;
     }
 
@@ -331,22 +328,22 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .sec1-hero .virtual-event-card {
       display: ${show-event-card};
       background: #fff;
-      border: 1px solid var(--sai-border);
-      border-radius: 10px;
-      padding: calc(60px * 1.25) calc(30px * 1.25);
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      padding: 60px 30px;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .sec1-hero .virtual-event-badge {
       font-size: 1.35rem;
       font-weight: 600;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 16px;
     }
 
     .btn-sai-teal {
-      background-color: var(--sai-teal-hover);
+      background-color: ${virtual-event-btn-color};
       color: #fff;
       border: none;
       padding: 10px 28px;
@@ -360,7 +357,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     }
 
     .btn-sai-teal:hover {
-      background-color: #8ACBCE;
+      background-color: var(--medium-purple);
       color: #fff;
     }
 
@@ -381,7 +378,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-size: 1.2rem;
       border-radius: 30px;
     }
-    /* ===== SECTION 2 - DARK HERO STYLES ===== */
+    /* ===== SECTION - HERO DARK STYLES ===== */
     .sec-hero-dark {
       display: ${show-hero-dark};
       order: ${order-hero-dark};
@@ -394,69 +391,69 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .sec-hero-dark h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: #FFFBF4;
+      color: var(--dark-text);
       margin-bottom: 8px;
     }
 
     .sec-hero-dark .subtitle {
       font-size: 1.05rem;
-      color: #FFFBF4;
+      color: var(--dark-text);
       margin-bottom: 20px;
     }
 
     .sec-hero-dark .hero-divider {
       width: 65%;
       height: 3px;
-      background-color: var(--sai-orange);
+      background-color: ${dark-divider-color};
       margin-bottom: 20px;
     }
 
     .sec-hero-dark .hero-description {
       font-size: 0.9rem;
-      color: #FFFBF4;
+      color: var(--white-text);
       line-height: 1.7;
       margin-bottom: 20px;
     }
 
     .sec-hero-dark .event-details {
       font-size: 0.85rem;
-      color: #FFFBF4;
+      color: var(--white-text);
     }
     .sec-hero-dark .event-details p {
-      font-family: "Noto Sans", arial, sans-serif;
+      font-family: "Montserrat", arial, sans-serif;
       font-size: 0.85rem;
-      color: #FFFBF4;
+      color: var(--white-text);
     }
 
     .sec-hero-dark .event-details span {
-      font-family: "Noto Sans", arial, sans-serif;
+      font-family: "Montserrat", arial, sans-serif;
       font-weight: 600;
       min-width: 55px;
-      color: #FFFBF4!important;
+      color: var(--dark-purple)!important;
     }
 
     /* Virtual Event Card */
     .sec-hero-dark .virtual-event-card {
       display: ${show-event-card};
       background: #fff;
-      border: 1px solid var(--sai-border);
-      border-radius: 10px;
-      padding: calc(60px * 1.25) calc(30px * 1.25);
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      padding: 60px 30px;
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .sec-hero-dark .virtual-event-badge {
       font-size: 1.15rem;
       font-weight: 600;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 16px;
     }
   
-    /* ===== SECTION 3 - VALUE PROPS STYLES ===== */
+    /* ===== SECTION - VALUE PROPS STYLES ===== */
     .sec2-value-props {
-      display: ${show-value-props};
-      order: ${order-value-props};
+      display: ${show-sec2};
+      order: ${order-sec2};
       background-color: ${value-props-bgColor};
       background-image: url('${value-props-bgImage}');
       background-size: cover;
@@ -474,12 +471,12 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .value-card h3 {
       font-size: 1.1rem;
       font-weight: 700;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 10px;
     }
 
     .value-card.card-value h3 {
-      color: #053947;
+      color: var(--dark-purple);
     }
 
     .value-card p {
@@ -488,10 +485,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       margin-bottom: 0;
       line-height: 1.6;
     }
-    /* ===== SECTION 4 - QUOTE STYLES ===== */
+    /* ===== SECTION - QUOTE STYLES ===== */
     .sec2-quote {
-      display: ${show-quote-sec};
-      order: ${order-quote};
+      display: ${show-sec2-quote};
+      order: ${order-sec2-quote};
       background-color: ${sec-quote-bgColor};
       background-image: url('${sec-quote-bgImage}');
       background-size: cover;
@@ -508,10 +505,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .quote-text span{
 	    font-style: italic;
     }
-    /* ===== SECTION 5 - KEY TAKEAWAYS STYLES ===== */
+    /* ===== SECTION - KEY TAKEAWAYS STYLES ===== */
     .sec3-takeaways {
-      display: ${show-key-takeaways};
-      order: ${order-key-takeaways};
+      display: ${show-sec3};
+      order: ${order-sec3};
       background-color: ${key-takeaways-bgColor};
       /* NEW: Background image now configurable via Marketo variable (defaults to tree ring) */
       background-image: url('${key-takeaways-bgImage}');
@@ -524,7 +521,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-size: 1.75rem;
       font-weight: 700;
       text-align: center;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 40px;
     }
 
@@ -533,7 +530,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       height: 40px;
       min-width: 40px;
       border-radius: 50%;
-      background-color: #053947;
+      background-color: var(--dark-purple);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -542,14 +539,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     }
 
     .takeaway-icon i {
-      color: var(--sai-white);
+      color: var(--light-purple);
       font-size: 0.85rem;
     }
 
     .takeaway-item h4 {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 6px;
     }
 
@@ -576,12 +573,12 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .takeaway-item-9.d-flex { display: ${show-takeaway9}; }
     .takeaway-item-10.d-flex { display: ${show-takeaway10}; }
 
-    /* ===== SECTION 6 - TITLE AND TEXT  STYLES ===== */
+    /* ===== SECTION - TITLE AND TEXT  STYLES ===== */
     .sec3-titletext {
-      display: ${show-text-only-sec};
-      order: ${order-text-only};
-      background-color: ${text-only-sec-bgColor};
-      background-image: url('${text-only-sec-bgImage}');
+      display: ${show-sec3-text};
+      order: ${order-sec3-text};
+      background-color: ${textOnly-sec-bgColor};
+      background-image: url('${textOnly-sec-bgImage}');
       background-size: cover;
       background-position: center center;
       padding: 60px 0;
@@ -591,21 +588,21 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-size: 1.75rem;
       font-weight: 700;
       text-align: center;
-      color: ${text-only-sec-text-color};
+      color: ${textOnly-sec-text-color};
       margin-bottom: 40px;
     }
     .sec3-titletext p {
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 300;
       text-align: center;
-      color: ${text-only-sec-text-color};
+      color: ${textOnly-sec-text-color};
       margin-bottom: 40px;
     }
 
-    /* ===== SECTION 7 - FEATURED SPEAKERS STYLES ===== */
+    /* ===== SECTION - FEATURED SPEAKERS STYLES ===== */
     .sec4-speakers {
-      display: ${show-featured-speakers-sec};
-      order: ${order-speakers} ;
+      display: ${show-sec4};
+      order: ${order-sec4} ;
       background-color: ${featured-speakers-bgColor};
       background-image: url('${featured-speakers-bgImage}');
       background-size: cover;
@@ -617,13 +614,13 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-size: 1.75rem;
       font-weight: 700;
       text-align: center;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 40px;
     }
 
     .speaker-card {
       text-align: left;
-      background-color: var(--sai-white);
+      background-color: var(--light-purple);
       padding-bottom: 15%;
       border: 1px solid var(--sai-border);
     }
@@ -643,7 +640,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .speaker-card h4 {
       font-size: 1rem;
       font-weight: 700;
-      color: #053947;
+      color: var(--dark-purple);
       margin-bottom: 4px;
     }
 
@@ -654,19 +651,21 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       line-height: 1.5;
     }
 
-    /* ===== SECTION 8 - FORM STYLES ===== */
+    /* ===== SECTION - FORM STYLES ===== */
     .sec5-form {
-      display: ${show-form-sec};
-      order: ${order-form-cta};
+      display: ${show-sec5};
+      order: ${order-sec5};
       background-color: ${form-sec-bgColor};
       background-image: url('${form-sec-bgImage}');
       background-size: cover;
       background-position: center center;
       padding: 60px 0;
     }
-
+    .form-title{
+      color: ${form-title-color};
+    }
     .form-wrapper {
-      background: ${sec5-form-bg};
+      background: ${form-bgColor};
       border: 1px solid var(--sai-border);
       border-radius: 8px;
       padding: 20px 30px;
@@ -685,7 +684,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .footer-section {
       display: block;
       order: ${order-footer};
-      background-color: ${footer-bg-color};
+      background-color: ${footer-bgColor};
       background-image: url('${footer-bgImage}');
       background-size: cover;
       background-position: center center;
@@ -699,14 +698,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-size: 0.9rem;
       font-weight: 700;
       margin-bottom: 12px;
-      color: #FFFBF4!important;
+      color: ${footer-text-color}!important;
     }
 
     .footer-section p,
     .footer-section a {
       font-size: 0.8rem;
       line-height: 1.7;
-      color: #FFFBF4!important;
+      color: ${footer-text-color}!important;
     }
 
     .footer-section a {
@@ -846,33 +845,26 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Header Logo (mktoImg) -->
           <a href="${header-logo-link}" class="header-logo" target="_blank">
             <div class="mktoImg" id="header-logo" mktoname="Header Logo">
-              <img class="header-logo-sai" src="https://go.scaledagile.com/rs/983-XYR-522/images/sai-logo-blue.png?version=0" alt="SAFe Logo">
+              <img class="header-logo-sai" src="https://go.scaledagile.com/rs/983-XYR-522/images/AI-Native%20Logo-MVP.png?version=0" alt="AI-Native Training By Scaled Agile">
             </div>
           </a>
         </div>
       </div>
     </header>
 
-    <!-- ===== BANNER SECTION (client-uploaded banner graphic - full width) ===== -->
+    <!-- ===== BANNER SECTION (NEW - client-uploaded banner graphic) ===== -->
+    <!-- Two sizing modes: Fixed (640px centered) and Full Width (100% viewport).
+         Toggle via the "Banner Full Width?" boolean in Marketo editor. -->
     <section class="banner-section">
-      <div class="banner-img-wrapper">
-          <a href="${banner-image-link}" target="_blank">
-            <div class="mktoImg" id="banner-img" mktoname="Banner Image">
-              <img src="https://placehold.co/640x200" alt="">
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== BANNER SECTION 2 (constrained to 1080px) ===== -->
-    <section class="banner-section-2">
-      <div class="container">
+      <div class="container banner-container">
         <div class="banner-img-wrapper">
-          <a href="${banner-2-image-link}" target="_blank">
-            <div class="mktoImg" id="banner-img-2" mktoname="Banner 2 Image">
-              <img src="${banner-2-image-url}" alt="">
+          <a href="${banner-image-link}" target="_blank"><div class="mktoImg" id="banner-img" mktoname="Banner Image">
+              <img src="https://placehold.co/640x200" alt="" style="width:100%; height:auto;">
             </div>
           </a>
+        </div>
+        <div class="mktoText" id="banner-link-text" mktoname="Banner Link Text">
+          <a href="${banner-link-url}" target="_blank">${banner-link-label}</a>
         </div>
       </div>
     </section>
@@ -883,7 +875,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         <div class="row align-items-start">
           <!-- Hero Text Content -->
           <div class="hero-text-col">
-            <div class="mktoText" id="sec1-content" mktoname="Hero Light Content">
+            <div class="mktoText" id="sec1-content" mktoname="Hero Light Title">
               <h1>SAFe Summit Rewind</h1>
               <p class="subtitle">Replay the major reveals and key takeaways from the Summit</p>
             </div>
@@ -920,15 +912,15 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         <div class="row align-items-start">
           <!-- Hero Text Content -->
           <div class="hero-text-col">
-            <div class="mktoText" id="sec-hero-dark-content" mktoname="Hero Dark Content">
+            <div class="mktoText" id="sec-hero-dark-content" mktoname="Dark Hero Hero Content">
               <h1>SAFe Summit Rewind</h1>
               <p class="subtitle">Replay the major reveals and key takeaways from the Summit</p>
             </div>
             <div class="hero-divider"></div>
-            <div class="mktoText" id="sec-hero-dark-description" mktoname="Hero Dark Description">
+            <div class="mktoText" id="sec-hero-dark-description" mktoname="Dark Hero Description">
               <p class="hero-description">The doors have just closed on the SAFe Summit in Amsterdam, where the global community gathered for five days of immersive sessions, customer stories, and high-intensity networking. Whether you joined us in person or are just now tuning in, we've distilled the event's breakthrough moments into the actionable insights needed to transition to the next evolution of Agility: AI-Empowered SAFe. Discover how this shift serves as the essential foundation for becoming an AI-Native enterprise and provides the edge needed to keep your organization ahead of the game.</p>
             </div>
-            <div class="mktoText" id="sec-hero-dark-event-details" mktoname="Hero Dark Event Details">
+            <div class="mktoText" id="sec-hero-dark-event-details" mktoname="Dark Hero Event Details">
               <div class="event-details">
                 <p class="mb-1"><span>Date</span>: Wednesday, April 15, 2026</p>
                 <p class="mb-1"><span>Time</span>: 10:00 am – 11:00 am MT | 12:00 pm – 1:00 pm ET</p>
@@ -939,10 +931,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Virtual Event Card -->
           <div class="col-lg-4 col-md-5 offset-lg-1">
             <div class="virtual-event-card">
-              <div class="mktoText" id="sec-dark-hero-badge" mktoname="Hero Dark Event Badge">
+              <div class="mktoText" id="sec-dark-hero-badge" mktoname="Dark Hero Event Badge">
                 <p class="virtual-event-badge">Virtual Event</p>
               </div>
-              <div class="mktoText" id="sec-dark-hero-btnText" mktoname="Hero Dark Button Text">
+              <div class="mktoText" id="sec-dark-hero-btnText" mktoname="Dark Hero Button Text">
               <a class="btn-sai-teal btn-size-${hero-button-size}" href="#savemyseat" target="_blank">Save My Seat</a>
               </div>
             </div>
@@ -958,7 +950,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Value Card -->
           <div class="col-12 col-md-4">
             <div class="value-card card-value">
-              <div class="mktoText" id="sec2-card1" mktoname="Value Prop - Card 1 (Value)">
+              <div class="mktoText" id="sec2-card1" mktoname="Value Prop Card 1 (Value)">
                 <h3>Value</h3>
                 <p>Leverage the latest releases and the strategies needed to accelerate value delivery across your
                   entire organization.</p>
@@ -968,7 +960,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Vision Card -->
           <div class="col-12 col-md-4">
             <div class="value-card card-vision">
-              <div class="mktoText" id="sec2-card2" mktoname="Value Prop - Card 2 (Vision)">
+              <div class="mktoText" id="sec2-card2" mktoname="Value Prop Card 2 (Vision)">
                 <h3>Vision</h3>
                 <p>Equip your leadership with the roadmap and the proven strategies needed to lead the transition to an
                   AI-Native enterprise. </p>
@@ -978,7 +970,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <!-- Reveal Card -->
           <div class="col-12 col-md-4">
             <div class="value-card card-reveal">
-              <div class="mktoText" id="sec2-card3" mktoname="Value Prop - Card 3 (Reveal)">
+              <div class="mktoText" id="sec2-card3" mktoname="Value Prop Card 3 (Reveal)">
                 <h3>Reveal</h3>
                 <p>Discover the major reveals from the main stage that are defining the next evolution of AI-Empowered
                   Agility.</p>
@@ -994,7 +986,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         <div class="row">
           <!-- quote icon -->
           <div class="col quote-icon">
-            <img class="quote-one" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-1.png?version=0" alt="quote">
+            <img class="quote-one" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-1-${quotes-color}.png?version=0" alt="quote">
           </div>
           <!-- quote -->
           <div class="col-12 col-lg-7">
@@ -1005,7 +997,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           </div>
           <!-- quote icon 2-->
           <div class="col quote-icon">
-            <img class="quote-two" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-2.png?version=0" alt="quote">
+            <img class="quote-two" src="https://go.scaledagile.com/rs/983-XYR-522/images/quote-2-${quotes-color}.png?version=0" alt="quote">
           </div>
         </div>
       </div>
@@ -1160,7 +1152,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     <section class="sec3-titletext">
       <div class="container">
         <!-- Title and text -->
-        <div class="mktoText" id="sec3-5-title" mktoname="Text Only Edits">
+        <div class="mktoText" id="sec3-5-title" mktoname="Text Only - Title">
           <h2 class="section-title">Simple Title - Thank You - Gracias</h2>
           <p>Thank you for visiting Scaled Agile and requesting additional information from us. We'll be reaching out to you via email or otherwise. Thanks. </p>
         </div>
@@ -1212,8 +1204,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
           <div class="col-12 col-md-10 col-lg-8">
             <div class="form-wrapper">
               <!-- Form Header Text -->
-              <div class="mktoText" id="sec5-form-title" mktoname="Form Section Title">
-                <h3>Save Your Seat</h3>
+              <div class="mktoText" id="sec5-form-title" mktoname="Form Title">
+                <h3 class="form-title">Save Your Seat</h3>
               </div>
               <!-- Marketo Form Embed -->
               <div class="mktoForm" id="mktoForm_0000" mktoname="Form Selection"></div>
@@ -1275,14 +1267,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
   <!-- Bootstrap 5.3 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQJSCGJ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQJSCGJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-<!-- ========================================== -->
-    <!-- VANILLA JS CAROUSEL LOGIC & MARKETO TOKENS -->
-    <!-- ========================================== -->
+  <!-- ========================================== -->
+  <!-- MARKETO TOKENS -->
+  <!-- ========================================== -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
@@ -1332,92 +1324,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     link: parseToken("${card6-link}", "#")
                 }
             ];
-
-            const track = document.getElementById('carouselTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            let isAnimating = false; // Lock interactions during animation
-            const transitionSpeed = 400; // ms
-
-            // STEP C: Render the cards dynamically into the track
-            function renderCards() {
-                cardsData.forEach(card => {
-                    const cardWrapper = document.createElement('div');
-                    cardWrapper.className = 'custom-carousel-card';
-                    
-                    // Standard Bootstrap 5 Card Structure
-                    cardWrapper.innerHTML = `
-                        <div class="card h-100 shadow-sm border-0 bg-white">
-                            <img src="${card.image}" class="card-img-top rounded-3" alt="${card.title}" onerror="this.src='https://via.placeholder.com/400x200?text=Image+Not+Found'">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">${card.title}</h5>
-                                <p class="card-text text-muted">${card.description}</p>
-                                <div class="mt-auto pt-3">
-                                    <a href="${card.link}" class="learn-more-link">Learn More ></a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    track.appendChild(cardWrapper);
-                });
-            }
-
-            // Initialize Cards
-            renderCards();
-
-            // Logic: Advance By One (Next)
-            nextBtn.addEventListener('click', () => {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                // Dynamically get the width of one card (adjusts automatically based on viewport)
-                const cardWidth = track.firstElementChild.offsetWidth;
-                
-                // Set CSS transition and move track left
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-                track.style.transform = `translateX(-${cardWidth}px)`;
-
-                // Once movement finishes, manipulate DOM to create the "loop"
-                track.addEventListener('transitionend', function handleNext() {
-                    track.style.transition = 'none'; // Turn off transition temporarily
-                    track.style.transform = 'translateX(0)'; // Snap track back to center
-                    
-                    // Move the first node to the end of the line
-                    track.appendChild(track.firstElementChild); 
-                    
-                    track.removeEventListener('transitionend', handleNext);
-                    isAnimating = false;
-                });
-            });
-
-            // Logic: Go Back By One (Previous)
-            prevBtn.addEventListener('click', () => {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                const cardWidth = track.firstElementChild.offsetWidth;
-
-                // Move the LAST node to the beginning of the line FIRST
-                track.prepend(track.lastElementChild);
-
-                // Offset the track instantly so it doesn't look like anything changed
-                track.style.transition = 'none';
-                track.style.transform = `translateX(-${cardWidth}px)`;
-
-                // Force a browser reflow so the style above is applied immediately
-                track.offsetHeight; 
-
-                // Now turn on transitions and animate back to zero
-                track.style.transition = `transform ${transitionSpeed}ms ease-in-out`;
-                track.style.transform = 'translateX(0)';
-
-                track.addEventListener('transitionend', function handlePrev() {
-                    track.style.transition = 'none';
-                    track.removeEventListener('transitionend', handlePrev);
-                    isAnimating = false;
-                });
-            });
         });
     </script>
 

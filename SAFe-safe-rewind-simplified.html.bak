@@ -19,6 +19,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Page Meta Variables -->
+<meta class="mktoString" mktoname="Page Title" id="page-title" default="SAFe Summit Rewind | Scaled Agile">
+<meta class="mktoString" mktoname="Page Description" id="page-desc" default="Replaying the major reveals and key takeaways from the global community.">
 <meta class="mktoString" mktoname="Page Image" id="page-img" default="https://go.scaledagile.com/rs/983-XYR-522/images/safe-summit-rewind-og.jpg">
 
 <title>${page-title}</title>
@@ -37,6 +39,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
  <!-- ===== BODY VARIABLES ====== -->
 <meta class="mktoColor" mktoname="Body BG Color" id="bodyBGcolor" default="#ffffff">
+<!-- Body BG Image URL (leave blank for no image) -->
+<meta class="mktoString" mktoname="Body BG Image URL" id="body-bgImage" default="">
 
 <!-- ===== HEADER VARIABLES == -->
 <meta class="mktoString" mktoname="Header Logo URL" id="header-logo-link" default="https://www.scaledagile.com/">
@@ -46,15 +50,23 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <!-- Header Logo Width -->
 <meta class="mktoString" id="header-logo-width" mktoname="Header Logo Width" default="180px">
 
-<!-- ===== 1st BANNER SECTION VARIABLES (placed after header) ===== -->
+<!-- ===== BANNER SECTION VARIABLES (NEW - placed after header) ===== -->
 <meta class="mktoBoolean" id="show-banner" mktoname="Show Banner?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoString" mktoname="Banner Width" id="banner-width" default="100%">
 <meta class="mktoColor" mktoname="Banner BG Color" id="banner-bgColor" default="#ffffff">
-<meta class="mktoString" mktoname="Banner 1 Image Link" id="banner-image-link" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
-<!-- ===== 2nd BANNER SECTION VARIABLES ===== -->
-<meta class="mktoBoolean" id="show-banner2" mktoname="Show Banner 2?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Banner 2 BG Color" id="banner2-bgColor" default="#ffffff">
+<!-- Banner Image Link URL (for making the banner clickable) -->
+<meta class="mktoString" mktoname="Banner Image Link URL" id="banner-image-link" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
+<!-- Banner Link Label (text for the link below the banner) -->
+<meta class="mktoString" mktoname="Banner Link Label" id="banner-link-label" default="">
+<!-- Banner Link URL (URL for the link below the banner) -->
+<meta class="mktoString" mktoname="Banner Link URL" id="banner-link-url" default="">
+ <!-- ===== SECOND BANNER SECTION VARIABLES ===== -->
+<meta class="mktoBoolean" id="show-banner-2" mktoname="Show Banner 2?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
 <meta class="mktoString" id="banner-2-image-url" mktoname="Banner 2 Image URL" default="">
-<meta class="mktoString" id="banner-2-image-link" mktoname="Banner 2 Image Link" default="#">
+<meta class="mktoString" id="banner-2-image-link" mktoname="Banner 2 Image Link URL" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
+<meta class="mktoString" id="banner-2-width" mktoname="Banner 2 Width" default="100%">
+<!-- Order for the second banner -->
+<meta class="mktoString" id="order-banner-2" mktoname="Banner 2 Order" default="2">
 
 <!-- ===== SECTION (HERO LIGHT) VARIABLES ===== -->
 <meta class="mktoBoolean" id="show-hero-light" mktoname="Show Hero Light?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
@@ -135,8 +147,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
 <!-- ===== SECTION ORDERING VARIABLES (shifted +1 for banner) ===== -->
 <meta class="mktoString" id="order-header" mktoname="Header Order" default="1">
-<meta class="mktoString" id="order-banner" mktoname="Banner Order" default="2">
-<meta class="mktoString" id="order-banner-2" mktoname="Banner Order" default="3">
+<meta class="mktoString" id="order-banner" mktoname="Banner Order" default="3">
 <meta class="mktoString" id="order-hero-light" mktoname="Hero Light Order" default="4">
 <meta class="mktoString" id="order-hero-dark" mktoname="Hero Dark Order" default="5">
 <meta class="mktoString" id="order-value-props" mktoname="Value Props Order" default="6">
@@ -230,9 +241,8 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     .banner-section {
       display: ${show-banner};
       order: ${order-banner};
-	    width:100vw;
       background-color: ${banner-bgColor};
-      background-image: ${banner-bg-img};
+      background-image: none;
       background-size: cover;
       background-position: center center;
       padding: 0;
@@ -243,32 +253,56 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       max-width: ${banner-width};
     }
 
+    /* When in full-width mode (100%), remove container constraints so the image spans edge-to-edge */
+    .banner-section .banner-container:has(+ *) {
+      /* container is present; full-width handled via max-width variable */
+    }
+
     .banner-section .banner-img-wrapper {
       max-width: ${banner-width};
       margin: 0 auto;
-      width:100vw; 
-      margin-left:-50vw; 
-      left:50%; 
-      position:relative; 
-      overflow:hidden;
     }
 
     .banner-section .banner-img-wrapper img {
       width: 100%;
       height: auto;
       display: block;
-      width:100vw; 
-      height:auto;
     }
-	
-  	.banner-section-2 {
-      display: ${show-banner2};
-      order: ${order-banner-2};
-      background-color: ${banner2-bgColor};
-    }
-    .banner-section-2 img{
-		  width: 100%;
-	  }
+
+    /* ===== SECOND BANNER SECTION STYLES =====
+/* This section sits below the header and displays a client-uploaded banner graphic.
+   Two modes: Fixed (640px max-width, centered) and Full Width (100% viewport) */
+.banner-section-2 {
+  display: ${show-banner-2};
+  order: ${order-banner-2};
+  background-color: ${banner-bgColor};
+  background-image: none;
+  background-size: cover;
+  background-position: center center;
+  padding: 0;
+}
+
+.banner-section-2 .banner-container-2 {
+  padding: 0;
+  max-width: ${banner-2-width};
+}
+
+/* When in full-width mode (100%), remove container constraints so the image spans edge-to-edge */
+.banner-section-2 .banner-container-2:has(+ *) {
+  /* container is present; full-width handled via max-width variable */
+}
+
+.banner-section-2 .banner-img-wrapper-2 {
+  max-width: ${banner-2-width};
+  margin: 0 auto;
+}
+
+.banner-section-2 .banner-img-wrapper-2 img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
 
     /* ===== SECTION 1 - LIGHT HERO STYLES ===== */
@@ -332,10 +366,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       display: ${show-event-card};
       background: #fff;
       border: 1px solid var(--sai-border);
-      border-radius: 10px;
+      border-radius: 8px;
       padding: calc(60px * 1.25) calc(30px * 1.25);
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .sec1-hero .virtual-event-badge {
@@ -440,10 +474,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       display: ${show-event-card};
       background: #fff;
       border: 1px solid var(--sai-border);
-      border-radius: 10px;
+      border-radius: 8px;
       padding: calc(60px * 1.25) calc(30px * 1.25);
       text-align: center;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .sec-hero-dark .virtual-event-badge {
@@ -853,24 +887,26 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       </div>
     </header>
 
-    <!-- ===== BANNER SECTION (client-uploaded banner graphic - full width) ===== -->
-    <section class="banner-section">
-      <div class="banner-img-wrapper">
-          <a href="${banner-image-link}" target="_blank">
-            <div class="mktoImg" id="banner-img" mktoname="Banner Image">
-              <img src="https://placehold.co/640x200" alt="">
-          </div>
-        </a>
+    <!-- ===== SECOND BANNER SECTION (NEW - client-uploaded banner graphic) ===== -->
+    <!-- Two sizing modes: Fixed (640px centered) and Full Width (100% viewport).
+         Toggle via the "Banner 2 Full Width?" boolean in Marketo editor. -->
+      <section class="banner-section" style="width:100vw; margin-left:-50vw; left:50%; position:relative;"><div class="banner-img-wrapper-2" style="width:100vw; margin-left:-50vw; left:50%; position:relative; overflow:hidden;">
+        <div class="banner-img-wrapper-2">
+          <a href="${banner-2-image-link}" target="_blank"><div class="mktoImg" id="banner-2-img" mktoname="Banner 2 Image">
+              <img src="https://placehold.co/640x200" alt="" style="width:100%;height:200px;object-fit:cover;">
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- ===== BANNER SECTION 2 (constrained to 1080px) ===== -->
-    <section class="banner-section-2">
-      <div class="container">
+    <!-- Two sizing modes: Fixed (640px centered) and Full Width (100% viewport).
+         Toggle via the "Banner Full Width?" boolean in Marketo editor. -->
+    <section class="banner-section">
+      <div class="container banner-container">
         <div class="banner-img-wrapper">
-          <a href="${banner-2-image-link}" target="_blank">
-            <div class="mktoImg" id="banner-img-2" mktoname="Banner 2 Image">
-              <img src="${banner-2-image-url}" alt="">
+          <a href="${banner-image-link}" target="_blank"><div class="mktoImg" id="banner-img" mktoname="Banner Image">
+              <img src="https://placehold.co/640x200" alt="" style="width:100%;height:200px;object-fit:cover;">
             </div>
           </a>
         </div>

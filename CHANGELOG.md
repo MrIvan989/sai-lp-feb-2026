@@ -1,6 +1,77 @@
 # Changelog
 
-## [Unreleased] — 2026-05-26
+## [Released] — 2026-05-27
+
+### Changed
+
+#### Banner Roles Swapped
+- **Banner 1** (was constrained 640px) → now **full-width** edge-to-edge using `width:100vw; overflow:hidden` approach. Occupies the `banner-section` class.
+- **Banner 2** (was full-width 100vw) → now **container-constrained** (1080px max). Occupies the `banner-section-2` class.
+- Banner 2 CSS simplified — removed complex `banner-container-2`, `banner-img-wrapper-2`, and `:has(+ *)` selector logic. Now uses simple `display`, `order`, `background-color`, and `img {width:100%}`.
+- Both files updated consistently.
+
+#### Card Styling Refined (Both Files)
+- Value props and speaker cards: `border-radius` increased from `8px` to `10px`.
+- Card padding increased: `60px 30px` → `75px 38px`.
+- Card box-shadow darkened: `0 2px 8px rgba(0,0,0,0.06)` → `0 3px 10px rgba(0,0,0,0.06)`.
+- Card title font sizes increased (AIN: `1.35rem` → `1.45rem` and `1.15rem` → `1.45rem`).
+
+#### Section Orders Re-baselined
+- Banner split into two independently-orderable sections (Banner at position 2, Banner 2 at position 3).
+- All downstream sections shifted +1 from the 2026-05-26 baseline:
+
+| Section | 05-26 Default | 05-27 Default |
+|---|---|---|
+| Header | 1 | 1 |
+| Banner | 2 | 2 |
+| **Banner 2** | *(not separate)* | **3** |
+| Hero Light | 3 | 4 |
+| Hero Dark | 4 | 5 |
+| Value Props | 5 | 6 |
+| Quote | 6 | 7 |
+| Key Takeaways | 7 | 8 |
+| Title & Text | 8 | 9 |
+| Speakers | 9 | 10 |
+| Form | 10 | 11 |
+| Footer | 11 | 12 |
+
+### Added
+
+- **`banner2-bgColor`** (mktoColor) — Banner 2 background color. Defaults: `#ffffff` (SAFe), `#eeeeff` (AIN).
+- **`banner-bg-img`** (mktoString) — Banner 1 background image URL (token only; no meta declaration).
+
+### Removed
+
+#### Meta Variables Cleaned Up
+Several Marketo editor variables were removed to reduce editor clutter. The underlying `${variable-name}` tokens remain in CSS/HTML so values can still be set via direct code edits or programmatically:
+
+- **`page-title`** (mktoString) — meta declaration removed; token still used in `<title>` and OG meta tags.
+- **`page-desc`** (mktoString) — meta declaration removed; token still used in OG description tag.
+- **`body-bgImage`** (mktoString) — meta declaration removed; token still referenced in CSS `background-image`.
+- **`header-bgImage`** (mktoString) — fully removed from AIN (CSS hardcoded to `background-image: none`). Never existed in SAFe.
+- **`banner-width`** (mktoString) — meta declaration removed; token still referenced in CSS `max-width`.
+- **`banner-link-label`** and **`banner-link-url`** (both mktoString) — fully removed (meta + body markup); banner link text feature below banner image is gone.
+
+### Renamed
+
+| Old ID | New ID | Notes |
+|---|---|---|
+| `show-banner-2` | `show-banner2` | mktoname unchanged: "Show Banner 2?" |
+| *(none; was `banner-bgImage`)* | `banner-bg-img` | Renamed in CSS; no meta declaration yet |
+| `mktoname="Banner Image Link URL"` | `mktoname="Banner 1 Image Link"` | Same `id="banner-image-link"` |
+| `mktoname="Banner 2 Image Link URL"` | `mktoname="Banner 2 Image Link"` | Same `id="banner-2-image-link"` |
+
+### Fixed
+- AIN header `background-image` was set to `${header-bgImage}` but the variable referenced a non-existent meta; hardcoded to `none`.
+- Banner 2 image source changed from hardcoded `https://placehold.co/640x200` placeholder to Marketo variable `${banner-2-image-url}` (fixes AIN; SAFe already used the variable).
+
+### Files Modified
+- `SAFe-safe-rewind-simplified.html` — SAFe-branded template
+- `AIN-safe-rewind-simplified.html` — AI-Native-branded template
+
+---
+
+## [2026-05-26]
 
 ### Added
 
