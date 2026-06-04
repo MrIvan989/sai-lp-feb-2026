@@ -1,5 +1,36 @@
 # Changelog
 
+## [Released] — 2026-06-03
+
+### Added
+
+#### Optional Speakers 3–5
+- **Three additional speaker slots** added to the Featured Speakers section, hidden by default. Two speakers remain the default; speakers 3–5 can be toggled on individually via Marketo booleans.
+- Each extra speaker card mirrors the existing structure: `mktoImg` photo picker, `mktoText` editable bio block, and `col-md-3` grid column.
+- Default placeholder images reuse the existing Andrew (`speaker 3`, `5`) and Beth (`speaker 4`) profile photos — no new assets required.
+- **New meta variables:**
+  - `show-speaker-3` (mktoBoolean) — Show/Hide Speaker 3 (default: Hide)
+  - `show-speaker-4` (mktoBoolean) — Show/Hide Speaker 4 (default: Hide)
+  - `show-speaker-5` (mktoBoolean) — Show/Hide Speaker 5 (default: Hide)
+- **New CSS classes:** `.speaker-3-col`, `.speaker-4-col`, `.speaker-5-col` — each bound to its corresponding `${show-speaker-N}` variable to toggle the entire column.
+
+#### Second Virtual Event Extra Content
+- **Additional badge and button** added inside the existing virtual event card, hidden by default. The extra content appears below the primary badge/button within the same card wrapper — no separate card is created.
+- The second badge and button use the same styling as the primary ones and are independently editable via `mktoText` regions:
+  - Hero Light: `sec1-badge-2` (Event Badge 2) + `sec1-btnText-2` (Button Text 2, default: "Register Now")
+  - Hero Dark: `sec-dark-hero-badge-2` (Event Badge 2) + `sec-dark-hero-btnText-2` (Button Text 2, default: "Register Now")
+- Both extra elements are wrapped in a `<div class="virtual-event-card-2">` inside the existing card; the class is bound to `${show-event-card-2}` for toggle control.
+- **New meta variable:**
+  - `show-event-card-2` (mktoBoolean) — Show/Hide Second Virtual Event Extra Content (default: Hide)
+
+### Files Modified
+- `SAFe-safe-rewind-simplified.html` — SAFe-branded template (1,581 lines)
+- `AIN-safe-rewind-simplified.html` — AI-Native-branded template (1,504 lines)
+- `parse-tokens.js` — Fallback defaults for `show-event-card-2`, `show-speaker-3/4/5`
+- `parse-tokens-ain.js` — Fallback defaults for `show-event-card-2`, `show-speaker-3/4/5`
+
+---
+
 ## [Released] — 2026-05-27
 
 ### Changed

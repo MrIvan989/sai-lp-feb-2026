@@ -19,6 +19,7 @@ const tokenDefaults = {
     'hero-col-full-width':     '58.333%',
     'sec1-bgColor':            'var(--sai-light-blue)',
     'show-event-card':         'block',
+    'show-event-card-2':       'none',
 
     // ── Section 1 – Hero Dark ─────────────────────────────────────────────────
     'show-hero-dark':          'none',
@@ -43,6 +44,9 @@ const tokenDefaults = {
     // ── Section 4 – Featured Speakers ─────────────────────────────────────────
     'show-sec4':               'none',
     'sec4-bgColor':            'var(--sai-light-blue)',
+    'show-speaker-3':          'none',
+    'show-speaker-4':          'none',
+    'show-speaker-5':          'none',
 
     // ── Section 5 – Form ──────────────────────────────────────────────────────
     'show-sec5':               'block',

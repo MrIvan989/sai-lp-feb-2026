@@ -50,11 +50,11 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
 <!-- ===== 1st BANNER SECTION VARIABLES (placed after header) ===== -->
 <meta class="mktoBoolean" id="show-banner" mktoname="Show Banner?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Banner BG Color" id="banner-bgColor" default="#ffffff">
+<meta class="mktoColor" mktoname="Banner BG Color" id="banner-bgColor" default="#FFFBF4">
 <meta class="mktoString" mktoname="Banner 1 Image Link" id="banner-image-link" default="https://go.scaledagile.com/WBNR-SAFe-2026-AI-Empowered-Agility-Series_Registration.html">
 <!-- ===== 2nd BANNER SECTION VARIABLES ===== -->
 <meta class="mktoBoolean" id="show-banner2" mktoname="Show Banner 2?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
-<meta class="mktoColor" mktoname="Banner 2 BG Color" id="banner2-bgColor" default="#ffffff">
+<meta class="mktoColor" mktoname="Banner 2 BG Color" id="banner2-bgColor" default="#FFFBF4">
 <meta class="mktoString" id="banner-2-image-url" mktoname="Banner 2 Image URL" default="">
 <meta class="mktoString" id="banner-2-image-link" mktoname="Banner 2 Image Link" default="#">
 
@@ -70,6 +70,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
 <!-- ===== HERO LAYOUT VARIABLES (HERO LIGHT AND HERO DARK) ===== -->
 <meta class="mktoBoolean" id="show-event-card" mktoname="Show Virtual Event Card?" default="false" true_value="flex" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-event-card-2" mktoname="Show Second Virtual Event Card?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
 <meta class="mktoBoolean" id="hero-col-full-width" mktoname="Hero Full Width Layout?" default="false" true_value="100%" false_value="58.333%" false_value_name="No" true_value_name="Yes">
 <!-- Hero Button Size Setting -->
 <meta class="mktoString" id="hero-button-size" mktoname="Hero Button Size" default="medium">
@@ -121,6 +122,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <meta class="mktoColor" mktoname="Speakers BG Color" id="featured-speakers-bgColor" default="#F4F9FA">
 <!-- Speakers BG Image URL (leave blank for no image) -->
 <meta class="mktoString" mktoname="Speakers BG Image URL" id="featured-speakers-bgImage" default="">
+<!-- Additional Speaker Toggles -->
+<meta class="mktoBoolean" id="show-speaker-3" mktoname="Show Speaker 3?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-speaker-4" mktoname="Show Speaker 4?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-speaker-5" mktoname="Show Speaker 5?" default="false" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
 
 <!-- ===== SECTION (FORM) VARIABLES ===== -->
 <meta class="mktoBoolean" id="show-form-sec" mktoname="Show Form?" default="true" true_value="block" false_value="none" false_value_name="Hide" true_value_name="Show">
@@ -351,6 +356,22 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       margin-bottom: 16px;
     }
 
+    /* Second Virtual Event Card */
+    .sec1-hero .virtual-event-card-2 {
+      display: ${show-event-card-2};
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: #fff;
+      /* border: 1px solid var(--sai-border); */
+      border-radius: 10px;
+      padding: 40px 38px;
+      text-align: center;
+      /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06); */
+      margin-top: 20px;
+    }
+
     .btn-sai-teal {
       background-color: var(--sai-teal-hover);
       color: #fff;
@@ -461,6 +482,15 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       font-weight: 600;
       color: #053947;
       margin-bottom: 16px;
+    }
+
+    /* Second Virtual Event Extra Content */
+    .sec-hero-dark .virtual-event-card-2 {
+      display: ${show-event-card-2};
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
     }
   
     /* ===== SECTION 3 - VALUE PROPS STYLES ===== */
@@ -664,6 +694,11 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       line-height: 1.5;
     }
 
+    /* Speaker 3-5 Toggle */
+    .speaker-3-col { display: ${show-speaker-3}; }
+    .speaker-4-col { display: ${show-speaker-4}; }
+    .speaker-5-col { display: ${show-speaker-5}; }
+
     /* ===== SECTION 8 - FORM STYLES ===== */
     .sec5-form {
       display: ${show-form-sec};
@@ -793,6 +828,10 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         margin-top: 24px;
       }
 
+      .virtual-event-card-2 {
+        margin-top: 24px;
+      }
+
       .takeaways-wrapper {
         padding: 24px;
       }
@@ -918,6 +957,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
               <div class="mktoText" id="sec1-btnText" mktoname="Hero Light Button Text">
               <a class="btn-sai-teal btn-size-${hero-button-size}" href="#savemyseat" target="_blank">Save My Seat</a>
               </div>
+              <div class="virtual-event-card-2">
+                <div class="mktoText" id="sec1-badge-2" mktoname="Hero Light Event Badge 2">
+                  <p class="virtual-event-badge">Virtual Event</p>
+                </div>
+                <div class="mktoText" id="sec1-btnText-2" mktoname="Hero Light Button Text 2">
+                <a class="btn-sai-teal btn-size-${hero-button-size}" href="#savemyseat" target="_blank">Register Now</a>
+                </div>
+              </div>
             </div>
           </div>
           <!-- Virtual Event Card -->
@@ -954,6 +1001,14 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
               </div>
               <div class="mktoText" id="sec-dark-hero-btnText" mktoname="Hero Dark Button Text">
               <a class="btn-sai-teal btn-size-${hero-button-size}" href="#savemyseat" target="_blank">Save My Seat</a>
+              </div>
+              <div class="virtual-event-card-2">
+                <div class="mktoText" id="sec-dark-hero-badge-2" mktoname="Hero Dark Event Badge 2">
+                  <p class="virtual-event-badge">Virtual Event</p>
+                </div>
+                <div class="mktoText" id="sec-dark-hero-btnText-2" mktoname="Hero Dark Button Text 2">
+                <a class="btn-sai-teal btn-size-${hero-button-size}" href="#savemyseat" target="_blank">Register Now</a>
+                </div>
               </div>
             </div>
           </div>
@@ -1208,6 +1263,48 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
                 <div class="mktoText" id="sec4-speaker2-info" mktoname="Speaker 2 Info">
                   <h4>Beth Bock</h4>
                   <p>VP, Marketing, Strategy &amp; Programs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Speaker 3 -->
+          <div class="col-md-3 col-sm-6 speaker-3-col">
+            <div class="speaker-card rounded-4">
+              <div class="mktoImg" id="sec4-speaker3-img" mktoname="Speaker 3 Photo">
+                <img class="speaker-photo" src="https://go.scaledagile.com/rs/983-XYR-522/images/andrew-profile.png?version=0" alt="Speaker 3">
+              </div>
+              <div class="speaker-bio">
+                <div class="mktoText" id="sec4-speaker3-info" mktoname="Speaker 3 Info">
+                  <h4>Speaker Name</h4>
+                  <p>Speaker Title</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Speaker 4 -->
+          <div class="col-md-3 col-sm-6 speaker-4-col">
+            <div class="speaker-card rounded-4">
+              <div class="mktoImg" id="sec4-speaker4-img" mktoname="Speaker 4 Photo">
+                <img class="speaker-photo" src="https://go.scaledagile.com/rs/983-XYR-522/images/beth-profile.png?version=0" alt="Speaker 4">
+              </div>
+              <div class="speaker-bio">
+                <div class="mktoText" id="sec4-speaker4-info" mktoname="Speaker 4 Info">
+                  <h4>Speaker Name</h4>
+                  <p>Speaker Title</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Speaker 5 -->
+          <div class="col-md-3 col-sm-6 speaker-5-col">
+            <div class="speaker-card rounded-4">
+              <div class="mktoImg" id="sec4-speaker5-img" mktoname="Speaker 5 Photo">
+                <img class="speaker-photo" src="https://go.scaledagile.com/rs/983-XYR-522/images/andrew-profile.png?version=0" alt="Speaker 5">
+              </div>
+              <div class="speaker-bio">
+                <div class="mktoText" id="sec4-speaker5-info" mktoname="Speaker 5 Info">
+                  <h4>Speaker Name</h4>
+                  <p>Speaker Title</p>
                 </div>
               </div>
             </div>
