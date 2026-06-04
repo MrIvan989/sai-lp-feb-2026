@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAI Landing Page Template — Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Lora:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root {
+    --skyline: #19254D;
+    --rocky: #3C71C1;
+    --horizon: #D04116;
+    --sunset: #F8A537;
+    --bone: #FFF9F2;
+    --cloud: #E8EAF4;
+    --white: #FFFFFF;
+    --shadow: #161616;
+    --font-primary: 'Lexend Deca', Verdana, sans-serif;
+    --font-accent: 'Lora', Georgia, serif;
+
+    /* code syntax colors */
+    --code-bg: #1e1e2e;
+    --code-text: #cdd6f4;
+    --code-keyword: #cba6f7;
+    --code-string: #a6e3a1;
+    --code-comment: #6c7086;
+    --code-tag: #89b4fa;
+    --code-attr: #f9e2af;
+    --code-value: #a6e3a1;
+    --code-punctuation: #94e2d5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-primary);
+    background: var(--bone);
+    color: var(--skyline);
+    line-height: 1.7;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 290px;
+    min-width: 290px;
+    background: var(--skyline);
+    color: var(--bone);
+    padding: 32px 24px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .sidebar-logo {
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sidebar-logo i { color: var(--sunset); font-size: 1.3rem; }
+
+  .sidebar-section {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--sunset);
+    margin-top: 20px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .sidebar a {
+    color: var(--cloud);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: block;
+  }
+  .sidebar a:hover,
+  .sidebar a.active {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+  }
+  .sidebar a.sub { padding-left: 28px; font-size: 0.82rem; color: rgba(232,234,244,0.65); }
+  .sidebar a.sub:hover,
+  .sidebar a.sub.active { color: var(--white); }
+
+  .sidebar .brand-switch {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .sidebar .brand-btn {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 100px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: transparent;
+    color: var(--cloud);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .sidebar .brand-btn:hover { border-color: rgba(255,255,255,0.4); }
+  .sidebar .brand-btn.active {
+    background: var(--rocky);
+    border-color: var(--rocky);
+    color: var(--white);
+  }
+
+  /* ── Main Content ── */
+  .main {
+    flex: 1;
+    max-width: 960px;
+    padding: 48px 56px 120px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--skyline);
+    margin-bottom: 8px;
+  }
+  h1 + p {
+    color: var(--rocky);
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--skyline);
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--cloud);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .anchor-icon { opacity: 0; font-size: 0.7em; transition: opacity 0.2s; }
+  h2:hover .anchor-icon { opacity: 0.5; }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--skyline);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rocky);
+    margin: 20px 0 8px;
+  }
+
+  p, li { font-size: 0.95rem; line-height: 1.75; }
+  p + p { margin-top: 10px; }
+  ul, ol { padding-left: 24px; margin: 10px 0; }
+  li { margin-bottom: 6px; }
+
+  a {
+    color: var(--rocky);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  a:hover { color: var(--skyline); text-decoration: underline; }
+
+  /* ── Section Cards ── */
+  .section-card {
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    border-radius: 12px;
+    padding: 0;
+    margin: 20px 0;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+  }
+  .section-card:hover { box-shadow: 0 4px 20px rgba(25,37,77,0.06); }
+
+  .section-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    background: var(--white);
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+  .section-card-header:hover { background: var(--bone); }
+  .section-card.open .section-card-header { border-bottom-color: var(--cloud); }
+
+  .section-card-header .left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--cloud);
+    color: var(--skyline);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .section-card-header .title { font-weight: 600; font-size: 1rem; color: var(--skyline); }
+  .section-card-header .subtitle { font-size: 0.78rem; color: var(--rocky); font-weight: 500; }
+
+  .section-card-header .chevron {
+    color: var(--rocky);
+    transition: transform 0.25s ease;
+    font-size: 0.8rem;
+  }
+  .section-card.open .chevron { transform: rotate(180deg); }
+
+  .section-card-body {
+    display: none;
+    padding: 20px 24px;
+    background: var(--bone);
+  }
+  .section-card.open .section-card-body { display: block; }
+
+  /* ── Variable / Token Tables ── */
+  .vars-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 0.85rem;
+  }
+  .vars-table th {
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--rocky);
+    padding: 10px 12px 8px;
+    border-bottom: 2px solid var(--cloud);
+    font-weight: 700;
+  }
+  .vars-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--cloud);
+    vertical-align: top;
+  }
+  .vars-table tr:last-child td { border-bottom: none; }
+  .vars-table .type-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+  }
+  .type-badge.boolean { background: #dbeafe; color: #1e40af; }
+  .type-badge.string { background: #d1fae5; color: #065f46; }
+  .type-badge.color { background: #fef3c7; color: #92400e; }
+  .type-badge.text { background: #fce7f3; color: #9d174d; }
+  .type-badge.image { background: #e0e7ff; color: #3730a3; }
+  .type-badge.form { background: #f3e8ff; color: #6b21a8; }
+
+  code.inline {
+    background: var(--cloud);
+    color: var(--skyline);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-weight: 500;
+  }
+
+  /* ── Code Blocks ── */
+  pre {
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 20px 24px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    margin: 14px 0;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  }
+  pre .kw { color: var(--code-keyword); }
+  pre .str { color: var(--code-string); }
+  pre .cm { color: var(--code-comment); }
+  pre .tag { color: var(--code-tag); }
+  pre .attr { color: var(--code-attr); }
+  pre .val { color: var(--code-value); }
+  pre .punc { color: var(--code-punctuation); }
+
+  /* ── Badges ── */
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-skyline { background: var(--skyline); color: var(--white); }
+  .badge-rocky { background: var(--rocky); color: var(--white); }
+  .badge-horizon { background: var(--horizon); color: var(--white); }
+  .badge-sunset { background: var(--sunset); color: var(--skyline); }
+
+  /* ── Alerts ── */
+  .alert {
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .alert-info { background: #dbeafe; color: #1e40af; border-left: 4px solid var(--rocky); }
+  .alert-warning { background: #fef3c7; color: #92400e; border-left: 4px solid var(--sunset); }
+  .alert-tip { background: #d1fae5; color: #065f46; border-left: 4px solid #10b981; }
+  .alert i { font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+
+  /* ── How-To Steps ── */
+  .step {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--rocky);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; }
+  .step-content p { margin: 0 0 8px; }
+
+  /* ── Token / CSS cross-reference ── */
+  .token-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cloud);
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-family: 'SF Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--skyline);
+    margin: 2px 4px;
+  }
+  .token-chip .arrow { color: var(--rocky); font-weight: 700; }
+
+  /* ── Responsive ── */
+  @media (max-width: 980px) {
+    body { flex-direction: column; }
+    .sidebar {
+      width: 100%; min-width: 100%; height: auto; position: relative;
+      padding: 20px; flex-direction: row; flex-wrap: wrap; gap: 4px;
+      overflow-y: visible;
+    }
+    .sidebar-logo { width: 100%; }
+    .sidebar-section { display: none; }
+    .sidebar a { display: inline-block; font-size: 0.78rem; padding: 5px 10px; }
+    .sidebar a.sub { display: none; }
+    .sidebar .brand-switch { width: 100%; }
+    .main { padding: 24px 20px 80px; max-width: 100%; }
+    h1 { font-size: 1.6rem; }
+  }
+
+  /* ── AIN brand override ── */
+  body.ain-mode { }
+  body.ain-mode .show-safe { display: none; }
+  body:not(.ain-mode) .show-ain { display: none; }
+
+  /* ── Scroll indicator ── */
+  .scroll-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--rocky);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 16px rgba(25,37,77,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { background: var(--skyline); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ SIDEBAR ═══════════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <i class="fa-solid fa-book-open"></i> Template Docs
+  </div>
+  <div class="sidebar-section">Overview</div>
+  <a href="#overview" class="active">Repository Overview</a>
+  <a href="#architecture">Architecture</a>
+  <a href="#parse-tokens">parse-tokens.js</a>
+  <div class="sidebar-section">Sections</div>
+  <a href="#sec-header" class="sub">Header</a>
+  <a href="#sec-banner" class="sub">Banner</a>
+  <a href="#sec-banner2" class="sub">Banner 2</a>
+  <a href="#sec-hero-light" class="sub">Hero Light</a>
+  <a href="#sec-hero-dark" class="sub">Hero Dark</a>
+  <a href="#sec-value-props" class="sub">Value Props</a>
+  <a href="#sec-quote" class="sub">Quote</a>
+  <a href="#sec-key-takeaways" class="sub">Key Takeaways</a>
+  <a href="#sec-title-text" class="sub">Title &amp; Text</a>
+  <a href="#sec-speakers" class="sub">Speakers</a>
+  <a href="#sec-form" class="sub">Form</a>
+  <a href="#sec-footer" class="sub">Footer</a>
+  <a href="#sec-carousel" class="sub">Carousel</a>
+  <div class="sidebar-section">How-To</div>
+  <a href="#howto-new-section">Add a Section</a>
+  <a href="#howto-text-module">Add a Text Module</a>
+  <a href="#howto-speaker">Add a Speaker</a>
+  <a href="#howto-image">Add an Image</a>
+  <a href="#howto-meta">Add Meta Variables</a>
+  <div class="brand-switch">
+    <button class="brand-btn active" onclick="setBrand('safe')">SAFe</button>
+    <button class="brand-btn" onclick="setBrand('ain')">AI‑Native</button>
+  </div>
+</nav>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main class="main" id="main">
+
+<h1>SAI Landing Page Template<br>Documentation</h1>
+<p>Marketo Guided Landing Page templates for the SAFe Summit Rewind webinar series.</p>
+
+<div class="alert alert-info">
+  <i class="fa-solid fa-circle-info"></i>
+  <div><strong>Two active templates:</strong> <code class="inline">SAFe-safe-rewind-simplified.html</code> (SAFe brand, Noto Sans font) and <code class="inline">AIN-safe-rewind-simplified.html</code> (AI-Native brand, Montserrat font). They share the same section structure but use different branding, CSS tokens, and variable prefixes. Toggle brands using the sidebar buttons.</div>
+</div>
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<h2 id="overview">Repository Overview <a href="#overview" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>This repository contains <strong>Marketo Guided Landing Page</strong> templates for lead-generation webinars. The templates are designed for use inside Marketo's template editor — all configurable elements are exposed through <code class="inline">&lt;meta&gt;</code> tags that power the Marketo UI.</p>
+
+<h3>Key Files</h3>
+<table class="vars-table">
+  <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td><code class="inline">SAFe-safe-rewind-simplified.html</code></td><td>SAFe-branded template (~1,570 lines). Noto Sans + Reenie Beanie fonts. Dark teal/cream/orange palette.</td></tr>
+    <tr><td><code class="inline">AIN-safe-rewind-simplified.html</code></td><td>AI-Native-branded template (~1,490 lines). Montserrat font. Deep purple/indigo palette.</td></tr>
+    <tr><td><code class="inline">parse-tokens.js</code></td><td>Token fallback map for <strong>SAFe</strong> local preview. Populates <code class="inline">${...}</code> tokens in CSS when opened outside Marketo.</td></tr>
+    <tr><td><code class="inline">parse-tokens-ain.js</code></td><td>Token fallback map for <strong>AIN</strong> local preview. Same mechanism, different defaults.</td></tr>
+    <tr><td><code class="inline">ain-style-form.css</code></td><td>External Marketo form overrides for the AIN template. Custom input styling, button colors, responsive rules.</td></tr>
+    <tr><td><code class="inline">CHANGELOG.md</code></td><td>Release history: banner roles swap, takeaway expansion, speaker slots, section order renumbering.</td></tr>
+    <tr><td><code class="inline">assets/</code></td><td>Static images: logos, speaker photos, quote decorations, icon set, tree ring background.</td></tr>
+    <tr><td><code class="inline">src/</code></td><td>Source design files (AI-Native logo .ai source + featured .jpg).</td></tr>
+  </tbody>
+</table>
+
+<h3>CDN Dependencies</h3>
+<ul>
+  <li><strong>Bootstrap 5.3.3</strong> — grid system, utility classes, JS bundle</li>
+  <li><strong>Font Awesome 6.5.1</strong> — social media icons, checkmark icons in takeaways</li>
+  <li><strong>Google Fonts</strong> — Noto Sans + Reenie Beanie (SAFe) / Montserrat (AIN)</li>
+  <li><strong>Google Tag Manager</strong> — GTM-MQJSCGJ with noscript fallback</li>
+</ul>
+<p>No local package manager, build step, or npm dependencies. Edit HTML/CSS directly.</p>
+
+<!-- ═══════════════ ARCHITECTURE ═══════════════ -->
+<h2 id="architecture">Architecture <a href="#architecture" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<h3>Marketo Meta Variable System</h3>
+<p>Every configurable property is declared via <code class="inline">&lt;meta&gt;</code> tags in the <code class="inline">&lt;head&gt;</code>. These tags define the Marketo editor UI fields. The HTML body and CSS reference these variables using <code class="inline">${variable-id}</code> tokens — Marketo replaces them at compile time.</p>
+
+<p>Five Marketo variable types are used:</p>
+<table class="vars-table">
+  <thead><tr><th>Type</th><th>CSS Class</th><th>Purpose</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td><span class="type-badge boolean">mktoBoolean</span></td><td><code class="inline">class="mktoBoolean"</code></td><td>Show/hide toggles. Defines two possible output values.</td><td><code class="inline">true_value="block" false_value="none"</code></td></tr>
+    <tr><td><span class="type-badge string">mktoString</span></td><td><code class="inline">class="mktoString"</code></td><td>Free-text values (URLs, order numbers, button labels).</td><td><code class="inline">default="Save My Seat"</code></td></tr>
+    <tr><td><span class="type-badge color">mktoColor</span></td><td><code class="inline">class="mktoColor"</code></td><td>Color picker for backgrounds, text, accents.</td><td><code class="inline">default="#FFFBF4"</code></td></tr>
+    <tr><td><span class="type-badge text">mktoText</span></td><td><code class="inline">&lt;div class="mktoText"&gt;</code></td><td>Rich text editable regions in the page body.</td><td><code class="inline">mktoname="Hero Light Content"</code></td></tr>
+    <tr><td><span class="type-badge image">mktoImg</span></td><td><code class="inline">&lt;div class="mktoImg"&gt;</code></td><td>Image picker for logos, banners, speaker photos.</td><td><code class="inline">mktoname="Header Logo"</code></td></tr>
+  </tbody>
+</table>
+
+<div class="alert alert-tip">
+  <i class="fa-solid fa-lightbulb"></i>
+  <div><strong>SAFe has ~113 meta variables; AIN has ~117.</strong> The difference comes from AIN-specific variables like <code class="inline">form-title-color</code>, <code class="inline">form-bgColor</code>, and <code class="inline">quotes-color</code> that SAFe handles differently.</div>
+</div>
+
+<h3>Section Ordering System</h3>
+<p>Every section has an <code class="inline">order-*</code> mktoString variable. The body uses a flexbox wrapper (<code class="inline">.page-wrapper { display: flex; flex-direction: column; }</code>) and each section's CSS uses <code class="inline">order: ${order-*}</code>. This enables drag-and-drop section reordering in Marketo's editor without touching HTML structure.</p>
+
+<table class="vars-table">
+  <thead><tr><th>Section</th><th>SAFe Variable</th><th>AIN Variable</th><th>Default Order</th><th>CSS Class</th></tr></thead>
+  <tbody>
+    <tr><td>Header</td><td><code class="inline">order-header</code></td><td><code class="inline">order-header</code></td><td>1</td><td><code class="inline">.header-section</code></td></tr>
+    <tr><td>Banner</td><td><code class="inline">order-banner</code></td><td><code class="inline">order-banner</code></td><td>2</td><td><code class="inline">.banner-section</code></td></tr>
+    <tr><td>Banner 2</td><td><code class="inline">order-banner-2</code></td><td><code class="inline">order-banner-2</code></td><td>3</td><td><code class="inline">.banner-section-2</code></td></tr>
+    <tr><td>Hero Light</td><td><code class="inline">order-hero-light</code></td><td><code class="inline">order-sec1</code></td><td>4</td><td><code class="inline">.sec1-hero</code></td></tr>
+    <tr><td>Hero Dark</td><td><code class="inline">order-hero-dark</code></td><td><code class="inline">order-hero-dark</code></td><td>5</td><td><code class="inline">.sec-hero-dark</code></td></tr>
+    <tr><td>Value Props</td><td><code class="inline">order-value-props</code></td><td><code class="inline">order-sec2</code></td><td>6</td><td><code class="inline">.sec2-value-props</code></td></tr>
+    <tr><td>Quote</td><td><code class="inline">order-quote</code></td><td><code class="inline">order-sec2-quote</code></td><td>7</td><td><code class="inline">.sec2-quote</code></td></tr>
+    <tr><td>Key Takeaways</td><td><code class="inline">order-key-takeaways</code></td><td><code class="inline">order-sec3</code></td><td>8</td><td><code class="inline">.sec3-takeaways</code></td></tr>
+    <tr><td>Title &amp; Text</td><td><code class="inline">order-text-only</code></td><td><code class="inline">order-sec3-text</code></td><td>9</td><td><code class="inline">.sec3-titletext</code></td></tr>
+    <tr><td>Speakers</td><td><code class="inline">order-speakers</code></td><td><code class="inline">order-sec4</code></td><td>10</td><td><code class="inline">.sec4-speakers</code></td></tr>
+    <tr><td>Form</td><td><code class="inline">order-form-cta</code></td><td><code class="inline">order-sec5</code></td><td>11</td><td><code class="inline">.sec5-form</code></td></tr>
+    <tr><td>Footer</td><td><code class="inline">order-footer</code></td><td><code class="inline">order-footer</code></td><td>12</td><td><code class="inline">.footer-section</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Visibility Toggles</h3>
+<p>Each section has a <code class="inline">show-*</code> mktoBoolean that outputs <code class="inline">"block"</code> or <code class="inline">"none"</code>. CSS applies it directly:</p>
+<pre><span class="cm">/* SAFe example */</span>
+<span class="tag">.sec1-hero</span> {
+  <span class="attr">display</span>: <span class="punc">${</span><span class="str">show-hero-light</span><span class="punc">}</span>;
+  <span class="attr">order</span>: <span class="punc">${</span><span class="str">order-hero-light</span><span class="punc">}</span>;
+}</pre>
+
+<div class="alert alert-warning">
+  <i class="fa-solid fa-triangle-exclamation"></i>
+  <div><strong>Takeaway items 5–10 use <code class="inline">!important</code> values.</strong> Because Bootstrap's <code class="inline">.d-flex</code> utility carries <code class="inline">!important</code>, the boolean outputs <code class="inline">"flex!important"</code> / <code class="inline">"none!important"</code>. CSS selectors use combined specificity: <code class="inline">.takeaway-item-5.d-flex { display: ${show-takeaway5}; }</code></div>
+</div>
+
+<h3>CSS Custom Properties (Design Tokens)</h3>
+<div class="show-safe">
+<h4>SAFe Brand</h4>
+<pre><span class="tag">:root</span> {
+  <span class="attr">--sai-dark</span>:   <span class="val">#053947</span>;     <span class="cm">/* Deep teal — headings, dark backgrounds */</span>
+  <span class="attr">--sai-teal</span>:   <span class="val">#8ACBCE</span>;     <span class="cm">/* Light teal accent */</span>
+  <span class="attr">--sai-teal-hover</span>: <span class="val">#0A83A0</span>; <span class="cm">/* Button / CTA background */</span>
+  <span class="attr">--sai-light-blue</span>: <span class="val">#F4F9FA</span>; <span class="cm">/* Section background */</span>
+  <span class="attr">--sai-cream</span>:  <span class="val">#FFFBF4</span>;     <span class="cm">/* Warm section background / footer text */</span>
+  <span class="attr">--sai-white</span>:  <span class="val">#ffffff</span>;     <span class="cm">/* Cards, modals */</span>
+  <span class="attr">--sai-border</span>: <span class="val">#e0e0e0</span>;     <span class="cm">/* Card borders */</span>
+  <span class="attr">--sai-text</span>:   <span class="val">#343333</span>;     <span class="cm">/* Body text */</span>
+  <span class="attr">--sai-text-light</span>: <span class="val">#666666</span>;  <span class="cm">/* Secondary text */</span>
+  <span class="attr">--sai-orange</span>: <span class="val">#CB9349</span>;     <span class="cm">/* Hero divider, accent */</span>
+  <span class="attr">--sai-card-border-value</span>:  <span class="val">#CB9349</span>; <span class="cm">/* Value card left border */</span>
+  <span class="attr">--sai-card-border-vision</span>: <span class="val">#1A6137</span>; <span class="cm">/* Vision card left border */</span>
+  <span class="attr">--sai-card-border-reveal</span>: <span class="val">#0A83A0</span>; <span class="cm">/* Reveal card left border */</span>
+}</pre>
+</div>
+<div class="show-ain">
+<h4>AI-Native Brand</h4>
+<pre><span class="tag">:root</span> {
+  <span class="attr">--dark-purple</span>:   <span class="val">#7b42ff</span>;     <span class="cm">/* Deep purple — dark backgrounds */</span>
+  <span class="attr">--medium-purple</span>: <span class="val">#c3c2ff</span>;     <span class="cm">/* Accent purple — header BG */</span>
+  <span class="attr">--light-purple</span>:  <span class="val">#eeeeff</span>;     <span class="cm">/* Section background */</span>
+  <span class="attr">--dark-teal</span>:     <span class="val">#288c89</span>;     <span class="cm">/* Teal accent */</span>
+  <span class="attr">--teal</span>:          <span class="val">#54d1ca</span>;     <span class="cm">/* Light teal hover */</span>
+  <span class="attr">--light-teal</span>:    <span class="val">#e6fffb</span>;     <span class="cm">/* Light teal BG (not in AIN root, in CSS) */</span>
+  <span class="attr">--dark-text</span>:     <span class="val">#3f3f3f</span>;     <span class="cm">/* Body text */</span>
+  <span class="attr">--white-text</span>:    <span class="val">#ffffff</span>;
+  <span class="attr">--light-border</span>:  <span class="val">#e6e8e8</span>;     <span class="cm">/* Card borders */</span>
+}</pre>
+</div>
+
+<!-- ═══════════════ PARSE-TOKENS ═══════════════ -->
+<h2 id="parse-tokens">parse-tokens.js / parse-tokens-ain.js <a href="#parse-tokens" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>These files serve <strong>one purpose</strong>: make the templates render correctly when opened directly in a browser (outside of Marketo's compilation pipeline).</p>
+
+<h3>How It Works</h3>
+<ol>
+  <li>Both files define a <code class="inline">tokenDefaults</code> object mapping <strong>every CSS token variable</strong> to a fallback value.</li>
+  <li>On <code class="inline">DOMContentLoaded</code>, each file scans all <code class="inline">&lt;style&gt;</code> blocks and replaces any remaining <code class="inline">${variable-name}</code> tokens with the fallback values.</li>
+  <li>If Marketo has already compiled the template (replacing <code class="inline">${...}</code> with real values), the regex finds nothing and the script is a no-op.</li>
+</ol>
+
+<h3>What They Cover</h3>
+<p>The token defaults cover <strong>only CSS-referenced tokens</strong> — show/hide booleans, background colors, section background colors, footer text colors, etc. They do <em>not</em> cover <code class="inline">mktoText</code> or <code class="inline">mktoImg</code> content (which is hardcoded as defaults in the HTML body).</p>
+
+<div class="show-safe">
+<h4>SAFe parse-tokens.js (73 lines)</h4>
+<pre><span class="kw">const</span> tokenDefaults = {
+    <span class="cm">// ── Page</span>
+    <span class="str">'bodyBGcolor'</span>:     <span class="str">'var(--sai-white)'</span>,
+    <span class="cm">// ── Header</span>
+    <span class="str">'show-header'</span>:     <span class="str">'block'</span>,
+    <span class="str">'header-bgColor'</span>:  <span class="str">'var(--sai-cream)'</span>,
+    <span class="str">'header-logo-position'</span>: <span class="str">'0 auto'</span>,
+    <span class="cm">// ── Hero Light</span>
+    <span class="str">'show-sec1'</span>:        <span class="str">'none'</span>,
+    <span class="str">'hero-col-full-width'</span>: <span class="str">'58.333%'</span>,
+    <span class="str">'sec1-bgColor'</span>:      <span class="str">'var(--sai-light-blue)'</span>,
+    <span class="str">'show-event-card'</span>:   <span class="str">'block'</span>,
+    <span class="str">'show-event-card-2'</span>: <span class="str">'none'</span>,
+    <span class="cm">// ... covers all 12 sections + carousel</span>
+};
+
+<span class="kw">document</span>.addEventListener(<span class="str">'DOMContentLoaded'</span>, () => {
+    <span class="kw">document</span>.querySelectorAll(<span class="str">'style'</span>).forEach(styleEl => {
+        styleEl.textContent = styleEl.textContent.replace(
+            <span class="str">/\$\{([\w-]+)\}/g</span>,
+            (match, tokenName) => tokenDefaults[tokenName] ?? match
+        );
+    });
+});</pre>
+</div>
+
+<div class="show-ain">
+<h4>AIN parse-tokens-ain.js (74 lines)</h4>
+<pre><span class="kw">const</span> tokenDefaults = {
+    <span class="str">'bodyBGcolor'</span>:     <span class="str">'var(--light-purple)'</span>,
+    <span class="str">'show-header'</span>:     <span class="str">'block'</span>,
+    <span class="str">'header-bgColor'</span>:  <span class="str">'var(--light-purple)'</span>,
+    <span class="str">'header-logo-position'</span>: <span class="str">'0 auto'</span>,
+    <span class="str">'show-sec1'</span>:        <span class="str">'none'</span>,
+    <span class="str">'hero-col-full-width'</span>: <span class="str">'58.333%'</span>,
+    <span class="str">'sec1-bgColor'</span>:      <span class="str">'var(--light-purple)'</span>,
+    <span class="str">'show-event-card'</span>:   <span class="str">'block'</span>,
+    <span class="str">'show-event-card-2'</span>: <span class="str">'none'</span>,
+    <span class="str">'show-sec2'</span>:        <span class="str">'none'</span>,
+    <span class="cm">// ... covers all sections</span>
+    <span class="str">'form-title-color'</span>: <span class="str">'var(--dark-purple)'</span>,
+    <span class="str">'footer-bgColor'</span>:   <span class="str">'var(--light-purple)'</span>,
+    <span class="str">'footer-textColor'</span>:  <span class="str">'var(--dark-purple)'</span>,
+};
+<span class="cm">// Same DOMContentLoaded regex replace</span></pre>
+</div>
+
+<div class="alert alert-tip">
+  <i class="fa-solid fa-lightbulb"></i>
+  <div><strong>To preview a specific section locally:</strong> change its <code class="inline">show-*</code> value in <code class="inline">tokenDefaults</code> to <code class="inline">"block"</code> and refresh. This is how the templates were developed before Marketo compilation.</div>
+</div>
+
+<!-- ═══════════════ SECTIONS ═══════════════ -->
+<div class="section-card open" id="sec-header">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">1</div>
+      <div>
+        <div class="title">Header</div>
+        <div class="subtitle">Logo, branding bar at top of page</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>The header displays the Scaled Agile logo with configurable alignment and size. It sits at the top of the landing page below the GTM noscript tag.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.header-section</code> — display controlled by <code class="inline">${show-header-logo}</code>, order by <code class="inline">${order-header}</code>.</p>
+    <p>Logo wrapper: <code class="inline">.header-logo</code> — horizontal margin controlled by <code class="inline">${header-logo-position}</code>, width by <code class="inline">${header-logo-width}</code>.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.header-section <span class="arrow">→</span> ${show-header-logo}</span>
+      <span class="token-chip">.header-section <span class="arrow">→</span> ${order-header}</span>
+      <span class="token-chip">.header-logo <span class="arrow">→</span> ${header-logo-position}</span>
+      <span class="token-chip">.header-logo <span class="arrow">→</span> ${header-logo-width}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">header-logo-link</code></td><td><span class="type-badge string">mktoString</span></td><td>Header Logo URL</td><td class="show-safe">https://www.scaledagile.com/</td><td class="show-ain">https://www.scaledagile.com/</td></tr>
+        <tr><td><code class="inline">header-logo-position</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Center Scaled Agile Logo</td><td class="show-safe">true → "0 auto"</td><td class="show-ain">true → "0 auto"</td></tr>
+        <tr><td><code class="inline">show-header-logo</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Header Logo?</td><td class="show-safe">Show → "block"</td><td class="show-ain">Show → "block"</td></tr>
+        <tr><td><code class="inline">header-logo-width</code></td><td><span class="type-badge string">mktoString</span></td><td>Header Logo Width</td><td class="show-safe">180px</td><td class="show-ain">180px</td></tr>
+        <tr class="show-ain"><td><code class="inline">header-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Header BG Color</td><td class="show-safe">—</td><td class="show-ain">#c3c2ff</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Body Markup</h4>
+    <pre><span class="tag">&lt;header</span> <span class="attr">class</span>=<span class="str">"header-section p-4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"container"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="str">"${header-logo-link}"</span> <span class="attr">class</span>=<span class="str">"header-logo"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoImg"</span> <span class="attr">id</span>=<span class="str">"header-logo"</span> <span class="attr">mktoname</span>=<span class="str">"Header Logo"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attr">class</span>=<span class="str">"header-logo-sai"</span> <span class="attr">src</span>=<span class="str">"...sai-logo-blue.png"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/header&gt;</span></pre>
+  </div>
+</div>
+
+<div class="section-card" id="sec-banner">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">2</div>
+      <div>
+        <div class="title">Banner</div>
+        <div class="subtitle">Full-width promo banner image</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>A full-width (100vw) banner image section below the header. Designed for a client-uploaded promotional graphic. Uses a viewport-width overflow technique to span edge-to-edge.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.banner-section</code> — display: <code class="inline">${show-banner}</code>, order: <code class="inline">${order-banner}</code>. The inner <code class="inline">.banner-img-wrapper</code> uses <code class="inline">width:100vw; margin-left:-50vw; left:50%</code> for full-bleed.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.banner-section <span class="arrow">→</span> ${show-banner}</span>
+      <span class="token-chip">.banner-section <span class="arrow">→</span> ${order-banner}</span>
+      <span class="token-chip">.banner-section <span class="arrow">→</span> ${banner-bgColor}</span>
+      <span class="token-chip">.banner-section <span class="arrow">→</span> ${banner-bg-img}</span>
+      <span class="token-chip">.banner-container <span class="arrow">→</span> ${banner-width}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">show-banner</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Banner?</td><td class="show-safe">Hide</td><td class="show-ain">Hide</td></tr>
+        <tr><td><code class="inline">banner-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Banner BG Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">banner-image-link</code></td><td><span class="type-badge string">mktoString</span></td><td>Banner 1 Image Link</td><td class="show-safe">…Registration.html</td><td class="show-ain">…Registration.html</td></tr>
+        <tr><td><code class="inline">order-banner</code></td><td><span class="type-badge string">mktoString</span></td><td>Banner Order</td><td class="show-safe">2</td><td class="show-ain">2</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Body Markup</h4>
+    <pre><span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="str">"banner-section"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"banner-img-wrapper"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="str">"${banner-image-link}"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoImg"</span> <span class="attr">id</span>=<span class="str">"banner-img"</span> <span class="attr">mktoname</span>=<span class="str">"Banner Image"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="str">"https://placehold.co/640x200"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre>
+  </div>
+</div>
+
+<div class="section-card" id="sec-banner2">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">3</div>
+      <div>
+        <div class="title">Banner 2</div>
+        <div class="subtitle">Container-constrained secondary banner</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Secondary banner constrained to the 1080px container width. Independent show/hide toggle, image source, link, and background color.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.banner-section-2</code> — display: <code class="inline">${show-banner2}</code>, order: <code class="inline">${order-banner-2}</code>.</p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">show-banner2</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Banner 2?</td><td class="show-safe">Hide</td><td class="show-ain">Hide</td></tr>
+        <tr><td><code class="inline">banner2-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Banner 2 BG Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">banner-2-image-url</code></td><td><span class="type-badge string">mktoString</span></td><td>Banner 2 Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr><td><code class="inline">banner-2-image-link</code></td><td><span class="type-badge string">mktoString</span></td><td>Banner 2 Image Link</td><td class="show-safe">#</td><td class="show-ain">#</td></tr>
+        <tr><td><code class="inline">order-banner-2</code></td><td><span class="type-badge string">mktoString</span></td><td>Banner Order</td><td class="show-safe">3</td><td class="show-ain">3</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-hero-light">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">4</div>
+      <div>
+        <div class="title">Hero Light</div>
+        <div class="subtitle">Main event hero with CTA and event card</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>The primary hero section — two-column layout with event details on the left and a "Virtual Event" CTA card on the right. The "Save My Seat" button anchors to <code class="inline">#savemyseat</code> (the Form section). Supports full-width hero layout via boolean toggle.</p>
+
+    <h4>CSS Classes</h4>
+    <p><code class="inline">.sec1-hero</code> — section wrapper. Display: <code class="inline">${show-hero-light}</code>, order: <code class="inline">${order-hero-light}</code> (SAFe) / <code class="inline">${order-sec1}</code> (AIN).</p>
+    <p><code class="inline">.hero-text-col</code> — text column width controlled by <code class="inline">${hero-col-full-width}</code> (default 58.333%, or 100% for full-width).</p>
+    <p><code class="inline">.virtual-event-card</code> — display: <code class="inline">${show-event-card}</code>. The right-side card with badge + button.</p>
+    <p><code class="inline">.virtual-event-card-2</code> — display: <code class="inline">${show-event-card-2}</code>. Second badge/button inside the same card.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec1-hero <span class="arrow">→</span> ${show-hero-light}</span>
+      <span class="token-chip">.sec1-hero <span class="arrow">→</span> ${order-hero-light} (SAFe)</span>
+      <span class="token-chip">.sec1-hero <span class="arrow">→</span> ${order-sec1} (AIN)</span>
+      <span class="token-chip">.sec1-hero <span class="arrow">→</span> ${hero-light-bgColor}</span>
+      <span class="token-chip">.sec1-hero <span class="arrow">→</span> ${hero-light-bgImage}</span>
+      <span class="token-chip">.hero-text-col <span class="arrow">→</span> ${hero-col-full-width}</span>
+      <span class="token-chip">.virtual-event-card <span class="arrow">→</span> ${show-event-card}</span>
+      <span class="token-chip">.virtual-event-card-2 <span class="arrow">→</span> ${show-event-card-2}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">show-hero-light</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Hero Light?</td><td class="show-safe">Hide</td><td class="show-ain">Hide</td></tr>
+        <tr><td><code class="inline">hero-light-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Hero Light BG Color</td><td class="show-safe">#F4F9FA</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">hero-light-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Light BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr><td><code class="inline">sec1-btn-text</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Light Button Text</td><td class="show-safe">Save My Seat</td><td class="show-ain">Save My Seat</td></tr>
+        <tr><td><code class="inline">sec1-badge-text</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Light Badge Text</td><td class="show-safe">Virtual Event</td><td class="show-ain">Virtual Event</td></tr>
+        <tr><td><code class="inline">virtual-event-btn-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Virtual Event Button Color</td><td class="show-safe">#7b42ff</td><td class="show-ain">#7b42ff</td></tr>
+        <tr><td><code class="inline">hero-col-full-width</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Hero Full Width Layout?</td><td class="show-safe">No → "58.333%"</td><td class="show-ain">No → "58.333%"</td></tr>
+        <tr><td><code class="inline">hero-button-size</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Button Size</td><td class="show-safe">medium</td><td class="show-ain">medium</td></tr>
+        <tr><td><code class="inline">show-event-card</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Virtual Event Card?</td><td class="show-safe">Hide → "none"</td><td class="show-ain">Hide → "none"</td></tr>
+        <tr><td><code class="inline">show-event-card-2</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Second Virtual Event Card?</td><td class="show-safe">Hide → "none"</td><td class="show-ain">Hide → "none"</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText Regions (SAFe naming)</h4>
+    <table class="vars-table">
+      <thead><tr><th>id</th><th>mktoname</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">sec1-content</code></td><td>Hero Light Content</td></tr>
+        <tr><td><code class="inline">sec1-description</code></td><td>Hero Light Description</td></tr>
+        <tr><td><code class="inline">sec1-event-details</code></td><td>Hero Light Event Details</td></tr>
+        <tr><td><code class="inline">sec1-badge</code></td><td>Hero Light Event Badge</td></tr>
+        <tr><td><code class="inline">sec1-btnText</code></td><td>Hero Light Button Text</td></tr>
+        <tr><td><code class="inline">sec1-badge-2</code></td><td>Hero Light Event Badge 2</td></tr>
+        <tr><td><code class="inline">sec1-btnText-2</code></td><td>Hero Light Button Text 2</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-hero-dark">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">5</div>
+      <div>
+        <div class="title">Hero Dark</div>
+        <div class="subtitle">Dark-themed alternative hero variant</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Identical structure to Hero Light but with dark background and light text. Independent show/hide toggle allows using one, both, or neither hero.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec-hero-dark</code> — display: <code class="inline">${show-hero-dark}</code>, order: <code class="inline">${order-hero-dark}</code>.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec-hero-dark <span class="arrow">→</span> ${show-hero-dark}</span>
+      <span class="token-chip">.sec-hero-dark <span class="arrow">→</span> ${order-hero-dark}</span>
+      <span class="token-chip">.sec-hero-dark <span class="arrow">→</span> ${hero-dark-bgColor}</span>
+      <span class="token-chip">.sec-hero-dark <span class="arrow">→</span> ${hero-dark-bgImage}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">show-hero-dark</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Hero Dark Version?</td><td class="show-safe">Hide</td><td class="show-ain">Hide</td></tr>
+        <tr><td><code class="inline">hero-dark-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Hero Dark BG Color</td><td class="show-safe">#053947</td><td class="show-ain">#7b42ff</td></tr>
+        <tr><td><code class="inline">hero-dark-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Dark BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr><td><code class="inline">sec-hero-dark-btn-text</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Dark Button Text</td><td class="show-safe">Save My Seat</td><td class="show-ain">Save My Seat</td></tr>
+        <tr><td><code class="inline">sec-hero-dark-badge-text</code></td><td><span class="type-badge string">mktoString</span></td><td>Hero Dark Badge Text</td><td class="show-safe">Virtual Event</td><td class="show-ain">Virtual Event</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-value-props">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">6</div>
+      <div>
+        <div class="title">Value Props</div>
+        <div class="subtitle">Three value-prop cards in a grid</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Three cards in a <code class="inline">col-12 col-md-4</code> grid: Value, Vision, Reveal. Each card has a colored left border (via CSS class) and a <code class="inline">mktoText</code> editable region.</p>
+
+    <h4>CSS Classes</h4>
+    <p><code class="inline">.sec2-value-props</code> — section wrapper. Cards: <code class="inline">.value-card.card-value</code>, <code class="inline">.value-card.card-vision</code>, <code class="inline">.value-card.card-reveal</code>.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec2-value-props <span class="arrow">→</span> ${show-value-props} (SAFe) / ${show-sec2} (AIN)</span>
+      <span class="token-chip">.sec2-value-props <span class="arrow">→</span> ${order-value-props} (SAFe) / ${order-sec2} (AIN)</span>
+      <span class="token-chip">.sec2-value-props <span class="arrow">→</span> ${value-props-bgColor}</span>
+      <span class="token-chip">.sec2-value-props <span class="arrow">→</span> ${value-props-bgImage}</span>
+      <span class="token-chip">.card-value border <span class="arrow">→</span> --sai-card-border-value</span>
+      <span class="token-chip">.card-vision border <span class="arrow">→</span> --sai-card-border-vision</span>
+      <span class="token-chip">.card-reveal border <span class="arrow">→</span> --sai-card-border-reveal</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-value-props</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Value Props?</td><td>Hide</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec2</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Value Props?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">value-props-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Value Props BG Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#c3c2ff</td></tr>
+        <tr><td><code class="inline">value-props-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Value Props BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText Regions</h4>
+    <table class="vars-table">
+      <thead><tr><th>id</th><th>mktoname</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">sec2-card1</code></td><td>Value Prop - Card 1 (Value)</td></tr>
+        <tr><td><code class="inline">sec2-card2</code></td><td>Value Prop - Card 2 (Vision)</td></tr>
+        <tr><td><code class="inline">sec2-card3</code></td><td>Value Prop - Card 3 (Reveal)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-quote">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">7</div>
+      <div>
+        <div class="title">Quote</div>
+        <div class="subtitle">Decorative pull-quote with icons</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>A centered quote section with decorative quote-mark images on either side. Single <code class="inline">mktoText</code> region for the quote body + attribution.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec2-quote</code> — display: <code class="inline">${show-quote-sec}</code> (SAFe) / <code class="inline">${show-sec2-quote}</code> (AIN); order: <code class="inline">${order-quote}</code> (SAFe) / <code class="inline">${order-sec2-quote}</code> (AIN). Quote icons have class <code class="inline">.quote-icon</code> (hidden on mobile).</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec2-quote <span class="arrow">→</span> ${show-quote-sec} / ${show-sec2-quote}</span>
+      <span class="token-chip">.sec2-quote <span class="arrow">→</span> ${order-quote} / ${order-sec2-quote}</span>
+      <span class="token-chip">.sec2-quote <span class="arrow">→</span> ${sec-quote-bgColor}</span>
+      <span class="token-chip">.sec2-quote <span class="arrow">→</span> ${sec-quote-bgImage}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-quote-sec</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Quote?</td><td>Hide</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec2-quote</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Quote?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">sec-quote-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Quote BG Color</td><td class="show-safe">#F4F9FA</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">sec-quote-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Quote BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr class="show-ain"><td><code class="inline">quotes-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Quotes Text Color</td><td class="show-ain">#c3c2ff</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText Region</h4>
+    <table class="vars-table">
+      <thead><tr><th>id</th><th>mktoname</th></tr></thead>
+      <tbody><tr><td><code class="inline">sec2-quote</code></td><td>Quote Text</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-key-takeaways">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">8</div>
+      <div>
+        <div class="title">Key Takeaways</div>
+        <div class="subtitle">Up to 10 takeaway items, tree ring BG</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Title + up to 10 takeaway items in a 2-column grid. Items 1–4 are always visible; items 5–10 have individual show/hide toggles. Background defaults to the tree ring graphic.</p>
+
+    <div class="alert alert-warning">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <div><strong>Items 5–10 use <code class="inline">!important</code> display values</strong> to override Bootstrap's <code class="inline">.d-flex</code>. CSS selectors combine class specificity: <code class="inline">.takeaway-item-5.d-flex</code>.</div>
+    </div>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec3-takeaways</code> — display: <code class="inline">${show-key-takeaways}</code> (SAFe) / <code class="inline">${show-sec3}</code> (AIN). Items wrapped in <code class="inline">.takeaways-wrapper</code>. Individual item classes: <code class="inline">.takeaway-item-N</code> (1–10).</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec3-takeaways <span class="arrow">→</span> ${show-key-takeaways} / ${show-sec3}</span>
+      <span class="token-chip">.sec3-takeaways <span class="arrow">→</span> ${key-takeaways-bgColor}</span>
+      <span class="token-chip">.sec3-takeaways <span class="arrow">→</span> ${key-takeaways-bgImage}</span>
+      <span class="token-chip">.takeaway-item-5.d-flex <span class="arrow">→</span> ${show-takeaway5}</span>
+      <span class="token-chip">.takeaway-item-N.d-flex <span class="arrow">→</span> ${show-takeawayN}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th>Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-key-takeaways</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Key Takeaways?</td><td>Hide</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec3</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Key Takeaways?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">key-takeaways-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Key Takeaways BG Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">key-takeaways-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Key Takeaways BG Image URL</td><td>SAI_treering_green.png (both)</td></tr>
+        <tr><td><code class="inline">show-takeaway5</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Takeaway 5?</td><td>Hide → "none!important"</td></tr>
+        <tr><td><code class="inline">show-takeaway6</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Takeaway 6?</td><td>Hide</td></tr>
+        <tr><td colspan="4" style="text-align:center; color:var(--rocky);">… same pattern through takeaway 10 …</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText Regions (10 total)</h4>
+    <table class="vars-table">
+      <thead><tr><th>id</th><th>mktoname</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">sec3-title</code></td><td>Key Takeaways Title</td></tr>
+        <tr><td><code class="inline">sec3-takeaway1</code></td><td>Key Takeaways - Takeaway 1</td></tr>
+        <tr><td colspan="2" style="text-align:center; color:var(--rocky);">… sec3-takeaway2 through sec3-takeaway10 …</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-title-text">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">9</div>
+      <div>
+        <div class="title">Title &amp; Text</div>
+        <div class="subtitle">Freeform rich text block section</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>A simple freeform section with a configurable title color and single <code class="inline">mktoText</code> region. Useful for thank-you messages, disclaimers, or supplemental content.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec3-titletext</code> — display: <code class="inline">${show-text-only-sec}</code> (SAFe) / <code class="inline">${show-sec3-text}</code> (AIN). The section title and paragraph text color are driven by <code class="inline">${text-only-sec-text-color}</code> (SAFe) / <code class="inline">${textOnly-sec-text-color}</code> (AIN).</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec3-titletext <span class="arrow">→</span> ${show-text-only-sec} / ${show-sec3-text}</span>
+      <span class="token-chip">.sec3-titletext <span class="arrow">→</span> ${text-only-sec-text-color} / ${textOnly-sec-text-color}</span>
+      <span class="token-chip">.sec3-titletext <span class="arrow">→</span> ${text-only-sec-bgColor} / ${textOnly-sec-bgColor}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-text-only-sec</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Title and Text?</td><td>Hide</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec3-text</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Title and Text?</td><td>Hide</td></tr>
+        <tr class="show-safe"><td><code class="inline">text-only-sec-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Title and Text BG Color</td><td>#F4F9FA</td></tr>
+        <tr class="show-ain"><td><code class="inline">textOnly-sec-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Title and Text - Title BG Color</td><td>#eeeeff</td></tr>
+        <tr class="show-safe"><td><code class="inline">text-only-sec-text-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Title and Text - Text Color</td><td>#343333</td></tr>
+        <tr class="show-ain"><td><code class="inline">textOnly-sec-text-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Title and Text - Text Color</td><td>#3f3f3f</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText Region</h4>
+    <table class="vars-table">
+      <thead><tr><th>id</th><th>mktoname</th></tr></thead>
+      <tbody><tr><td><code class="inline">sec3-5-title</code></td><td>Text Only Edits</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-speakers">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">10</div>
+      <div>
+        <div class="title">Featured Speakers</div>
+        <div class="subtitle">Up to 5 speaker cards with photos</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Speaker cards in a <code class="inline">col-md-3 col-sm-6</code> grid. Speakers 1 and 2 are always present in the DOM; speakers 3–5 have individual show/hide toggles and are hidden by default. Each card has a <code class="inline">mktoImg</code> photo picker and a <code class="inline">mktoText</code> info block.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec4-speakers</code> — section wrapper. Cards: <code class="inline">.speaker-card</code>, photo: <code class="inline">.speaker-photo</code>. Speaker column toggles: <code class="inline">.speaker-3-col</code>, <code class="inline">.speaker-4-col</code>, <code class="inline">.speaker-5-col</code>.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec4-speakers <span class="arrow">→</span> ${show-featured-speakers-sec} / ${show-sec4}</span>
+      <span class="token-chip">.sec4-speakers <span class="arrow">→</span> ${order-speakers} / ${order-sec4}</span>
+      <span class="token-chip">.sec4-speakers <span class="arrow">→</span> ${featured-speakers-bgColor}</span>
+      <span class="token-chip">.speaker-3-col <span class="arrow">→</span> ${show-speaker-3}</span>
+      <span class="token-chip">.speaker-4-col <span class="arrow">→</span> ${show-speaker-4}</span>
+      <span class="token-chip">.speaker-5-col <span class="arrow">→</span> ${show-speaker-5}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-featured-speakers-sec</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Speakers?</td><td>Hide</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec4</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Key Speakers?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">featured-speakers-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Speakers BG Color</td><td class="show-safe">#F4F9FA</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">featured-speakers-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Speakers BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr><td><code class="inline">show-speaker-3</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Speaker 3?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">show-speaker-4</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Speaker 4?</td><td>Hide</td></tr>
+        <tr><td><code class="inline">show-speaker-5</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Speaker 5?</td><td>Hide</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoImg + mktoText Regions (5 total)</h4>
+    <table class="vars-table">
+      <thead><tr><th>mktoImg id</th><th>mktoname (Photo)</th><th>mktoText id</th><th>mktoname (Info)</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">sec4-speaker1-img</code></td><td>Speaker 1 Photo</td><td><code class="inline">sec4-speaker1-info</code></td><td>Speaker 1 Info</td></tr>
+        <tr><td colspan="4" style="text-align:center; color:var(--rocky);">… same pattern through speaker 5 …</td></tr>
+        <tr><td><code class="inline">sec4-speaker5-img</code></td><td>Speaker 5 Photo</td><td><code class="inline">sec4-speaker5-info</code></td><td>Speaker 5 Info</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Speaker Card Structure</h4>
+    <pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"col-md-3 col-sm-6 speaker-3-col"</span><span class="tag">&gt;</span>  <span class="cm">&lt;!-- column wrapper --&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"speaker-card rounded-4"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoImg"</span> <span class="attr">id</span>=<span class="str">"sec4-speaker3-img"</span> <span class="attr">mktoname</span>=<span class="str">"Speaker 3 Photo"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;img</span> <span class="attr">class</span>=<span class="str">"speaker-photo"</span> <span class="attr">src</span>=<span class="str">"...andrew-profile.png"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"speaker-bio"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoText"</span> <span class="attr">id</span>=<span class="str">"sec4-speaker3-info"</span> <span class="attr">mktoname</span>=<span class="str">"Speaker 3 Info"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h4&gt;</span>Speaker Name<span class="tag">&lt;/h4&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Speaker Title<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+  </div>
+</div>
+
+<div class="section-card" id="sec-form">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">11</div>
+      <div>
+        <div class="title">Form</div>
+        <div class="subtitle">Marketo form embed with title</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>The form section (id: <code class="inline">savemyseat</code>) is the anchor target for both Hero buttons. Contains a <code class="inline">mktoForm</code> placeholder replaced at runtime by Marketo, plus a form title and special address text.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.sec5-form</code> — display: <code class="inline">${show-form-sec}</code> (SAFe) / <code class="inline">${show-sec5}</code> (AIN). The form wrapper is <code class="inline">.form-wrapper</code> with max-width 520px, centered. Background: <code class="inline">${sec5-form-bg}</code> (SAFe) / <code class="inline">${form-bgColor}</code> (AIN).</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.sec5-form <span class="arrow">→</span> ${show-form-sec} / ${show-sec5}</span>
+      <span class="token-chip">.sec5-form <span class="arrow">→</span> ${form-sec-bgColor}</span>
+      <span class="token-chip">.form-wrapper <span class="arrow">→</span> ${sec5-form-bg} / ${form-bgColor}</span>
+      <span class="token-chip show-ain">.form-title <span class="arrow">→</span> ${form-title-color}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">show-form-sec</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Form?</td><td>Show → "block"</td></tr>
+        <tr class="show-ain"><td><code class="inline">show-sec5</code></td><td><span class="type-badge boolean">mktoBoolean</span></td><td>Show Form?</td><td>Show → "block"</td></tr>
+        <tr><td><code class="inline">form-sec-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Form Section BG Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">form-sec-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Form Section BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr class="show-safe"><td><code class="inline">sec5-form-bg</code></td><td><span class="type-badge color">mktoColor</span></td><td>Section 5 Form BG Color</td><td>#FFFBF4</td></tr>
+        <tr class="show-ain"><td><code class="inline">form-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Form BG Color</td><td>#ffffff</td></tr>
+        <tr class="show-ain"><td><code class="inline">form-title-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Form Title Color</td><td>#7b42ff</td></tr>
+      </tbody>
+    </table>
+
+    <h4>mktoText + mktoForm Regions</h4>
+    <table class="vars-table">
+      <thead><tr><th>Type</th><th>id</th><th>mktoname</th></tr></thead>
+      <tbody>
+        <tr><td><span class="type-badge text">mktoText</span></td><td><code class="inline">sec5-form-title</code></td><td class="show-safe">Form Section Title</td><td class="show-ain">Form Title</td></tr>
+        <tr><td><span class="type-badge form">mktoForm</span></td><td><code class="inline">mktoForm_0000</code></td><td>Form Selection</td></tr>
+        <tr><td><span class="type-badge text">mktoText</span></td><td><code class="inline">sec5-address</code></td><td>Form Special Address</td></tr>
+      </tbody>
+    </table>
+
+    <h4>AIN Form Styles</h4>
+    <p>The AIN template loads <code class="inline">ain-style-form.css</code> (270 lines) which overrides Marketo's default form appearance:</p>
+    <ul>
+      <li>All form elements use <code class="inline">Montserrat</code> font</li>
+      <li>Input fields: 100% width, 8px padding, 0.5rem border-radius, transparent background</li>
+      <li>Submit button: <code class="inline">background: #7b42ff</code>, border-radius 30px, full width</li>
+      <li>Responsive at 781px: fieldset columns stack vertically</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-card" id="sec-footer">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">12</div>
+      <div>
+        <div class="title">Footer</div>
+        <div class="subtitle">Address, links, social icons</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>Three-column footer with address, contact links, social icons (Facebook, YouTube, LinkedIn via Font Awesome), and legal links. Configurable background color and text color.</p>
+
+    <h4>CSS Class</h4>
+    <p><code class="inline">.footer-section</code> — background: <code class="inline">${footer-bg-color}</code> (SAFe) / <code class="inline">${footer-bgColor}</code> (AIN); text color: <code class="inline">${footer-text-color}</code>. Social icons use <code class="inline">.footer-social</code>, bottom bar uses <code class="inline">.footer-bottom</code>.</p>
+
+    <h4>CSS Token Associations</h4>
+    <p>
+      <span class="token-chip">.footer-section <span class="arrow">→</span> ${footer-bg-color} / ${footer-bgColor}</span>
+      <span class="token-chip">.footer-section <span class="arrow">→</span> ${footer-text-color}</span>
+      <span class="token-chip">.footer-section <span class="arrow">→</span> ${footer-bgImage}</span>
+      <span class="token-chip">.footer-section <span class="arrow">→</span> ${order-footer}</span>
+    </p>
+
+    <h4>Marketo Meta Variables</h4>
+    <table class="vars-table">
+      <thead><tr><th>Variable ID</th><th>Type</th><th>Name in Editor</th><th class="show-safe">SAFe Default</th><th class="show-ain">AIN Default</th></tr></thead>
+      <tbody>
+        <tr class="show-safe"><td><code class="inline">footer-bg-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Footer BG Color</td><td>#053947</td></tr>
+        <tr class="show-ain"><td><code class="inline">footer-bgColor</code></td><td><span class="type-badge color">mktoColor</span></td><td>Footer BG Color</td><td>#3f3f3f</td></tr>
+        <tr><td><code class="inline">footer-text-color</code></td><td><span class="type-badge color">mktoColor</span></td><td>Footer Text Color</td><td class="show-safe">#FFFBF4</td><td class="show-ain">#eeeeff</td></tr>
+        <tr><td><code class="inline">footer-bgImage</code></td><td><span class="type-badge string">mktoString</span></td><td>Footer BG Image URL</td><td class="show-safe">(empty)</td><td class="show-ain">(empty)</td></tr>
+        <tr><td><code class="inline">order-footer</code></td><td><span class="type-badge string">mktoString</span></td><td>Footer Order</td><td>12</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="section-card" id="sec-carousel">
+  <div class="section-card-header" onclick="toggleSection(this)">
+    <div class="left">
+      <div class="section-number">★</div>
+      <div>
+        <div class="title">Related Content Carousel</div>
+        <div class="subtitle">JS-driven 6-card looping carousel</div>
+      </div>
+    </div>
+    <i class="fa-solid fa-chevron-down chevron"></i>
+  </div>
+  <div class="section-card-body">
+    <p>A vanilla JavaScript carousel that renders 6 cards dynamically using Marketo token variables. Each card has an image (<code class="inline">mktoImg</code>), title, description, and link. The carousel loops forward and backward with CSS transition animation. Fallback placeholders are used for local preview when tokens aren't compiled.</p>
+
+    <h4>Carousel Token Variables (no meta declarations — in JS only)</h4>
+    <table class="vars-table">
+      <thead><tr><th>Token</th><th>Content</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">${card1-img}</code></td><td>Card 1 image URL</td></tr>
+        <tr><td><code class="inline">${card1-title}</code></td><td>Card 1 title text</td></tr>
+        <tr><td><code class="inline">${card1-desc}</code></td><td>Card 1 description text</td></tr>
+        <tr><td><code class="inline">${card1-link}</code></td><td>Card 1 link URL</td></tr>
+        <tr><td colspan="2" style="text-align:center; color:var(--rocky);">… same pattern for cards 2 through 6 (24 tokens total) …</td></tr>
+      </tbody>
+    </table>
+
+    <div class="alert alert-info">
+      <i class="fa-solid fa-circle-info"></i>
+      <div><strong>These tokens have no <code class="inline">&lt;meta&gt;</code> declarations</strong> — they are referenced directly in the JavaScript and filled by Marketo at compile time. The JS <code class="inline">parseToken()</code> helper substitutes fallback values when the token starts with <code class="inline">$</code> (uncompiled). Carousel section visibility is controlled by <code class="inline">show-sec8</code> variable.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ HOW-TO ═══════════════ -->
+<h2 id="howto-new-section">How-To: Add a New Section <a href="#howto-new-section" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>Adding a new section requires changes in <strong>three places</strong>: HTML body, <code class="inline">&lt;head&gt;</code> meta variables, and the <code class="inline">&lt;style&gt;</code> block. Here's the full checklist:</p>
+
+<div class="step"><div class="step-num">1</div><div class="step-content">
+  <h4>Add Section HTML to the Body</h4>
+  <p>Place your new <code class="inline">&lt;section&gt;</code> inside <code class="inline">.page-wrapper</code>, before the footer. Give it a unique class (e.g., <code class="inline">my-new-section</code>).</p>
+<pre><span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="str">"my-new-section mx-4 my-4 rounded-4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"container"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoText"</span> <span class="attr">id</span>=<span class="str">"my-section-content"</span> <span class="attr">mktoname</span>=<span class="str">"My Section Content"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>New Section Title<span class="tag">&lt;/h2&gt;</span>
+      <span class="tag">&lt;p&gt;</span>Your content here.<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content">
+  <h4>Add CSS Rules in the &lt;style&gt; Block</h4>
+  <p>Add rules for <code class="inline">display</code>, <code class="inline">order</code>, <code class="inline">background-color</code>, and optional background image. Follow the established pattern:</p>
+<pre><span class="cm">/* ===== SECTION - MY NEW SECTION ===== */</span>
+<span class="tag">.my-new-section</span> {
+  <span class="attr">display</span>: <span class="punc">${</span><span class="str">show-my-section</span><span class="punc">}</span>;
+  <span class="attr">order</span>: <span class="punc">${</span><span class="str">order-my-section</span><span class="punc">}</span>;
+  <span class="attr">background-color</span>: <span class="punc">${</span><span class="str">my-section-bgColor</span><span class="punc">}</span>;
+  <span class="attr">background-image</span>: <span class="attr">url</span>(<span class="str">'${my-section-bgImage}'</span>);
+  <span class="attr">background-size</span>: cover;
+  <span class="attr">background-position</span>: center center;
+  <span class="attr">padding</span>: 60px 0;
+}</pre>
+</div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content">
+  <h4>Add Meta Variables in the &lt;head&gt;</h4>
+  <p>Declare show/hide, order, and color variables. Place them with the other section variables:</p>
+<pre><span class="cm">&lt;!-- ===== MY NEW SECTION VARIABLES ===== --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoBoolean"</span> <span class="attr">id</span>=<span class="str">"show-my-section"</span> <span class="attr">mktoname</span>=<span class="str">"Show My Section?"</span>
+      <span class="attr">default</span>=<span class="str">"false"</span> <span class="attr">true_value</span>=<span class="str">"block"</span> <span class="attr">false_value</span>=<span class="str">"none"</span>
+      <span class="attr">false_value_name</span>=<span class="str">"Hide"</span> <span class="attr">true_value_name</span>=<span class="str">"Show"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoColor"</span> <span class="attr">mktoname</span>=<span class="str">"My Section BG Color"</span> <span class="attr">id</span>=<span class="str">"my-section-bgColor"</span>
+      <span class="attr">default</span>=<span class="str">"#FFFBF4"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoString"</span> <span class="attr">mktoname</span>=<span class="str">"My Section BG Image URL"</span> <span class="attr">id</span>=<span class="str">"my-section-bgImage"</span>
+      <span class="attr">default</span>=<span class="str">""</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoString"</span> <span class="attr">id</span>=<span class="str">"order-my-section"</span> <span class="attr">mktoname</span>=<span class="str">"My Section Order"</span>
+      <span class="attr">default</span>=<span class="str">"13"</span><span class="tag">&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">4</div><div class="step-content">
+  <h4>Update parse-tokens.js (both files)</h4>
+  <p>Add token fallback values so the section previews correctly in a local browser:</p>
+<pre><span class="kw">const</span> tokenDefaults = {
+    <span class="cm">// ... existing tokens ...</span>
+    <span class="str">'show-my-section'</span>:   <span class="str">'none'</span>,       <span class="cm">// change to 'block' to preview</span>
+    <span class="str">'my-section-bgColor'</span>: <span class="str">'var(--sai-cream)'</span>,
+};</pre>
+</div></div>
+
+<div class="step"><div class="step-num">5</div><div class="step-content">
+  <h4>Add Responsive CSS (767px breakpoint)</h4>
+  <p>Add <code class="inline">.my-new-section</code> to the mobile override block:</p>
+<pre><span class="attr">@media</span> (<span class="attr">max-width</span>: 767px) {
+  <span class="tag">.my-new-section</span> {
+    <span class="attr">margin-left</span>: 0 !important;
+    <span class="attr">margin-right</span>: 0 !important;
+    <span class="attr">border-radius</span>: 0 !important;
+    <span class="attr">padding</span>: 40px 0;
+  }
+}</pre>
+</div></div>
+
+<div class="alert alert-tip">
+  <i class="fa-solid fa-lightbulb"></i>
+  <div><strong>Sync both templates.</strong> When you add a section to <code class="inline">SAFe-safe-rewind-simplified.html</code>, add the same section (with AIN-appropriate colors) to <code class="inline">AIN-safe-rewind-simplified.html</code>. Keep the HTML structure identical; only the default values and CSS tokens should differ.</div>
+</div>
+
+<!-- ═══════════════ ADD A TEXT MODULE ═══════════════ -->
+<h2 id="howto-text-module">How-To: Add a Text Module <a href="#howto-text-module" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>A text module is a <code class="inline">mktoText</code> region — rich text editable by marketing teams in the Marketo editor. Adding one requires only the HTML body markup:</p>
+
+<div class="step"><div class="step-num">1</div><div class="step-content">
+  <h4>Place a mktoText div inside the target section</h4>
+  <p>Use a unique <code class="inline">id</code> and a descriptive <code class="inline">mktoname</code> (this is what appears in Marketo's editor dropdown):</p>
+<pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoText"</span> <span class="attr">id</span>=<span class="str">"sec-extra-disclaimer"</span> <span class="attr">mktoname</span>=<span class="str">"Extra Disclaimer Text"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="str">"text-muted small"</span><span class="tag">&gt;</span>Default disclaimer text here.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content">
+  <h4>Style with existing CSS classes</h4>
+  <p>No CSS changes needed for mktoText regions — they inherit the section's typography. Use Bootstrap utility classes (<code class="inline">text-muted</code>, <code class="inline">small</code>, <code class="inline">text-center</code>) for quick formatting.</p>
+</div></div>
+
+<div class="alert alert-info">
+  <i class="fa-solid fa-circle-info"></i>
+  <div><strong>No meta variables or parse-tokens changes needed.</strong> mktoText regions don't use CSS <code class="inline">${...}</code> tokens — they render their content directly in the body.</div>
+</div>
+
+<!-- ═══════════════ ADD A SPEAKER ═══════════════ -->
+<h2 id="howto-speaker">How-To: Add a Speaker <a href="#howto-speaker" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>Speakers 1–2 are always in the DOM. Speakers 3–5 follow the exact same pattern: <code class="inline">mktoImg</code> photo + <code class="inline">mktoText</code> bio, wrapped in a togglable column. To add a Speaker 6:</p>
+
+<div class="step"><div class="step-num">1</div><div class="step-content">
+  <h4>Add the column wrapper and card HTML</h4>
+  <p>Clone the speaker 3–5 pattern with a new index:</p>
+<pre><span class="cm">&lt;!-- Speaker 6 --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"col-md-3 col-sm-6 speaker-6-col"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"speaker-card rounded-4"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoImg"</span> <span class="attr">id</span>=<span class="str">"sec4-speaker6-img"</span> <span class="attr">mktoname</span>=<span class="str">"Speaker 6 Photo"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;img</span> <span class="attr">class</span>=<span class="str">"speaker-photo"</span> <span class="attr">src</span>=<span class="str">"...andrew-profile.png"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"speaker-bio"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoText"</span> <span class="attr">id</span>=<span class="str">"sec4-speaker6-info"</span> <span class="attr">mktoname</span>=<span class="str">"Speaker 6 Info"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h4&gt;</span>Speaker Name<span class="tag">&lt;/h4&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Speaker Title<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">2</div><div class="step-content">
+  <h4>Add the CSS toggle rule</h4>
+  <p>In the <code class="inline">&lt;style&gt;</code> block, next to the other speaker column rules:</p>
+<pre><span class="tag">.speaker-6-col</span> { <span class="attr">display</span>: <span class="punc">${</span><span class="str">show-speaker-6</span><span class="punc">}</span>; }</pre>
+</div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content">
+  <h4>Add the meta variable</h4>
+  <p>In the <code class="inline">&lt;head&gt;</code>, with the other speaker toggles:</p>
+<pre><span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoBoolean"</span> <span class="attr">id</span>=<span class="str">"show-speaker-6"</span> <span class="attr">mktoname</span>=<span class="str">"Show Speaker 6?"</span>
+      <span class="attr">default</span>=<span class="str">"false"</span> <span class="attr">true_value</span>=<span class="str">"block"</span> <span class="attr">false_value</span>=<span class="str">"none"</span>
+      <span class="attr">false_value_name</span>=<span class="str">"Hide"</span> <span class="attr">true_value_name</span>=<span class="str">"Show"</span><span class="tag">&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">4</div><div class="step-content">
+  <h4>Update parse-tokens.js</h4>
+  <p>Add to both <code class="inline">parse-tokens.js</code> and <code class="inline">parse-tokens-ain.js</code>:</p>
+<pre><span class="str">'show-speaker-6'</span>: <span class="str">'none'</span>,</pre>
+</div></div>
+
+<!-- ═══════════════ ADD AN IMAGE ═══════════════ -->
+<h2 id="howto-image">How-To: Add an Image <a href="#howto-image" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>Images use Marketo's <code class="inline">mktoImg</code> component — the editor provides an image picker, and the template supplies a default fallback. Two patterns exist in the codebase:</p>
+
+<h4>Pattern A: Inline mktoImg (Header, Banners, Speakers)</h4>
+<p>The image is part of a section's layout, wrapped in a <code class="inline">&lt;div class="mktoImg"&gt;</code> with a unique <code class="inline">id</code>:</p>
+<pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="str">"mktoImg"</span> <span class="attr">id</span>=<span class="str">"my-image"</span> <span class="attr">mktoname</span>=<span class="str">"My Custom Image"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="str">"https://placehold.co/400x200"</span> <span class="attr">alt</span>=<span class="str">""</span> <span class="attr">class</span>=<span class="str">"my-custom-image-class"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+
+<h4>Pattern B: mktoImg as a URL source (Carousel Cards)</h4>
+<p>For JS-driven content, the image is referenced as a Marketo token variable in the script:</p>
+<pre><span class="kw">const</span> card = {
+    <span class="attr">image</span>: <span class="str">"${card7-img}"</span>,  <span class="cm">// Marketo replaces at compile time</span>
+    <span class="attr">title</span>: <span class="str">"${card7-title}"</span>,
+};</pre>
+
+<div class="alert alert-tip">
+  <i class="fa-solid fa-lightbulb"></i>
+  <div><strong>No meta variables needed for Pattern A.</strong> The <code class="inline">mktoImg</code> class and mktoname attribute are self-declaring — Marketo's editor picks them up automatically. Pattern B requires corresponding <code class="inline">&lt;meta&gt;</code> declarations if you want the URL configurable in the editor.</div>
+</div>
+
+<h4>Quick Reference: All mktoImg IDs in the Templates</h4>
+<table class="vars-table">
+  <thead><tr><th>id</th><th>mktoname</th><th>Section</th></tr></thead>
+  <tbody>
+    <tr><td><code class="inline">header-logo</code></td><td>Header Logo</td><td>Header</td></tr>
+    <tr><td><code class="inline">banner-img</code></td><td>Banner Image</td><td>Banner</td></tr>
+    <tr><td><code class="inline">banner-img-2</code></td><td>Banner 2 Image</td><td>Banner 2</td></tr>
+    <tr><td><code class="inline">sec4-speaker1-img</code></td><td>Speaker 1 Photo</td><td>Speakers</td></tr>
+    <tr><td><code class="inline">sec4-speaker2-img</code></td><td>Speaker 2 Photo</td><td>Speakers</td></tr>
+    <tr><td><code class="inline">sec4-speaker3-img</code></td><td>Speaker 3 Photo</td><td>Speakers</td></tr>
+    <tr><td><code class="inline">sec4-speaker4-img</code></td><td>Speaker 4 Photo</td><td>Speakers</td></tr>
+    <tr><td><code class="inline">sec4-speaker5-img</code></td><td>Speaker 5 Photo</td><td>Speakers</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ ADD A META VARIABLE ═══════════════ -->
+<h2 id="howto-meta">How-To: Add Meta Variables <a href="#howto-meta" class="anchor-icon"><i class="fa-solid fa-link"></i></a></h2>
+
+<p>Meta variables power the Marketo editor UI. They come in five types; choose based on what the variable controls.</p>
+
+<div class="step"><div class="step-num">1</div><div class="step-content">
+  <h4>Choose the correct type and place &lt;meta&gt; tags in &lt;head&gt;</h4>
+</div></div>
+
+<h4>mktoBoolean (Show/Hide Toggle)</h4>
+<p>For toggling visibility. <code class="inline">true_value</code> and <code class="inline">false_value</code> are what get injected into <code class="inline">${id}</code> tokens.</p>
+<pre><span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoBoolean"</span>
+      <span class="attr">id</span>=<span class="str">"show-my-feature"</span>
+      <span class="attr">mktoname</span>=<span class="str">"Show My Feature?"</span>
+      <span class="attr">default</span>=<span class="str">"false"</span>
+      <span class="attr">true_value</span>=<span class="str">"block"</span>
+      <span class="attr">false_value</span>=<span class="str">"none"</span>
+      <span class="attr">false_value_name</span>=<span class="str">"Hide"</span>
+      <span class="attr">true_value_name</span>=<span class="str">"Show"</span><span class="tag">&gt;</span></pre>
+<div class="alert alert-warning">
+  <i class="fa-solid fa-triangle-exclamation"></i>
+  <div>If the element uses Bootstrap flex classes, your boolean values must include <code class="inline">!important</code>: use <code class="inline">true_value="flex!important" false_value="none!important"</code>.</div>
+</div>
+
+<h4>mktoString (Text / URL / Number)</h4>
+<p>For free-text values — button labels, URLs, section order numbers, image URLs.</p>
+<pre><span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoString"</span>
+      <span class="attr">id</span>=<span class="str">"my-button-text"</span>
+      <span class="attr">mktoname</span>=<span class="str">"My Button Text"</span>
+      <span class="attr">default</span>=<span class="str">"Click Here"</span><span class="tag">&gt;</span></pre>
+
+<h4>mktoColor (Color Picker)</h4>
+<p>For background colors, text colors, or accent colors. Use 6-digit hex defaults.</p>
+<pre><span class="tag">&lt;meta</span> <span class="attr">class</span>=<span class="str">"mktoColor"</span>
+      <span class="attr">id</span>=<span class="str">"my-bg-color"</span>
+      <span class="attr">mktoname</span>=<span class="str">"My BG Color"</span>
+      <span class="attr">default</span>=<span class="str">"#FFFBF4"</span><span class="tag">&gt;</span></pre>
+
+<div class="step"><div class="step-num">2</div><div class="step-content">
+  <h4>Reference the variable in CSS</h4>
+  <p>Use <code class="inline">${id}</code> syntax in the <code class="inline">&lt;style&gt;</code> block:</p>
+<pre><span class="tag">.my-feature</span> {
+  <span class="attr">display</span>: <span class="punc">${</span><span class="str">show-my-feature</span><span class="punc">}</span>;
+  <span class="attr">background-color</span>: <span class="punc">${</span><span class="str">my-bg-color</span><span class="punc">}</span>;
+}</pre>
+</div></div>
+
+<div class="step"><div class="step-num">3</div><div class="step-content">
+  <h4>Optionally reference in the HTML body</h4>
+  <p>Tokens work in body markup too — useful for links, button text, and image sources:</p>
+<pre><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="str">"${my-link-url}"</span><span class="tag">&gt;</span><span class="punc">${</span><span class="str">my-button-text</span><span class="punc">}</span><span class="tag">&lt;/a&gt;</span></pre>
+</div></div>
+
+<div class="step"><div class="step-num">4</div><div class="step-content">
+  <h4>Update parse-tokens.js (CSS tokens only)</h4>
+  <p>Only add CSS tokens (show/hide booleans, colors) — not body-text tokens:</p>
+<pre><span class="str">'show-my-feature'</span>: <span class="str">'none'</span>,
+<span class="str">'my-bg-color'</span>:    <span class="str">'var(--sai-cream)'</span>,</pre>
+</div></div>
+
+<h3>Variable Association Quick Reference</h3>
+<p>This table shows the relationship between where a variable is used and which files need updating:</p>
+<table class="vars-table">
+  <thead><tr><th>Variable used in...</th><th>Add &lt;meta&gt;?</th><th>Add to CSS?</th><th>Add to parse-tokens.js?</th></tr></thead>
+  <tbody>
+    <tr><td>CSS <code class="inline">display</code> / <code class="inline">order</code></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-rocky">Yes</span></td></tr>
+    <tr><td>CSS <code class="inline">background-color</code> / <code class="inline">color</code></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-rocky">Yes</span></td></tr>
+    <tr><td>CSS <code class="inline">background-image</code></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-sunset">No</span> (URLs don't need fallback)</td></tr>
+    <tr><td>Body <code class="inline">&lt;a href&gt;</code> / link</td><td><span class="badge badge-rocky">Yes</span></td><td><span class="badge badge-sunset">N/A</span></td><td><span class="badge badge-sunset">No</span></td></tr>
+    <tr><td>Body text content (mktoText)</td><td><span class="badge badge-horizon">N/A</span></td><td><span class="badge badge-horizon">N/A</span></td><td><span class="badge badge-sunset">No</span> (no token)</td></tr>
+    <tr><td>JS-only tokens (carousel cards)</td><td><span class="badge badge-sunset">Optional</span></td><td><span class="badge badge-sunset">N/A</span></td><td><span class="badge badge-sunset">No</span> (JS has fallback logic)</td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div style="margin-top: 64px; padding-top: 24px; border-top: 2px solid var(--cloud); text-align: center; color: var(--rocky); font-size: 0.85rem;">
+  <p><strong>SAI Landing Page Template Documentation</strong> &mdash; Generated from the source templates in <code class="inline">sai-lp-safe-rewind-simplified/</code></p>
+  <p>SAFe ~113 meta variables &bull; AIN ~117 meta variables &bull; Both templates share identical section structure</p>
+</div>
+
+</main>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+  // ── Section card toggles ──
+  function toggleSection(header) {
+    const card = header.closest('.section-card');
+    card.classList.toggle('open');
+  }
+
+  // ── Brand switching ──
+  function setBrand(brand) {
+    document.body.classList.toggle('ain-mode', brand === 'ain');
+    document.querySelectorAll('.brand-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().startsWith(brand === 'safe' ? 'SAFe' : 'AI')));
+    localStorage.setItem('doc-brand', brand);
+  }
+  // Restore saved brand preference
+  const saved = localStorage.getItem('doc-brand') || 'safe';
+  setBrand(saved);
+
+  // ── Scroll-to-top button visibility ──
+  const scrollBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // ── Active sidebar link highlighting ──
+  const sidebarLinks = document.querySelectorAll('.sidebar a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        sidebarLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  document.querySelectorAll('h2[id], .section-card[id]').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
