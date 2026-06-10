@@ -105,7 +105,11 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 <!-- Key Takeaways BG Image URL (defaults to tree ring graphic; set to blank for no image) -->
 <meta class="mktoString" mktoname="Key Takeaways BG Image URL" id="key-takeaways-bgImage" default="https://go.scaledagile.com/rs/983-XYR-522/images/SAI_treering_green.png?version=0">
 
-<!-- NEW: Key Takeaways 5-10 visibility toggles -->
+<!-- NEW: Key Takeaways 1-10 visibility toggles || 1-4 Show by default, 5-10 Hide by default -->
+<meta class="mktoBoolean" id="show-takeaway1" mktoname="Show Takeaway 1?" default="true" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-takeaway2" mktoname="Show Takeaway 2?" default="true" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-takeaway3" mktoname="Show Takeaway 3?" default="true" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
+<meta class="mktoBoolean" id="show-takeaway4" mktoname="Show Takeaway 4?" default="true" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
 <meta class="mktoBoolean" id="show-takeaway5" mktoname="Show Takeaway 5?" default="false" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
 <meta class="mktoBoolean" id="show-takeaway6" mktoname="Show Takeaway 6?" default="false" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
 <meta class="mktoBoolean" id="show-takeaway7" mktoname="Show Takeaway 7?" default="false" true_value="flex!important" false_value="none!important" false_value_name="Hide" true_value_name="Show">
@@ -211,8 +215,6 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
     }
     body {
       background-color: ${bodyBGcolor};
-      /* NEW: Optional body background image */
-      background-image: url('${body-bgImage}');
       background-size: cover;
       background-position: center center;
     }
@@ -247,7 +249,6 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       order: ${order-banner};
 	    width:100vw;
       background-color: ${banner-bgColor};
-      background-image: ${banner-bg-img};
       background-size: cover;
       background-position: center center;
       padding: 0;
@@ -255,11 +256,9 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
 
     .banner-section .banner-container {
       padding: 0;
-      max-width: ${banner-width};
     }
 
     .banner-section .banner-img-wrapper {
-      max-width: ${banner-width};
       margin: 0 auto;
       width:100vw; 
       margin-left:-50vw; 
@@ -608,7 +607,11 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
       background: transparent;
     }
 
-    /* NEW: Display toggles for takeaway items 5-10 */
+    /* NEW: Display toggles for takeaway items 1-10 */
+    .takeaway-item-1.d-flex { display: ${show-takeaway1}; }
+    .takeaway-item-2.d-flex { display: ${show-takeaway2}; }
+    .takeaway-item-3.d-flex { display: ${show-takeaway3}; }
+    .takeaway-item-4.d-flex { display: ${show-takeaway4}; }
     .takeaway-item-5.d-flex { display: ${show-takeaway5}; }
     .takeaway-item-6.d-flex { display: ${show-takeaway6}; }
     .takeaway-item-7.d-flex { display: ${show-takeaway7}; }
@@ -1086,7 +1089,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
         </div>
         <div class="takeaways-wrapper">
           <!-- Takeaway 1 -->
-          <div class="takeaway-item d-flex mb-4">
+          <div class="takeaway-item takeaway-item-1 d-flex mb-4">
             <div class="takeaway-icon">
               <!--<i class="fas fa-mountain"></i>-->
               <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
@@ -1100,7 +1103,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Takeaway 2 -->
-          <div class="takeaway-item d-flex mb-4">
+          <div class="takeaway-item takeaway-item-2 d-flex mb-4">
             <div class="takeaway-icon">
               <!--<i class="fas fa-robot"></i>-->
               <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
@@ -1114,7 +1117,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Takeaway 3 -->
-          <div class="takeaway-item d-flex mb-4">
+          <div class="takeaway-item takeaway-item-3 d-flex mb-4">
             <div class="takeaway-icon">
              <!--<i class="fas fa-sync-alt"></i>-->
               <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
@@ -1128,7 +1131,7 @@ MARKETO GUIDED LANDING PAGE META VARIABLES
             </div>
           </div>
           <!-- Takeaway 4 -->
-          <div class="takeaway-item d-flex mb-4">
+          <div class="takeaway-item takeaway-item-4 d-flex mb-4">
             <div class="takeaway-icon">
               <!--<i class="fas fa-star"></i>-->
               <img src="https://go.scaledagile.com/rs/983-XYR-522/images/takeaway-icon.png?version=0" alt="Key Takeaway">
